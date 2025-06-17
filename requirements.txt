@@ -1,0 +1,13 @@
+langgraph
+langchain-google-genai
+langchain-community
+google-generativeai
+pydantic
+requests
+python-dotenv
+faiss-cpu
+unstructured
+sentence-transformers
+transformers
+accelerate
+torch
