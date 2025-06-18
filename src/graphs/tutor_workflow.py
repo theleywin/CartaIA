@@ -58,7 +58,7 @@ def crear_workflow_tutor(llm, vector_store):
     
     # Evaluar y decidir si continuar
     def decidir_continuar(estado):
-        print("[DEBUG] Evaluación BDI:", estado.ultima_evaluacion)
+        print(f"[Debug] Evaluación BDI:", estado.ultima_evaluacion)
         if estado.ultima_evaluacion and estado.bdi_state:
             progreso = bdi_agent.evaluate_progress(estado.ultima_evaluacion)
             print(f"[INFO] Evaluación del progreso: {progreso}")

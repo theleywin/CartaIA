@@ -8,8 +8,7 @@ llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.2)
 
 def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent):
     solucion = estado.solucion_estudiante or ""
-    print("[DEBUG] Solución del estudiante:", repr(solucion))
-    print("[DEBUG] Tema actual:", repr(estado.tema))
+    print(f"[Debug] Tema actual:", repr(estado.tema))
 
     comprension = evaluar_dimensión_llm("comprensión", estado.tema, solucion)
     precision = evaluar_dimensión_llm("precisión", estado.tema, solucion)
@@ -46,10 +45,10 @@ def evaluar_dimensión_llm(dimension: str, tema: str, solucion: str) -> float:
     Devuelve únicamente un número decimal entre 0.0 y 1.0 sin texto adicional.
     """
 
-    print(f"[DEBUG] Prompt ({dimension}):\n{prompt}")
+    print(f"[Debug] Prompt ({dimension}):\n{prompt}")
 
     respuesta = llm.invoke(prompt).content.strip()
-    print(f"[DEBUG] Respuesta LLM ({dimension}):", repr(respuesta))
+    print(f"[Debug] Respuesta LLM ({dimension}):", repr(respuesta))
 
     # Extraer número decimal con regex
     match = re.search(r"\b(0(?:\.\d+)?|1(?:\.0+)?)\b", respuesta)

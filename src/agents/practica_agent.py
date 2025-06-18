@@ -19,15 +19,16 @@ def crear_agente_practica(llm: BaseChatModel):
         Respuesta del estudiante:
         """
         respuesta = llm.invoke(prompt).content.strip()
-        print(f"[DEBUG IMPORTANT] Respuesta del estudiante: {respuesta}")
         estado.solucion_estudiante = respuesta
+        
+        print(problema.enunciado)
 
         # 3. Guardar en material visible
-        estado.material = {
-            "problema": problema.enunciado,
+        estado.problema_actual = {
+            "enunciado": problema.enunciado,
             "respuesta_estudiante": respuesta
         }
 
         return estado
-
+    print("estoy en Agente de práctica")
     return manejar_practica

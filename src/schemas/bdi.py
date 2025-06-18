@@ -9,7 +9,7 @@ class TipoAyuda(str, Enum):
     FINALIZAR = "finalizar"
 
 class Belief(BaseModel):
-    student_knowledge: Dict[str, float] = Field(..., 
+    student_knowledge: Dict[str, Dict[str, float]] = Field(..., 
         description="Mapa de temas con nivel de comprensión (0-1)")
     learning_preferences: List[str] = Field(["visual", "practico"], 
         description="Preferencias de aprendizaje detectadas")

@@ -84,17 +84,28 @@ class BDIAgent:
     
     def update_beliefs(self, student_response: str, performance_data: dict):
         prompt = f"""
-        Actualiza las creencias sobre el estudiante basado en:
+       Eres un sistema inteligente de tutoría.
+
+        Actualiza las creencias sobre el estudiante basándote en:
         - Respuesta reciente: {student_response}
-        - Datos de desempeño: {performance_data}
-        - Creencias actuales: {self.state.beliefs.json()}
-        
-        Considera:
-        1. Ajustar el nivel de comprensión de los temas
-        2. Identificar nuevos conceptos erróneos
-        3. Detectar preferencias de aprendizaje
-        
-        Devuelve SOLO el JSON actualizado para Beliefs.
+        - Evaluación del desempeño: {performance_data}
+        - Estado previo de creencias: {self.state.beliefs.json()}
+
+        Devuelve un JSON con exactamente esta estructura:
+        {{
+        "student_knowledge": {{
+            "NOMBRE_DEL_TEMA": {{
+            "comprension": float,
+            "precision": float,
+            "profundidad": float
+            }}
+        }},
+        "misconceptions": [ "concepto erróneo 1", "concepto erróneo 2" ],
+        "learning_preferences": [ "visual", "practico" ]
+        }}
+        Todos los valores de las dimensiones deben estar entre 0.0 y 1.0.
+        NO expliques nada.
+        Devuelve solo el JSON. Nada más
         """
         updated_beliefs = self.llm.invoke(prompt).content
         cleaned = extract_json_block(updated_beliefs)
@@ -157,16 +168,19 @@ class BDIAgent:
         return action
     
     def evaluate_progress(self, assessment: dict) -> bool:
-        achieved = 0
-        total = len(self.state.desires.success_criteria)
-        if total == 0:
-            return False
-        
-        for criterion, threshold in self.state.desires.success_criteria.items():
-            if assessment.get(criterion, 0) >= threshold:
-                achieved += 1
-        
-        return achieved / total >= 0.4
+        """
+        Retorna True si el promedio de las tres dimensiones es al menos 50%.
+        """
+        # Tomamos sólo las tres dimensiones clave
+        dims = ["comprension", "precision", "profundidad"]
+        valores = [assessment.get(dim, 0.0) for dim in dims]
+
+        # Cálculo del promedio
+        promedio = sum(valores) / len(valores)
+
+        print(f"[Debug] Promedio BDI: {promedio:.2f}")
+        return promedio >= 0.5  # aquí decides el umbral
+
     
     def handle_failure(self):
         strategies = [

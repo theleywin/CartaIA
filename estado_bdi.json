@@ -1,0 +1,79 @@
+{
+  "beliefs": {
+    "student_knowledge": {
+      "Borrado de nodos en un árbol binario de búsqueda": {
+        "comprension": 0.8,
+        "precision": 0.9,
+        "profundidad": 0.6
+      }
+    },
+    "learning_preferences": [],
+    "misconceptions": []
+  },
+  "desires": {
+    "primary_goal": "Al finalizar el módulo, el estudiante será capaz de implementar y analizar algoritmos de inserción, búsqueda y eliminación en árboles binarios de búsqueda (ABB), demostrando comprensión de su eficiencia y propiedades fundamentales en al menos el 80% de los ejercicios prácticos.",
+    "secondary_goals": [
+      "Identificar las ventajas y desventajas de los ABB en comparación con otras estructuras de datos, como las listas enlazadas y los arrays.",
+      "Analizar la complejidad temporal de las operaciones básicas en ABB (inserción, búsqueda, eliminación) en los casos promedio, mejor y peor.",
+      "Resolver problemas algorítmicos utilizando ABB como la estructura de datos principal, demostrando la capacidad de aplicar los conceptos aprendidos en contextos prácticos."
+    ],
+    "success_criteria": { "undefined": 0.7 }
+  },
+  "intentions": {
+    "action_plan": [
+      {
+        "step": 1,
+        "title": "Introducción a los Árboles Binarios de Búsqueda (ABB)",
+        "description": "Se presentarán los conceptos fundamentales de ABB: definición, propiedades (ordenamiento, balanceo),  ventajas y desventajas en comparación con otras estructuras de datos. Se utilizarán diagramas y ejemplos visuales para facilitar la comprensión. Se introducirán las notaciones para representar los nodos y la estructura del árbol.",
+        "activities": [
+          "Presentación interactiva con ejemplos.",
+          "Ejercicios de identificación de ABB válidos e inválidos."
+        ],
+        "assessment": "Quiz corto sobre definiciones y propiedades de ABB."
+      },
+      {
+        "step": 2,
+        "title": "Implementación de la Inserción en ABB",
+        "description": "Se explicará el algoritmo de inserción en un ABB, paso a paso, utilizando pseudocódigo y ejemplos. Se enfatizará la importancia de mantener el ordenamiento del árbol. Se abordarán casos especiales como la inserción en un árbol vacío o la inserción de un nodo duplicado (se definirá el manejo de duplicados).",
+        "activities": [
+          "Implementación práctica del algoritmo de inserción en un lenguaje de programación (ej. Python, Java, C++).",
+          "Depuración de código y resolución de problemas."
+        ],
+        "assessment": "Ejercicios de programación: insertar nodos en un ABB, incluyendo casos especiales."
+      },
+      {
+        "step": 3,
+        "title": "Implementación de la Búsqueda y Eliminación en ABB",
+        "description": "Se explicarán los algoritmos de búsqueda y eliminación en un ABB, incluyendo los diferentes casos de eliminación (nodo hoja, nodo con un hijo, nodo con dos hijos). Se utilizarán pseudocódigo, diagramas y ejemplos. Se hará énfasis en la eficiencia de la búsqueda en un ABB balanceado.",
+        "activities": [
+          "Implementación práctica de los algoritmos de búsqueda y eliminación.",
+          "Análisis de la complejidad temporal de cada operación."
+        ],
+        "assessment": "Ejercicios de programación: búsqueda y eliminación de nodos en un ABB, incluyendo casos especiales. Análisis de la eficiencia."
+      },
+      {
+        "step": 4,
+        "title": "Análisis de la Eficiencia y Propiedades Fundamentales",
+        "description": "Se analizará la complejidad temporal de las operaciones de inserción, búsqueda y eliminación en el mejor, promedio y peor caso. Se discutirá la importancia del balanceo del árbol para mantener la eficiencia. Se presentarán ejemplos de árboles desbalanceados y su impacto en el rendimiento.",
+        "activities": [
+          "Análisis de la complejidad temporal mediante ejemplos y ejercicios.",
+          "Discusión sobre estrategias para mantener el balanceo (opcional: introducción a árboles AVL o árboles rojo-negro)."
+        ],
+        "assessment": "Preguntas de análisis sobre la eficiencia y propiedades de los ABB."
+      },
+      {
+        "step": 5,
+        "title": "Práctica y Consolidación",
+        "description": "Se realizarán ejercicios prácticos adicionales para consolidar los conocimientos adquiridos.  Se proporcionará retroalimentación individualizada para abordar las dificultades específicas de cada estudiante. Se revisarán los conceptos erróneos identificados durante el módulo.",
+        "activities": [
+          "Ejercicios de programación más complejos.",
+          "Resolución de problemas en grupo.",
+          "Revisión de conceptos erróneos identificados."
+        ],
+        "assessment": "Examen final con ejercicios de programación y preguntas teóricas que cubren todos los conceptos del módulo."
+      }
+    ],
+    "current_step": 0,
+    "fallback_strategy": "provide_more_examples"
+  }
+}
