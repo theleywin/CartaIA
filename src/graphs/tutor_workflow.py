@@ -1,6 +1,6 @@
 from langgraph.graph import StateGraph, END
-from agents import supervisor_agent, teoria_agent, ejemplo_agent, practica_agent
-from utils import bdi_evaluator
+from agents import supervisor_agent, teoria_agent, ejemplo_agent, practica_agent, retrieval_agent
+from utils import bdi_evaluator, embedding_loader
 from schemas.estado import EstadoConversacion, TipoAyuda
 from agents.bdi_agent import BDIAgent
 
@@ -12,12 +12,16 @@ def crear_workflow_tutor(llm, vector_store):
     practica_agent_instance = practica_agent.crear_agente_practica(llm)
     bdi_agent = BDIAgent(llm)
     
+    retriever = embedding_loader.cargar_retriever()
+    retrieval_agent_instance = retrieval_agent.crear_agente_retrieval(retriever)
+    
     # Definir el grafo
     graph = StateGraph(EstadoConversacion)
     
     # Añadir nodos
     graph.add_node("iniciar_bdi", lambda estado: iniciar_bdi(estado, bdi_agent))
     graph.add_node("supervisor", supervisor_agent_instance)
+    graph.add_node("retrieval", retrieval_agent_instance)
     graph.add_node("teoria", teoria_agent_instance)
     graph.add_node("ejemplo", ejemplo_agent_instance)
     graph.add_node("practica", practica_agent_instance)
@@ -42,8 +46,9 @@ def crear_workflow_tutor(llm, vector_store):
         
     # Añadir bordes
     graph.add_edge("iniciar_bdi", "supervisor")
+    graph.add_edge("supervisor", "retrieval")
     graph.add_conditional_edges(
-        "supervisor",
+        "retrieval",
         decidir_ruta,
         {
             TipoAyuda.TEORIA: "teoria",

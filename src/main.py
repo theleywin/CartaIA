@@ -55,11 +55,11 @@ tutor_workflow = crear_workflow_tutor(llm, vector_store)
 
 # Estado inicial del estudiante
 estado_inicial = EstadoConversacion(
-    tema="Árboles binarios de búsqueda",
+    tema="single source shortest path theory",
     estado_estudiante=EstadoEstudiante(
         nivel="intermedio",
-        temas_vistos=["listas enlazadas", "pilas", "colas"],
-        errores_comunes=["recursión infinita", "manejo de punteros"]
+        temas_vistos=["Arbol binario de busqueda", "disjoint sets", "heap binarios"],
+        errores_comunes=["grafos", "manejo de punteros"]
     )
 )
 

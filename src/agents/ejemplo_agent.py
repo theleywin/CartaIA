@@ -13,8 +13,9 @@ def limpiar_json(raw_response: str) -> str:
 
 def crear_agente_ejemplos():
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.4)
-    
     prompt = """
+    {context}
+    
     Eres un experto en programación y estructuras de datos.
 
     Genera un ejemplo de código para ilustrar el tema: "{tema}" considerando:
@@ -34,7 +35,9 @@ def crear_agente_ejemplos():
     """
 
     def generar_ejemplo(estado: EstadoConversacion):
+        context = f"Contexto: \n {"\n\n".join(estado.docs_relevantes) or []}"
         respuesta = llm.invoke(prompt.format(
+            context=context,
             tema=estado.tema,
             nivel=estado.estado_estudiante.nivel,
             lenguaje="python"

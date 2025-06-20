@@ -10,6 +10,7 @@ class EstadoEstudiante(BaseModel):
 class EstadoConversacion(BaseModel):
     tema: str
     historial: List[Dict[str, str]] = []
+    docs_relevantes: List[str] = []
     tipo_ayuda_necesaria: Optional[TipoAyuda] = None
     material: Optional[dict] = None
     problema_actual: Optional[dict] = None

@@ -7,9 +7,13 @@ def crear_agente_practica(llm: BaseChatModel):
         # 1. Generar un problema personalizado
         problema = generar_problema_personalizado(estado)
         estado.problema_actual = problema.model_dump()
+        
+        context = f"Contexto: \n {"\n\n".join(estado.docs_relevantes) or []}"
 
         # 2. Construir un prompt para que el LLM simule ser el estudiante
         prompt = f"""
+        {context}
+        
         Simula la respuesta de un estudiante que intenta resolver el siguiente ejercicio de programación sobre "{estado.problema_actual}". 
         El objetivo es evaluar su comprensión, precisión y profundidad. No des explicaciones, solo muestra el código del estudiante.
 

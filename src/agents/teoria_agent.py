@@ -13,8 +13,10 @@ def limpiar_json(raw_response: str) -> str:
     return raw_response
 
 def crear_agente_teoria(llm):
+    
     prompt = ChatPromptTemplate.from_template(
         """
+        {context}
         Eres un experto en estructuras de datos. Proporciona una explicación clara y concisa.
 
         Contexto BDI:
@@ -45,7 +47,9 @@ def crear_agente_teoria(llm):
             if current_step < len(estado.bdi_state.intentions.action_plan):
                 bdi_step = estado.bdi_state.intentions.action_plan[current_step]
 
+        context = f"Contexto {"\n\n".join(estado.docs_relevantes) or []}"
         response = llm.invoke(prompt.format(
+            context=context,
             tema=estado.tema,
             nivel=estado.estado_estudiante.nivel,
             bdi_step=bdi_step,
