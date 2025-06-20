@@ -82,14 +82,14 @@ class BDIAgent:
             )
         )
     
-    def update_beliefs(self, student_response: str, performance_data: dict):
+    async def update_beliefs(self, student_response: str, performance_data: dict):
         prompt = f"""
        Eres un sistema inteligente de tutoría.
 
         Actualiza las creencias sobre el estudiante basándote en:
         - Respuesta reciente: {student_response}
         - Evaluación del desempeño: {performance_data}
-        - Estado previo de creencias: {self.state.beliefs.json()}
+        - Estado previo de creencias: {self.state.beliefs.model_dump_json()}
 
         Devuelve un JSON con exactamente esta estructura:
         {{
@@ -107,15 +107,16 @@ class BDIAgent:
         NO expliques nada.
         Devuelve solo el JSON. Nada más
         """
-        updated_beliefs = self.llm.invoke(prompt).content
+        llm_response = await self.llm.ainvoke(prompt)
+        updated_beliefs = llm_response.content
         cleaned = extract_json_block(updated_beliefs)
-        self.state.beliefs = Belief.parse_raw(cleaned)
+        self.state.beliefs = Belief.model_validate_json(cleaned)
     
-    def generate_desires(self, learning_objective: str):
+    async def generate_desires(self, learning_objective: str):
         prompt = f"""
         Como tutor de algoritmos, define objetivos pedagógicos para:
         - Objetivo principal: {learning_objective}
-        - Creencias actuales: {self.state.beliefs.json()}
+        - Creencias actuales: {self.state.beliefs.model_dump_json()}
 
         Genera:
         1. 1 objetivo principal SMART
@@ -124,7 +125,8 @@ class BDIAgent:
 
         Formato JSON con: primary_goal, secondary_goals, success_criteria
         """
-        response = self.llm.invoke(prompt).content
+        llm_response = await self.llm.ainvoke(prompt)
+        response = llm_response.content
         cleaned = extract_json_block(response)
 
         try:
@@ -133,7 +135,7 @@ class BDIAgent:
         except Exception as e:
             raise ValueError(f"Error al procesar desires del LLM: {e}\nRespuesta LLM:\n{cleaned}")
     
-    def plan_intentions(self):
+    async def plan_intentions(self):
         prompt = f"""
         Diseña un plan de enseñanza para:
         - Objetivo: {self.state.desires.primary_goal}
@@ -152,7 +154,8 @@ class BDIAgent:
             "fallback_strategy": "nombre_estrategia"
         }}
         """
-        new_intentions = self.llm.invoke(prompt).content
+        llm_response = await self.llm.ainvoke(prompt)
+        new_intentions = llm_response.content
         cleaned = extract_json_block(new_intentions)
         new_intentions = json.loads(cleaned)
         self.state.intentions.action_plan = new_intentions.get("action_plan", [])
@@ -182,7 +185,7 @@ class BDIAgent:
         return promedio >= 0.5  # aquí decides el umbral
 
     
-    def handle_failure(self):
+    async def handle_failure(self):
         strategies = [
             "simplify_content",
             "provide_more_examples",
@@ -195,4 +198,4 @@ class BDIAgent:
         
         self.state.intentions.fallback_strategy = strategies[next_index]
         self.state.intentions.current_step = 0
-        self.plan_intentions()
+        await self.plan_intentions()

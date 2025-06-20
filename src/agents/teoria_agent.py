@@ -40,7 +40,7 @@ def crear_agente_teoria(llm):
         """
     )
 
-    def obtener_teoria(estado: EstadoConversacion):
+    async def obtener_teoria(estado: EstadoConversacion):
         bdi_step = ""
         if estado.bdi_state and estado.bdi_state.intentions.action_plan:
             current_step = estado.bdi_state.intentions.current_step
@@ -48,7 +48,7 @@ def crear_agente_teoria(llm):
                 bdi_step = estado.bdi_state.intentions.action_plan[current_step]
 
         context = f"Contexto {"\n\n".join(estado.docs_relevantes) or []}"
-        response = llm.invoke(prompt.format(
+        response = await llm.ainvoke(prompt.format(
             context=context,
             tema=estado.tema,
             nivel=estado.estado_estudiante.nivel,
@@ -58,7 +58,6 @@ def crear_agente_teoria(llm):
         ))
 
         contenido_limpio = limpiar_json(response.content)
-        explicacion = ExplicacionTeorica.parse_raw(contenido_limpio)
-        return {"material": explicacion.dict()}
-    print("entre al agente teoria")
+        explicacion = ExplicacionTeorica.model_validate_json(contenido_limpio)
+        return {"material": explicacion.model_dump()}
     return obtener_teoria

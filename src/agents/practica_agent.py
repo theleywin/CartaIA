@@ -3,9 +3,9 @@ from schemas.estado import EstadoConversacion
 from langchain_core.language_models.chat_models import BaseChatModel
 
 def crear_agente_practica(llm: BaseChatModel):
-    def manejar_practica(estado: EstadoConversacion) -> EstadoConversacion:
+    async def manejar_practica(estado: EstadoConversacion) -> EstadoConversacion:
         # 1. Generar un problema personalizado
-        problema = generar_problema_personalizado(estado)
+        problema = await generar_problema_personalizado(estado)
         estado.problema_actual = problema.model_dump()
         
         context = f"Contexto: \n {"\n\n".join(estado.docs_relevantes) or []}"
@@ -22,7 +22,8 @@ def crear_agente_practica(llm: BaseChatModel):
 
         Respuesta del estudiante:
         """
-        respuesta = llm.invoke(prompt).content.strip()
+        result = await llm.ainvoke(prompt)
+        respuesta = result.content.strip()
         estado.solucion_estudiante = respuesta
         
         print(problema.enunciado)
@@ -34,5 +35,4 @@ def crear_agente_practica(llm: BaseChatModel):
         }
 
         return estado
-    print("estoy en Agente de práctica")
     return manejar_practica

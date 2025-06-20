@@ -18,14 +18,18 @@ def crear_workflow_tutor(llm, vector_store):
     # Definir el grafo
     graph = StateGraph(EstadoConversacion)
     
-    # Añadir nodos
-    graph.add_node("iniciar_bdi", lambda estado: iniciar_bdi(estado, bdi_agent))
+    async def iniciar_bdi_node(estado):
+        return await iniciar_bdi(estado, bdi_agent)
+    
+    graph.add_node("iniciar_bdi", iniciar_bdi_node)
     graph.add_node("supervisor", supervisor_agent_instance)
     graph.add_node("retrieval", retrieval_agent_instance)
     graph.add_node("teoria", teoria_agent_instance)
     graph.add_node("ejemplo", ejemplo_agent_instance)
     graph.add_node("practica", practica_agent_instance)
-    graph.add_node("evaluar_respuesta", lambda estado: bdi_evaluator.evaluar_y_actualizar_bdi(estado, bdi_agent))
+    async def evaluar_respuesta_node(estado):
+        return await bdi_evaluator.evaluar_y_actualizar_bdi(estado, bdi_agent)
+    graph.add_node("evaluar_respuesta", evaluar_respuesta_node)
     
     # Establecer punto de entrada
     graph.set_entry_point("iniciar_bdi")
@@ -84,10 +88,10 @@ def crear_workflow_tutor(llm, vector_store):
     
     return graph.compile()
 
-def iniciar_bdi(estado: EstadoConversacion, bdi_agent: BDIAgent):
+async def iniciar_bdi(estado: EstadoConversacion, bdi_agent: BDIAgent):
     # Inicializar el agente BDI
-    bdi_agent.generate_desires(estado.tema)
-    bdi_agent.plan_intentions()
+    await bdi_agent.generate_desires(estado.tema)
+    await bdi_agent.plan_intentions()
     
     # Guardar el estado BDI en la conversación
     estado.bdi_state = bdi_agent.state

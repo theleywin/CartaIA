@@ -37,13 +37,13 @@ def crear_supervisor(llm):
         """
     )
 
-    def supervisor_chain(estado: EstadoConversacion):
+    async def supervisor_chain(estado: EstadoConversacion):
         bdi_plan = (
             estado.bdi_state.intentions.action_plan
             if estado.bdi_state and estado.bdi_state.intentions
             else "No disponible"
         )
-        student_state = estado.estado_estudiante.json()
+        student_state = estado.estado_estudiante.model_dump_json()
         consulta = obtener_ultima_consulta(estado)
 
         formatted_prompt = prompt.format_prompt(
@@ -53,16 +53,15 @@ def crear_supervisor(llm):
             format_instructions=parser.get_format_instructions(),
         )
 
-        output = llm.invoke(formatted_prompt)
+        output = await llm.ainvoke(formatted_prompt)
 
         # Limpieza del contenido JSON en caso de que venga envuelto en ```json ... ```
         raw_content = output.content
-        match = re.search(r"```json\s*(\{.*?\})\s*```", raw_content, re.DOTALL)
+        match = re.search(r"```json\s*(\{[^\}]*\})\s*```", raw_content, re.DOTALL)
         json_string = match.group(1) if match else raw_content.strip()
 
         # Parsear y actualizar el estado
-        decision = SupervisorDecision.parse_raw(json_string)
+        decision = SupervisorDecision.model_validate_json(json_string)
         estado.tipo_ayuda_necesaria = decision.decision
         return estado
-    print("entre al agente supervisor")
     return supervisor_chain

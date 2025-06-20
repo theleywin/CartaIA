@@ -8,7 +8,6 @@ import torch
 def run_ingestion():
     # Configuración de dispositivo
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"Usando dispositivo: {device}")
 
     # Cargar documentos PDF
     loader = DirectoryLoader(

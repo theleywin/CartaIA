@@ -34,15 +34,14 @@ def crear_agente_ejemplos():
     }}
     """
 
-    def generar_ejemplo(estado: EstadoConversacion):
+    async def generar_ejemplo(estado: EstadoConversacion):
         context = f"Contexto: \n {"\n\n".join(estado.docs_relevantes) or []}"
-        respuesta = llm.invoke(prompt.format(
+        respuesta = await llm.ainvoke(prompt.format(
             context=context,
             tema=estado.tema,
             nivel=estado.estado_estudiante.nivel,
             lenguaje="python"
         ))
         json_limpio = limpiar_json(respuesta.content)
-        return EjemploCodigo.parse_raw(json_limpio)
-    print("entre al agente ejemplos")
+        return EjemploCodigo.model_validate_json(json_limpio)
     return generar_ejemplo
