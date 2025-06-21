@@ -118,7 +118,7 @@ class BDIAgent:
         promedio = sum(valores) / len(valores)
 
         print(f"[Debug] Promedio BDI: {promedio:.2f}")
-        return promedio >= 0.5  # aquí decides el umbral
+        return promedio >= 0.8  # aquí decides el umbral
 
     
     async def handle_failure(self):

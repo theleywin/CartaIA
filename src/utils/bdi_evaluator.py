@@ -9,9 +9,9 @@ async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent, llm):
     solucion = estado.solucion_estudiante or ""
     print("[Debug] Tema actual:", repr(estado.tema))
 
-    comprension = await evaluar_dimension_llm("comprensión", estado.tema, solucion, llm)
-    precision = await evaluar_dimension_llm("precisión", estado.tema, solucion, llm)
-    profundidad = await evaluar_dimension_llm("profundidad", estado.tema, solucion, llm)
+    comprension = await evaluar_dimension_llm("comprensión", estado.problema_actual.enunciado, solucion, llm)
+    precision = await evaluar_dimension_llm("precisión",estado.problema_actual.enunciado, solucion, llm)
+    profundidad = await evaluar_dimension_llm("profundidad", estado.problema_actual.enunciado, solucion, llm)
 
     evaluacion = {
         "comprension": comprension,
@@ -35,11 +35,16 @@ class EvaluacionDimension(BaseModel):
 async def evaluar_dimension_llm(dimension: str, tema: str, solucion: str, llm) -> float:
     prompt = f"""
     Eres un asistente educativo. Evalúa la siguiente solución de un estudiante en la dimensión de **{dimension}** 
-    respecto al tema "{tema}". Asigna una puntuación entre 0.0 (muy pobre) y 1.0 (excelente) basada en:
+    respecto a la siguiente pregunta:
+    
+        "{tema}" 
+        
+        
+    Asigna una puntuación entre 0.00 (muy pobre) y 1.00 (excelente) basada en:
 
     - Comprensión: ¿el estudiante entendió el concepto?
     - Precisión: ¿su código o explicación tiene errores?
-    - Profundidad: ¿la solución muestra razonamiento avanzado o solo básico?
+    - Profundidad: ¿la solución muestra razonamiento suficientemente avanzado?
 
     Solución del estudiante:
     {solucion}
