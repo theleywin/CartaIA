@@ -2,18 +2,19 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from schemas.estado import EstadoConversacion
 import os
 import re
+from dotenv import dotenv_values
 
-
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBZTbgUlJhlUC1lQSpQUIL8Zq4ejSg-Xe0"
+config = dotenv_values(".env")
+os.environ["GOOGLE_API_KEY"] = config["GOOGLE_API_KEY_2"]
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.2)
 
 async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent):
     solucion = estado.solucion_estudiante or ""
-    print(f"[Debug] Tema actual:", repr(estado.tema))
+    print("[Debug] Tema actual:", repr(estado.tema))
 
-    comprension = await evaluar_dimensión_llm("comprensión", estado.tema, solucion)
-    precision = await evaluar_dimensión_llm("precisión", estado.tema, solucion)
-    profundidad = await evaluar_dimensión_llm("profundidad", estado.tema, solucion)
+    comprension = await evaluar_dimension_llm("comprensión", estado.tema, solucion)
+    precision = await evaluar_dimension_llm("precisión", estado.tema, solucion)
+    profundidad = await evaluar_dimension_llm("profundidad", estado.tema, solucion)
 
     evaluacion = {
         "comprension": comprension,
@@ -31,7 +32,7 @@ async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent):
     estado.bdi_state = bdi_agent.state
     return estado
 
-async def evaluar_dimensión_llm(dimension: str, tema: str, solucion: str) -> float:
+async def evaluar_dimension_llm(dimension: str, tema: str, solucion: str) -> float:
     prompt = f"""
     Eres un asistente educativo. Evalúa la siguiente solución de un estudiante en la dimensión de **{dimension}** 
     respecto al tema "{tema}". Asigna una puntuación entre 0.0 (muy pobre) y 1.0 (excelente) basada en:
