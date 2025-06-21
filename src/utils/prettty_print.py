@@ -9,6 +9,7 @@ def print_output(estado_final):
         
 def show_final_result(estado_final):
     print("\n=== RESULTADO DEL TUTOR ===")
+    problema = estado_final["problema_actual"]
     tipo = estado_final["tipo_ayuda_necesaria"]
     if tipo == TipoAyuda.TEORIA and estado_final["material"]:
         print("🔍 Explicación teórica:")
@@ -16,9 +17,9 @@ def show_final_result(estado_final):
     elif tipo == TipoAyuda.EJEMPLO and estado_final["material"]:
         print("💡 Ejemplo de código:")
         print(estado_final["material"].get("codigo", "[Código no disponible]"))
-    elif tipo == TipoAyuda.PRACTICA and estado_final["problema_actual"]:
+    elif tipo == TipoAyuda.PRACTICA and problema.enunciado:
         print("📝 Problema para resolver:")
-        print(estado_final["problema_actual"].get("enunciado", "[Enunciado no disponible]"))
+        print(problema.enunciado)
     elif tipo == TipoAyuda.FINALIZAR:
         print("✅ Progreso suficiente alcanzado. Sesión finalizada.")
     else:

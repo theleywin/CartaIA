@@ -19,11 +19,6 @@ def crear_agente_practica(llm: BaseChatModel):
         )
         estado.solucion_estudiante = respuesta
 
-        # 3. Guardar en material visible
-        estado.problema_actual = {
-            "enunciado": problema.enunciado,
-            "respuesta_estudiante": respuesta
-        }
 
         return estado
 
