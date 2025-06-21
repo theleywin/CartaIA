@@ -1,20 +1,17 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
+from pydantic import BaseModel
 from schemas.estado import EstadoConversacion
 import os
 import re
 from dotenv import dotenv_values
 
-config = dotenv_values(".env")
-os.environ["GOOGLE_API_KEY"] = config["GOOGLE_API_KEY_2"]
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.2)
-
-async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent):
+async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent, llm):
     solucion = estado.solucion_estudiante or ""
     print("[Debug] Tema actual:", repr(estado.tema))
 
-    comprension = await evaluar_dimension_llm("comprensión", estado.tema, solucion)
-    precision = await evaluar_dimension_llm("precisión", estado.tema, solucion)
-    profundidad = await evaluar_dimension_llm("profundidad", estado.tema, solucion)
+    comprension = await evaluar_dimension_llm("comprensión", estado.tema, solucion, llm)
+    precision = await evaluar_dimension_llm("precisión", estado.tema, solucion, llm)
+    profundidad = await evaluar_dimension_llm("profundidad", estado.tema, solucion, llm)
 
     evaluacion = {
         "comprension": comprension,
@@ -32,7 +29,10 @@ async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent):
     estado.bdi_state = bdi_agent.state
     return estado
 
-async def evaluar_dimension_llm(dimension: str, tema: str, solucion: str) -> float:
+class EvaluacionDimension(BaseModel):
+    puntuacion: float
+
+async def evaluar_dimension_llm(dimension: str, tema: str, solucion: str, llm) -> float:
     prompt = f"""
     Eres un asistente educativo. Evalúa la siguiente solución de un estudiante en la dimensión de **{dimension}** 
     respecto al tema "{tema}". Asigna una puntuación entre 0.0 (muy pobre) y 1.0 (excelente) basada en:
@@ -49,12 +49,8 @@ async def evaluar_dimension_llm(dimension: str, tema: str, solucion: str) -> flo
 
     print(f"[Debug] Prompt ({dimension}):\n{prompt}")
 
+    llm = llm.with_structured_output(EvaluacionDimension)
     llm_response = await llm.ainvoke(prompt)
-    respuesta = llm_response.content.strip()
+    respuesta = llm_response.puntuacion
     print(f"[Debug] Respuesta LLM ({dimension}):", repr(respuesta))
-
-    # Extraer número decimal con regex
-    match = re.search(r"\b(0(?:\.\d+)?|1(?:\.0+)?)\b", respuesta)
-    if match:
-        return float(match.group(1))
-    return 0.0
+    return respuesta

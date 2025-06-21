@@ -5,7 +5,7 @@ class ExplicacionTeorica(BaseModel):
     concepto: str
     definicion: str
     caracteristicas: List[str]
-    complejidad: Dict[str, str]
+    complejidad: str
     casos_uso: list[str]
     analogia: str
 

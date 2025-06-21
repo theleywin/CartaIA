@@ -2,18 +2,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from schemas.contenido import ProblemaPractico
 from schemas.estado import EstadoConversacion
 
-def limpiar_json(raw_response: str) -> str:
-    if raw_response.startswith("```json"):
-        lines = raw_response.splitlines()
-        return "\n".join(lines[1:-1])
-    if raw_response.startswith("```") and raw_response.endswith("```"):
-        lines = raw_response.splitlines()
-        return "\n".join(lines[1:-1])
-    return raw_response
-
-async def generar_problema_personalizado(estado: EstadoConversacion):
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
-    
+async def generar_problema_personalizado(estado: EstadoConversacion, llm):    
     prompt = f"""
     Genera un problema de {estado.tema} para un estudiante de nivel {estado.estado_estudiante.nivel}.
     Considera:
@@ -37,8 +26,6 @@ async def generar_problema_personalizado(estado: EstadoConversacion):
     
     No incluyas explicaciones, solo responde con un bloque JSON puro y bien formateado.
     """
-    
+    llm = llm.with_structured_output(ProblemaPractico)
     response = await llm.ainvoke(prompt)
-    respuesta_raw = response.content
-    respuesta_json = limpiar_json(respuesta_raw)
-    return ProblemaPractico.model_validate_json(respuesta_json)
+    return response

@@ -13,7 +13,7 @@ def limpiar_json(raw_response: str) -> str:
     return raw_response
 
 def crear_agente_teoria(llm):
-    
+    llm = llm.with_structured_output(ExplicacionTeorica)
     prompt = ChatPromptTemplate.from_template(
         """
         {context}
@@ -27,15 +27,15 @@ def crear_agente_teoria(llm):
         Tema: {tema}
         Nivel: {nivel}
 
-         Estructura requerida (en formato JSON válido):
-    {{
-      "concepto": "Definición breve del concepto",
-      "definicion": "Explicación detallada",
-      "caracteristicas": ["característica 1", "característica 2", "..."],
-      "complejidad": {{"mejor_caso": "O(1)", "peor_caso": "O(n)"}},
-      "casos_uso": ["caso 1", "caso 2", "..."],
-      "analogia": "Analogía sencilla para entender el concepto"
-    }}
+        Estructura requerida (en formato JSON válido):
+        {{
+        "concepto": "Definición breve del concepto",
+        "definicion": "Explicación detallada",
+        "caracteristicas": ["característica 1", "característica 2", "..."],
+        "complejidad": {{"mejor_caso": "O(1)", "peor_caso": "O(n)"}},
+        "casos_uso": ["caso 1", "caso 2", "..."],
+        "analogia": "Analogía sencilla para entender el concepto"
+        }}
 
         """
     )
@@ -57,7 +57,5 @@ def crear_agente_teoria(llm):
             preferences=", ".join(estado.bdi_state.beliefs.learning_preferences) if estado.bdi_state else ""
         ))
 
-        contenido_limpio = limpiar_json(response.content)
-        explicacion = ExplicacionTeorica.model_validate_json(contenido_limpio)
-        return {"material": explicacion.model_dump()}
+        return {"material": response.model_dump()}
     return obtener_teoria

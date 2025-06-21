@@ -2,17 +2,8 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from schemas.contenido import EjemploCodigo
 from schemas.estado import EstadoConversacion
 
-def limpiar_json(raw_response: str) -> str:
-    if raw_response.startswith("```json"):
-        lines = raw_response.splitlines()
-        return "\n".join(lines[1:-1])
-    if raw_response.startswith("```") and raw_response.endswith("```"):
-        lines = raw_response.splitlines()
-        return "\n".join(lines[1:-1])
-    return raw_response
-
-def crear_agente_ejemplos():
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.4)
+def crear_agente_ejemplos(llm):
+    llm = llm.with_structured_output(EjemploCodigo)
     prompt = """
     {context}
     
@@ -42,6 +33,5 @@ def crear_agente_ejemplos():
             nivel=estado.estado_estudiante.nivel,
             lenguaje="python"
         ))
-        json_limpio = limpiar_json(respuesta.content)
-        return EjemploCodigo.model_validate_json(json_limpio)
+        return respuesta
     return generar_ejemplo

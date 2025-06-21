@@ -1,5 +1,5 @@
-from pydantic import BaseModel, Field
-from typing import Dict, List, Optional
+from pydantic import BaseModel, Field, field_validator
+from typing import Dict, List
 from enum import Enum
 
 class TipoAyuda(str, Enum):
@@ -8,8 +8,19 @@ class TipoAyuda(str, Enum):
     PRACTICA = "practica"
     FINALIZAR = "finalizar"
 
+class SuccessCriteria(BaseModel):
+    comprension: float = Field(
+        description="Nivel de comprensión esperado (0-1)"
+    )
+    precision: float = Field(
+        description="Precisión esperada en la resolución de problemas (0-1)"
+    )
+    profundidad: float = Field(
+        description="Profundidad de conocimiento esperada (0-1)"
+    )
+
 class Belief(BaseModel):
-    student_knowledge: Dict[str, Dict[str, float]] = Field(..., 
+    student_knowledge: Dict[str, SuccessCriteria] = Field(..., 
         description="Mapa de temas con nivel de comprensión (0-1)")
     learning_preferences: List[str] = Field(["visual", "practico"], 
         description="Preferencias de aprendizaje detectadas")
@@ -21,8 +32,9 @@ class Desire(BaseModel):
         description="Objetivo pedagógico principal")
     secondary_goals: List[str] = Field([],
         description="Objetivos secundarios")
-    success_criteria: Dict[str, float] = Field(...,
-        description="Criterios de éxito cuantificables")
+    success_criteria: SuccessCriteria = Field(
+        description="Criterios de éxito cuantificables"
+    )
 
 class Intention(BaseModel):
     action_plan: List[str] = Field(...,

@@ -17,6 +17,7 @@ def obtener_ultima_consulta(estado: EstadoConversacion) -> str:
     return "No se encontró una consulta reciente."
 
 def crear_supervisor(llm):
+    llm = llm.with_structured_output(SupervisorDecision)
     parser = JsonOutputParser(pydantic_object=SupervisorDecision)
 
     prompt = ChatPromptTemplate.from_template(
@@ -52,16 +53,7 @@ def crear_supervisor(llm):
             consulta=consulta,
             format_instructions=parser.get_format_instructions(),
         )
-
-        output = await llm.ainvoke(formatted_prompt)
-
-        # Limpieza del contenido JSON en caso de que venga envuelto en ```json ... ```
-        raw_content = output.content
-        match = re.search(r"```json\s*(\{[^\}]*\})\s*```", raw_content, re.DOTALL)
-        json_string = match.group(1) if match else raw_content.strip()
-
-        # Parsear y actualizar el estado
-        decision = SupervisorDecision.model_validate_json(json_string)
-        estado.tipo_ayuda_necesaria = decision.decision
+        respuesta = await llm.ainvoke(formatted_prompt)
+        estado.tipo_ayuda_necesaria = respuesta.decision
         return estado
     return supervisor_chain
