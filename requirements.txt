@@ -14,3 +14,4 @@ sentence-transformers
 transformers
 accelerate
 torch
+scikit-fuzzy
