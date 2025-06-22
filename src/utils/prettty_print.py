@@ -11,9 +11,10 @@ def show_final_result(estado_final):
     print("\n=== RESULTADO DEL TUTOR ===")
     problema = estado_final["problema_actual"]
     tipo = estado_final["tipo_ayuda_necesaria"]
+    material = estado_final["material"]
     if tipo == TipoAyuda.TEORIA and estado_final["material"]:
         print("🔍 Explicación teórica:")
-        print(estado_final["material"].get("definicion", "[Definición no disponible]"))
+        print(material.concepto + "\n" + material.definicion)
     elif tipo == TipoAyuda.EJEMPLO and estado_final["material"]:
         print("💡 Ejemplo de código:")
         print(estado_final["material"].get("codigo", "[Código no disponible]"))

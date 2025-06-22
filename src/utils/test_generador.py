@@ -1,26 +1,36 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from schemas.estado import EstadoConversacion
+from schemas.contenido import ProblemaPractico
 
 async def generar_test_teoria(estado: EstadoConversacion, llm):
     prompt = f"""
-    Genera una pregunta teórica corta sobre el tema "{estado.tema}" para un estudiante de nivel {estado.estado_estudiante.nivel}.
+    Diseña una evaluación teórica relacionada con el tema "{estado.tema}" para un estudiante de nivel {estado.estado_estudiante.nivel}.
+
     Considera:
     - Temas vistos: {', '.join(estado.estado_estudiante.temas_vistos)}
     - Errores comunes: {', '.join(estado.estado_estudiante.errores_comunes)}
     - Objetivo BDI: {estado.bdi_state.desires.primary_goal if estado.bdi_state else 'N/A'}
-    
-    Requisitos:
-    - Formato: pregunta abierta o verdadero/falso
-    - Breve y clara
-    - Nivel apropiado
 
-    Responde solo con la pregunta, sin explicaciones ni formato adicional.
+    Requisitos:
+    - La pregunta debe evaluar conceptos teóricos clave.
+    - Debe ser clara, concisa y de dificultad adecuada.
+    - Incluir una solución esperada razonada.
+    - Agregar casos de prueba si aplica (pueden ser ejemplos de respuestas válidas).
+    - Formato JSON estricto con los siguientes campos:
+        {{
+            "id": "string",
+            "dificultad": "baja/media/alta",
+            "enunciado": "enunciado claro y completo",
+            "solucion_referencia": "respuesta correcta o esperada",
+            "casos_prueba": [{{"input": "respuesta posible", "output": "evaluación o nota"}}],
+            "temas_relacionados": ["tema1", "tema2"]
+        }}
+
+    No incluyas ningún texto fuera del bloque JSON. Responde solo con el JSON.
     """
+    llm = llm.with_structured_output(ProblemaPractico)
     response = await llm.ainvoke(prompt)
-    return {
-        "tipo": "teoría",
-        "pregunta": response.content.strip()
-    }
+    return response
     
 async def generar_test_ejemplo(estado: EstadoConversacion, llm):
     prompt = f"""
