@@ -18,3 +18,4 @@ def update_db(db: FAISS, docs_str: List[str]):
         print(f"Error al dividir documentos: {e}")
         return
     db.add_documents(documents)
+    db.save_local("./data/faiss_vectorstore")
