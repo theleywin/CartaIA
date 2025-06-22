@@ -2,6 +2,7 @@ langgraph
 langchain-google-genai
 langchain-community
 langchain-huggingface
+firecrawl
 google-generativeai
 pydantic
 requests
