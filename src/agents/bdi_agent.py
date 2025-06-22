@@ -1,6 +1,7 @@
 
 import re
 from schemas.bdi import Belief, Desire, Intention, BDIState
+from utils.optimizador_ag import optimizar_plan
 
 def extract_json_block(text: str) -> str:
     """
@@ -78,6 +79,7 @@ class BDIAgent:
         updated_desires = await llm.ainvoke(prompt)
         self.state.desires = updated_desires
 
+    
     async def plan_intentions(self):
         prompt = f"""
         Diseña un plan de enseñanza para:
@@ -100,6 +102,12 @@ class BDIAgent:
         llm = self.llm.with_structured_output(Intention)
         new_intentions = await llm.ainvoke(prompt)
         self.state.intentions = new_intentions
+
+        # Aquí optimizamos el action plan con la metaheurística
+        estado_estudiante = self.state.beliefs
+        plan_original = self.state.intentions.action_plan
+        plan_optimizado = await optimizar_plan(plan_original, estado_estudiante)
+        self.state.intentions.action_plan = plan_optimizado
             
     def execute_next_step(self) -> str:
         if self.state.intentions.current_step >= len(self.state.intentions.action_plan):
