@@ -6,13 +6,20 @@ from utils.retrieval_utils import update_db
 
 THRESHOLD = 1.2
 
-def crear_agente_retrieval(db: FAISS):
+def crear_agente_retrieval(db: FAISS, llm):
     crawler = Crawler()
-    def manejar_retrieval(estado: EstadoConversacion) -> EstadoConversacion:
-        documentos = db.similarity_search_with_score(estado.tema, k=10)
+    async def manejar_retrieval(estado: EstadoConversacion) -> EstadoConversacion:
+        prompt = f"""
+            Traduce al inglés el siguiente texto: "{estado.tema}". 
+            Devuelve solo el texto traducido, sin comillas ni explicaciones adicionales, resume el contenido traducido si excede las 40 palabras.
+            No incluyas ningún otro contenido o comentario.
+        """
+        result = await llm.ainvoke(prompt)
+        db_query = result.content.strip()
+        documentos = db.similarity_search_with_score(db_query, k=10)
         filtered_docs = [doc.page_content for doc, score in documentos if score < THRESHOLD]
         
-        if len(filtered_docs) < 4:
+        if len(filtered_docs) < 3:
             print(f"[RETRIEVAL AGENT] Buscando nuevos documentos para: {estado.tema}")
             crawl_response = crawler.crawl(estado.tema, num_results=10)
             urls = [result.get("url", "") for result in crawl_response]

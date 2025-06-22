@@ -13,7 +13,7 @@ def crear_workflow_tutor(llm, vector_store):
     bdi_agent = BDIAgent(llm)
     
     db = embedding_loader.cargar_db()
-    retrieval_agent_instance = retrieval_agent.crear_agente_retrieval(db)
+    retrieval_agent_instance = retrieval_agent.crear_agente_retrieval(db, llm)
     
     # Definir el grafo
     graph = StateGraph(EstadoConversacion)
