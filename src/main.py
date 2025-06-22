@@ -29,7 +29,7 @@ async def main():
     tutor_workflow = crear_workflow_tutor(llm, vector_store)
     
     estado_inicial = EstadoConversacion(
-        tema=" cual es la Teoría detrás del Disjoint Set",
+        tema="quiero que em des un ejemplo de como hallar un ciclo en un grafo usando DFS",
         estado_estudiante=EstadoEstudiante(
             nivel="intermedio",
             temas_vistos=["Arbol binario de busqueda", "heap binarios"],
