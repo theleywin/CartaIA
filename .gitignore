@@ -192,4 +192,11 @@ pyrightconfig.json
 .history
 .ionide
 
+# Ignore pdf files
+*.pdf
+
+# Ignore FAISS and pickle index files
+index.faiss
+index.pkl
+
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode

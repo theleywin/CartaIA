@@ -1,1 +1,47 @@
-{"beliefs":{"student_knowledge":{"Tema_general":{"comprension":0.7,"precision":0.7,"profundidad":0.7}},"learning_preferences":[],"misconceptions":[]},"desires":{"primary_goal":"Al finalizar el módulo, el estudiante será capaz de explicar el algoritmo de Dijkstra para encontrar el camino más corto desde un nodo fuente único en un grafo ponderado no dirigido, incluyendo la justificación de su corrección y complejidad temporal.","secondary_goals":["El estudiante podrá implementar el algoritmo de Dijkstra en un lenguaje de programación.","El estudiante podrá identificar y resolver problemas reales que puedan ser modelados como un problema de camino más corto desde una fuente única.","El estudiante podrá comparar y contrastar el algoritmo de Dijkstra con otros algoritmos de búsqueda de caminos más cortos."],"success_criteria":{"comprension":0.8,"precision":0.9,"profundidad":0.7}},"intentions":{"action_plan":["Introducción al concepto de grafos ponderados no dirigidos y la necesidad de encontrar caminos más cortos.","Explicación del algoritmo de Dijkstra paso a paso, utilizando ejemplos visuales y sencillos.","Demostración de la corrección del algoritmo mediante un ejemplo y la justificación de su funcionamiento.","Análisis de la complejidad temporal del algoritmo de Dijkstra (O(E log V)).","Ejercicios prácticos que permitan al estudiante aplicar el algoritmo y resolver problemas relacionados con la búsqueda del camino más corto."],"current_step":0,"fallback_strategy":"provide_more_examples"}}
+{
+  "beliefs": {
+    "student_knowledge": {
+      "Búsqueda en profundidad (DFS)": {
+        "comprension": 0.85,
+        "precision": 0.95,
+        "profundidad": 0.85
+      },
+      "Detección de ciclos en grafos": {
+        "comprension": 0.85,
+        "precision": 0.95,
+        "profundidad": 0.85
+      },
+      "Implementación de algoritmos de grafos en Python": {
+        "comprension": 0.85,
+        "precision": 0.95,
+        "profundidad": 0.85
+      }
+    },
+    "learning_preferences": [],
+    "misconceptions": []
+  },
+  "desires": {
+    "primary_goal": "Al finalizar la sesión, el estudiante será capaz de implementar un algoritmo de búsqueda en profundidad (DFS) para detectar ciclos en un grafo dirigido, utilizando Python y considerando al menos dos ejemplos distintos.",
+    "secondary_goals": [
+      "El estudiante podrá identificar correctamente los conceptos de grafo, ciclo, y búsqueda en profundidad.",
+      "El estudiante podrá explicar el funcionamiento del algoritmo DFS para detección de ciclos.",
+      "El estudiante podrá adaptar el algoritmo DFS para diferentes tipos de grafos (dirigidos, no dirigidos)."
+    ],
+    "success_criteria": {
+      "comprension": 0.8,
+      "precision": 0.9,
+      "profundidad": 0.7
+    }
+  },
+  "intentions": {
+    "action_plan": [
+      "Explicar el concepto de búsqueda en profundidad (DFS) y su aplicación en la detección de ciclos en grafos dirigidos.",
+      "Presentar el primer ejemplo: un grafo dirigido simple con un ciclo. Implementar el algoritmo DFS en Python para detectarlo, explicando paso a paso el proceso.",
+      "Presentar el segundo ejemplo: un grafo dirigido más complejo con múltiples ciclos. Implementar el algoritmo DFS en Python para detectarlos, mostrando cómo manejar diferentes escenarios.",
+      "Resolver dudas y preguntas del estudiante sobre la implementación del algoritmo y la detección de ciclos.",
+      "Proponer ejercicios adicionales para que el estudiante practique la implementación del algoritmo DFS en diferentes grafos dirigidos."
+    ],
+    "current_step": 0,
+    "fallback_strategy": "provide_more_examples"
+  }
+}

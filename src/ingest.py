@@ -1,7 +1,7 @@
-import os
 from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain.schema import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import torch
 
@@ -57,6 +57,8 @@ def run_ingestion():
 
     # Crear vectorstore FAISS y guardar
     try:
+        if documents is None or len(documents) == 0:
+            documents = [Document(page_content="init")]
         vectorstore = FAISS.from_documents(documents, embeddings)
         vectorstore.save_local("./data/faiss_vectorstore")
         print(f"Ingesta completada. {len(documents)} fragmentos almacenados.")
