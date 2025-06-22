@@ -12,8 +12,8 @@ def crear_workflow_tutor(llm, vector_store):
     practica_agent_instance = practica_agent.crear_agente_practica(llm)
     bdi_agent = BDIAgent(llm)
     
-    retriever = embedding_loader.cargar_retriever()
-    retrieval_agent_instance = retrieval_agent.crear_agente_retrieval(retriever)
+    db = embedding_loader.cargar_db()
+    retrieval_agent_instance = retrieval_agent.crear_agente_retrieval(db)
     
     # Definir el grafo
     graph = StateGraph(EstadoConversacion)
