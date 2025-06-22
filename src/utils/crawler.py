@@ -15,12 +15,13 @@ class Crawler:
         try:
             result = self.app.search(
                 query=query,
+                lang="en",
                 limit=num_results,
                 scrape_options=ScrapeOptions(
                     formats=["markdown"]
                 )
             )
-            return result
+            return result.data
         except Exception as e:
             print(e)
             return []

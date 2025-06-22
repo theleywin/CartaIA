@@ -4,7 +4,7 @@ from langchain_community.vectorstores import FAISS
 from src.utils.crawler import Crawler
 from utils.retrieval_utils import update_db
 
-THRESHOLD = 1.2
+THRESHOLD = 1.0
 
 def crear_agente_retrieval(db: FAISS):
     crawler = Crawler()
@@ -15,7 +15,7 @@ def crear_agente_retrieval(db: FAISS):
         if len(filtered_docs) < 4:
             print(f"[RETRIEVAL AGENT] Buscando nuevos documentos para: {estado.tema}")
             crawl_response = crawler.crawl(estado.tema, num_results=10)
-            urls = [result.get("url", "") for result in crawl_response.data]
+            urls = [result.get("url", "") for result in crawl_response]
             docs = [crawler.scrape(url) for url in urls if url]
             docs_text= [doc.markdown[:1500] for doc in docs if doc]
             update_db(db, docs_text)

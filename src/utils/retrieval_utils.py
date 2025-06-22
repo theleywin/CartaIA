@@ -1,7 +1,10 @@
+from typing import List
 from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain.schema import Document
 
-def update_db(db: FAISS, docs):   
+def update_db(db: FAISS, docs_str: List[str]):
+    docs = [Document(page_content=doc) for doc in docs_str]   
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=200,
