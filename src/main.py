@@ -8,6 +8,17 @@ import torch
 from utils.load_vector_store import load_vector_store
 from utils.prettty_print import print_output
 from dotenv import dotenv_values
+from langchain_core.language_models.chat_models import BaseChatModel
+
+async def es_tema_valido(llm: BaseChatModel, tema: str) -> bool:
+    prompt = f"""
+    Dado el siguiente tema: "{tema}"
+
+    Responde únicamente con "Sí" si el tema pertenece al dominio de estructuras de datos y algoritmos (como listas, árboles, grafos, complejidad, etc.), 
+    o con "No" si no pertenece. No des ninguna explicación adicional.
+    """
+    respuesta = await llm.ainvoke(prompt)
+    return respuesta.content.strip().lower().startswith("sí")
 
 async def main():
     config = dotenv_values(".env")
@@ -29,16 +40,21 @@ async def main():
     tutor_workflow = crear_workflow_tutor(llm, vector_store)
     
     estado_inicial = EstadoConversacion(
-        tema="quiero que em des un ejemplo de como hallar un ciclo en un grafo usando DFS",
+        tema="es el boniato un tubérculo?",
         estado_estudiante=EstadoEstudiante(
             nivel="intermedio",
             temas_vistos=["Arbol binario de busqueda", "heap binarios"],
             errores_comunes=["grafos", "manejo de punteros"]
         )
     )
+    
+    tema_usuario = estado_inicial.tema
 
-    estado_final = await tutor_workflow.ainvoke(estado_inicial)
-    print_output(estado_final)
+    if not await es_tema_valido(llm, tema_usuario):
+        print(f"⚠️ El tema \"{tema_usuario}\" no pertenece al dominio de mis conocimientos. Yo solo fui entrenado para ayudarte en temas relacionados con estructuras de datos y algoritmos, lo siento")
+    else:
+        estado_final = await tutor_workflow.ainvoke(estado_inicial)
+        print_output(estado_final)
         
 if __name__ == "__main__":
     import asyncio
