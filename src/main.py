@@ -29,10 +29,10 @@ async def main():
     tutor_workflow = crear_workflow_tutor(llm, vector_store)
     
     estado_inicial = EstadoConversacion(
-        tema="Arbol binario de búsqueda practica",
+        tema=" cual es la Teoría detrás del Disjoint Set",
         estado_estudiante=EstadoEstudiante(
             nivel="intermedio",
-            temas_vistos=["Arbol binario de busqueda", "disjoint sets", "heap binarios"],
+            temas_vistos=["Arbol binario de busqueda", "heap binarios"],
             errores_comunes=["grafos", "manejo de punteros"]
         )
     )
