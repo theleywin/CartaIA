@@ -31,25 +31,36 @@ async def generar_test_teoria(estado: EstadoConversacion, llm):
     llm = llm.with_structured_output(ProblemaPractico)
     response = await llm.ainvoke(prompt)
     return response
-    
+
 async def generar_test_ejemplo(estado: EstadoConversacion, llm):
     prompt = f"""
-    Basado en el tema "{estado.tema}" y el ejemplo que se le ha mostrado al estudiante, genera una pregunta que evalúe su comprensión.
+    Diseña una pregunta de evaluación basada en un ejemplo que el estudiante ha visto sobre el tema "{estado.tema}".
+    
     Considera:
     - Nivel del estudiante: {estado.estado_estudiante.nivel}
     - Temas previos: {', '.join(estado.estado_estudiante.temas_vistos)}
     - Errores frecuentes: {', '.join(estado.estado_estudiante.errores_comunes)}
-    - Objetivo pedagógico: {estado.bdi_state.desires.primary_goal if estado.bdi_state else 'N/A'}
-        
+    - Objetivo BDI: {estado.bdi_state.desires.primary_goal if estado.bdi_state else 'N/A'}
+    
     Requisitos:
-    - Formato de pregunta breve (por ejemplo, ¿qué haría este código? ¿Cuál sería la salida?)
-    - Enfocada en interpretar el ejemplo dado
-    - Nivel adecuado
+    - Enunciado claro basado en interpretación de código o comportamiento esperado.
+    - Dificultad adecuada.
+    - Solución de referencia precisa.
+    - Casos de prueba que reflejen respuestas del estudiante y su evaluación (por ejemplo, posibles interpretaciones).
+    - Lista de temas relacionados.
 
-    Devuelve solo la pregunta en texto plano.
+    Formato JSON estricto:
+    {{
+        "id": "string",
+        "dificultad": "baja/media/alta",
+        "enunciado": "enunciado del ejercicio",
+        "solucion_referencia": "respuesta correcta esperada",
+        "casos_prueba": [{{"input": "respuesta del estudiante", "output": "evaluación"}}],
+        "temas_relacionados": ["tema1", "tema2"]
+    }}
+
+    Responde solo con el JSON. No agregues explicaciones externas ni bloques de código adicionales.
     """
+    llm = llm.with_structured_output(ProblemaPractico)
     response = await llm.ainvoke(prompt)
-    return {
-        "tipo": "ejemplo",
-        "pregunta": response.content.strip()
-    }
+    return response
