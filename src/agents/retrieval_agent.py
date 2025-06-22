@@ -4,7 +4,7 @@ from langchain_community.vectorstores import FAISS
 from src.utils.crawler import Crawler
 from utils.retrieval_utils import update_db
 
-THRESHOLD = 1.0
+THRESHOLD = 1.2
 
 def crear_agente_retrieval(db: FAISS):
     crawler = Crawler()
