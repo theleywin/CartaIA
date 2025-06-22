@@ -9,6 +9,7 @@ requests
 python-dotenv
 faiss-cpu
 unstructured
+markdown
 sentence-transformers
 transformers
 accelerate

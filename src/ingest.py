@@ -1,17 +1,14 @@
-from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
+from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader, UnstructuredMarkdownLoader
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.schema import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import torch
 
-def run_ingestion():
-    # Configuración de dispositivo
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-
+def load_pdfs(directory: str):
     # Cargar documentos PDF
-    loader = DirectoryLoader(
-        './data/algoritmos',
+    pdf_loader = DirectoryLoader(
+        path=directory,
         glob="**/*.pdf",
         loader_cls=PyPDFLoader,
         use_multithreading=True,
@@ -19,11 +16,38 @@ def run_ingestion():
     )
     
     try:
-        docs = loader.load()
+        docs = pdf_loader.load()
         print(f"Documentos PDF cargados: {len(docs)}")
     except Exception as e:
         print(f"Error al cargar documentos PDF: {e}")
-        return
+        return []
+    return docs
+    
+def load_mds(directory: str):
+    md_loader = DirectoryLoader(
+        path=directory,
+        glob="**/*.md",
+        loader_cls=UnstructuredMarkdownLoader,
+        use_multithreading=True,
+        max_concurrency=4
+    )
+    
+    try:
+        docs = md_loader.load()
+        print(f"Documentos Markdown cargados: {len(docs)}")
+    except Exception as e:
+        print(f"Error al cargar documentos Markdown: {e}")
+        return []
+    
+    return docs
+
+def run_ingestion():
+    # Configuración de dispositivo
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    # Cargar documentos PDF
+    docs = load_pdfs('./data/algoritmos/pdf')
+    docs.extend(load_mds('./data/algoritmos/md'))
 
     # Dividir documentos en fragmentos
     text_splitter = RecursiveCharacterTextSplitter(
