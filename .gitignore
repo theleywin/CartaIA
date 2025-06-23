@@ -195,7 +195,7 @@ pyrightconfig.json
 # Ignore pdf and md files recursively inside the data folder
 data/**/*.pdf
 data/**/*.md
-
+data1
 # Ignore FAISS and pickle index files
 index.faiss
 index.pkl

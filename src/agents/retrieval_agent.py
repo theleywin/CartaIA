@@ -2,11 +2,11 @@
 from schemas.estado import EstadoConversacion
 from langchain_community.vectorstores import FAISS
 from src.utils.crawler import Crawler
-from utils.retrieval_utils import update_db
+from utils.vector_store import update_vector_store
 
 THRESHOLD = 1.2
 
-def crear_agente_retrieval(db: FAISS, llm):
+def crear_agente_retrieval(vector_store: FAISS, llm):
     crawler = Crawler()
     async def manejar_retrieval(estado: EstadoConversacion) -> EstadoConversacion:
         prompt = f"""
@@ -16,7 +16,7 @@ def crear_agente_retrieval(db: FAISS, llm):
         """
         result = await llm.ainvoke(prompt)
         db_query = result.content.strip()
-        documentos = db.similarity_search_with_score(db_query, k=10)
+        documentos = vector_store.similarity_search_with_score(db_query, k=10)
         filtered_docs = [doc.page_content for doc, score in documentos if score < THRESHOLD]
         
         if len(filtered_docs) < 3:
@@ -25,8 +25,8 @@ def crear_agente_retrieval(db: FAISS, llm):
             urls = [result.get("url", "") for result in crawl_response]
             docs = [crawler.scrape(url) for url in urls if url]
             docs_text= [doc.markdown[:1500] for doc in docs if doc]
-            update_db(db, docs_text)
-            documentos = db.similarity_search_with_score(estado.tema, k=10)
+            update_vector_store(vector_store, docs_text)
+            documentos = vector_store.similarity_search_with_score(estado.tema, k=10)
             filtered_docs = [doc.page_content for doc, score in documentos if score < THRESHOLD]            
             if len(filtered_docs) == 0:
                 print(f"[RETRIEVAL AGENT] No se encontraron suficientes documentos relevantes para: {estado.tema}")

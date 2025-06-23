@@ -1,6 +1,7 @@
 from langgraph.graph import StateGraph, END
 from agents import supervisor_agent, teoria_agent, ejemplo_agent, practica_agent, retrieval_agent
-from utils import bdi_evaluator, embedding_loader
+from utils.bdi_evaluator import evaluar_y_actualizar_bdi
+from utils.embedding_loader import embedding_loader
 from schemas.estado import EstadoConversacion, TipoAyuda
 from agents.bdi_agent import BDIAgent
 
@@ -12,8 +13,7 @@ def crear_workflow_tutor(llm, vector_store):
     practica_agent_instance = practica_agent.crear_agente_practica(llm)
     bdi_agent = BDIAgent(llm)
     
-    db = embedding_loader.cargar_db()
-    retrieval_agent_instance = retrieval_agent.crear_agente_retrieval(db, llm)
+    retrieval_agent_instance = retrieval_agent.crear_agente_retrieval(vector_store, llm)
     
     # Definir el grafo
     graph = StateGraph(EstadoConversacion)
@@ -28,7 +28,7 @@ def crear_workflow_tutor(llm, vector_store):
     graph.add_node("ejemplo", ejemplo_agent_instance)
     graph.add_node("practica", practica_agent_instance)
     async def evaluar_respuesta_node(estado):
-        return await bdi_evaluator.evaluar_y_actualizar_bdi(estado, bdi_agent, llm)
+        return await evaluar_y_actualizar_bdi(estado, bdi_agent, llm)
     graph.add_node("evaluar_respuesta", evaluar_respuesta_node)
     
     # Establecer punto de entrada
