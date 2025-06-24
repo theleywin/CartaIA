@@ -49,15 +49,15 @@ def chunk_optimized(docs: list[Document], computed_chunk_size=None) -> list[Docu
     
     config = dotenv_values(".env")
     os.environ["GOOGLE_API_KEY"] = config["GOOGLE_API_KEY_1"]
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
+    # llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
     
     queries = sample(test_queries, 3)
     
     chunked_docs = chunk_with_different_sizes(docs, test_chunk_sizes, overlap_ratio=0.1)
     vector_stores = create_vector_stores(chunked_docs)
     performance_df = evaluate_chunk_size_performance(vector_stores, queries)
-    qa_results = evaluate_answer_quality(vector_stores, queries, llm)
-    optimization_score = calculate_optimization_score(performance_df, qa_results)
+    # qa_results = evaluate_answer_quality(vector_stores, queries, llm)
+    optimization_score = calculate_optimization_score(performance_df, None, None)
     best_chunk_size = int(optimization_score.iloc[0]['chunk_size'])
     print("[DEBUG] Best chunk size determined:", best_chunk_size)
     return chunked_docs[best_chunk_size]

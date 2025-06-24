@@ -67,12 +67,20 @@ def calculate_optimization_score(performance_df: pd.DataFrame, qa_df: pd.DataFra
         'avg_similarity_score': 'mean'
     }).reset_index()
 
-    qa_agg = qa_df.groupby('chunk_size').agg({
-        'answer_time': 'mean',
-        'context_length': 'mean'
-    }).reset_index()
+    if qa_df is None or qa_df.empty:
+        qa_agg = pd.DataFrame({
+            'chunk_size': perf_agg['chunk_size'],
+            'answer_time': np.nan,
+            'context_length': np.nan
+        })
+    else:
+        qa_agg = qa_df.groupby('chunk_size').agg({
+            'answer_time': 'mean',
+            'context_length': 'mean'
+        }).reset_index()
 
-    merged = perf_agg.merge(qa_agg, on='chunk_size')
+    merged = perf_agg.merge(qa_agg, on='chunk_size', how='left')
+
 
     merged['retrieval_speed_norm'] = 1 - (merged['retrieval_time'] - merged['retrieval_time'].min()) / (merged['retrieval_time'].max() - merged['retrieval_time'].min())
     merged['answer_speed_norm'] = 1 - (merged['answer_time'] - merged['answer_time'].min()) / (merged['answer_time'].max() - merged['answer_time'].min())
