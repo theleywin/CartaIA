@@ -90,7 +90,7 @@ def calculate_optimization_score(performance_df: pd.DataFrame, qa_df: pd.DataFra
 
 def evaluate_answer_quality(vector_stores: dict[int, FAISS], test_questions, llm):
     prompt_template = """
-        Based on the following context, answer the question concisely and accurately:
+        Using but not limited to the following context, answer the question concisely and accurately:
         Context:
         {context}
 
@@ -106,7 +106,7 @@ def evaluate_answer_quality(vector_stores: dict[int, FAISS], test_questions, llm
 
     results = []
 
-    timeout = 10 # para no exceder el rate limit de la API :(
+    timeout = 6 # para no exceder el rate limit de la API :(
     for question in test_questions:
         print(f"\nEvaluating: {question}")
 
