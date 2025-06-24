@@ -30,6 +30,7 @@ def crear_agente_ejemplos(llm):
     )
 
     async def obtener_ejemplo(estado: EstadoConversacion) -> EstadoConversacion:
+        print("Formulando ejemplos ...")
         # 1. Contexto
         context = f"Contexto:\n{'\n\n'.join(estado.docs_relevantes) or ''}"
 

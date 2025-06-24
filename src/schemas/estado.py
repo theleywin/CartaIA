@@ -22,3 +22,9 @@ class EstadoConversacion(BaseModel):
     estado_estudiante: EstadoEstudiante
     bdi_state: Optional[BDIState] = None
     ultima_evaluacion: Optional[dict] = None
+    
+class EstadoConversacionResponse(BaseModel):
+    tema: str
+    nivel: str
+    temas_vistos: List[str]
+    errores_comunes: List[str]

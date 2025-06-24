@@ -125,7 +125,7 @@ class BDIAgent:
         valores = [assessment.get(dim, 0.0) for dim in dims]
         promedio = sum(valores) / len(valores)
 
-        print(f"[Debug] Promedio BDI: {promedio:.2f}")
+        # print(f"[Debug] Promedio BDI: {promedio:.2f}")
         return promedio >= 0.8  # aquí decides el umbral
 
     

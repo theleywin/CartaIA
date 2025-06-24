@@ -30,7 +30,7 @@ def show_final_result(estado_final):
         
 def show_final_evaluation(estado_final):
     if estado_final["ultima_evaluacion"] is not None:
-        print(f"[Debug] ultima evaluacion {estado_final['ultima_evaluacion']}")
+        # print(f"[Debug] ultima evaluacion {estado_final['ultima_evaluacion']}")
         print("\n📊 Evaluación final del estudiante:")
         for criterio, valor in estado_final["ultima_evaluacion"].items():
             print(f" - {criterio}: {valor:.2f}")

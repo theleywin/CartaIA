@@ -14,7 +14,7 @@ def embedding_loader():
                 "normalize_embeddings": True
             }
         )
-        print("Embeddings configurados correctamente")
+        # print("Embeddings configurados correctamente")
         return embeddings
     except Exception as e:
         print(f"Error al configurar embeddings: {e}")

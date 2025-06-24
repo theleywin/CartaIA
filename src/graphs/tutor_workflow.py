@@ -67,14 +67,14 @@ def crear_workflow_tutor(llm, vector_store):
     
     # Evaluar y decidir si continuar
     def decidir_continuar(estado):
-        print("[Debug] Evaluación BDI:", estado.ultima_evaluacion)
+        # print("[Debug] Evaluación BDI:", estado.ultima_evaluacion)
         if estado.ultima_evaluacion and estado.bdi_state:
             progreso = bdi_agent.evaluate_progress(estado.ultima_evaluacion)
-            print(f"[INFO] Evaluación del progreso: {progreso}")
+            # print(f"[INFO] Evaluación del progreso: {progreso}")
             if progreso:
-                print("[INFO] Progreso suficiente alcanzado. Finalizando...")
+                # print("[INFO] Progreso suficiente alcanzado. Finalizando...")
                 return END
-        print("[INFO] Continuando con siguiente ciclo.")
+        # print("[INFO] Continuando con siguiente ciclo.")
         return "supervisor"
     
     graph.add_conditional_edges(
