@@ -39,6 +39,7 @@ def crear_supervisor(llm):
     )
 
     async def supervisor_chain(estado: EstadoConversacion):
+        print("Pensando ...")
         bdi_plan = (
             estado.bdi_state.intentions.action_plan
             if estado.bdi_state and estado.bdi_state.intentions

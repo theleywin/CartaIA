@@ -9,7 +9,15 @@ requests
 python-dotenv
 faiss-cpu
 unstructured
+markdown
 sentence-transformers
 transformers
 accelerate
 torch
+nltk
+scikit-fuzzy
+tiktoken 
+pypdf
+pandas
+matplotlib
+seaborn

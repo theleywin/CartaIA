@@ -6,6 +6,7 @@ from langchain_core.language_models.chat_models import BaseChatModel
 
 def crear_agente_practica(llm: BaseChatModel):
     async def manejar_practica(estado: EstadoConversacion) -> EstadoConversacion:
+        print("Creando problemas prácticos ...")
         # 1. Generar un problema personalizado
         problema = await generar_problema_personalizado(estado, llm)
         estado.problema_actual = problema

@@ -192,9 +192,10 @@ pyrightconfig.json
 .history
 .ionide
 
-# Ignore pdf files
-*.pdf
-
+# Ignore pdf and md files recursively inside the data folder
+data/**/*.pdf
+data/**/*.md
+data1
 # Ignore FAISS and pickle index files
 index.faiss
 index.pkl

@@ -7,7 +7,7 @@ from dotenv import dotenv_values
 
 async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent, llm):
     solucion = estado.solucion_estudiante or ""
-    print("[Debug] Tema actual:", repr(estado.tema))
+    # print("[Debug] Tema actual:", repr(estado.tema))
 
     comprension = await evaluar_dimension_llm("comprensión", estado.problema_actual.enunciado, solucion, llm)
     precision = await evaluar_dimension_llm("precisión",estado.problema_actual.enunciado, solucion, llm)
@@ -52,10 +52,10 @@ async def evaluar_dimension_llm(dimension: str, tema: str, solucion: str, llm) -
     Devuelve únicamente un número decimal entre 0.0 y 1.0 sin texto adicional.
     """
 
-    print(f"[Debug] Prompt ({dimension}):\n{prompt}")
+    # print(f"[Debug] Prompt ({dimension}):\n{prompt}")
 
     llm = llm.with_structured_output(EvaluacionDimension)
     llm_response = await llm.ainvoke(prompt)
     respuesta = llm_response.puntuacion
-    print(f"[Debug] Respuesta LLM ({dimension}):", repr(respuesta))
+    # print(f"[Debug] Respuesta LLM ({dimension}):", repr(respuesta))
     return respuesta
