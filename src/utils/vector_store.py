@@ -7,6 +7,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 import torch
+from utils import embedding_loader
+from utils.chunking.chunking import chunk_docs
 
 DEFAULT_PATH = "./data/faiss_vectorstore"
 
@@ -45,19 +47,6 @@ def init_vector_store(embeddings: HuggingFaceEmbeddings, documents=None, path=DE
 
 def update_vector_store(vector_store: FAISS, docs_str: List[str]):
     docs = [Document(page_content=doc) for doc in docs_str]   
-    # split documents
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000,
-        chunk_overlap=200,
-        length_function=len,
-        is_separator_regex=False,
-    )
-    try:
-        documents = text_splitter.split_documents(docs)
-        print(f"Fragmentos creados: {len(documents)}")
-    except Exception as e:
-        print(f"Error al dividir documentos: {e}")
-        return
-    
+    documents = chunk_docs(docs, 1000, ["\n\n", "\n", " ", ""], overlap_ratio=0.1)
     vector_store.add_documents(documents)
     vector_store.save_local("./data/faiss_vectorstore")
