@@ -21,3 +21,4 @@ pypdf
 pandas
 matplotlib
 seaborn
+googlesearch-python
