@@ -27,7 +27,7 @@ def crear_agente_retrieval(vector_store: FAISS, llm):
                 estado.docs_relevantes = []
                 return estado
             update_vector_store(vector_store, docs_text)
-            documentos = vector_store.similarity_search_with_score(estado.tema, k=10)
+            documentos = vector_store.similarity_search_with_score(db_query, k=10)
             filtered_docs = [doc.page_content for doc, score in documentos if score < THRESHOLD]            
             if len(filtered_docs) == 0:
                 estado.docs_relevantes = []
