@@ -1,13 +1,12 @@
 # agents/retrieval_agent.py
 from schemas.estado import EstadoConversacion
 from langchain_community.vectorstores import FAISS
-from src.utils.crawler import Crawler
+from utils.crawler import search_web
 from utils.vector_store import update_vector_store
 
 THRESHOLD = 1.2
 
 def crear_agente_retrieval(vector_store: FAISS, llm):
-    crawler = Crawler()
     async def manejar_retrieval(estado: EstadoConversacion) -> EstadoConversacion:
         print("Buscando información ...")
         prompt = f"""
@@ -22,9 +21,8 @@ def crear_agente_retrieval(vector_store: FAISS, llm):
         
         if len(filtered_docs) < 3:
             print("Buscando en la web ...")
-            crawl_response = crawler.crawl(db_query, num_results=10)
-            docs = crawler.scrape(crawl_response)
-            docs_text= [doc["text"][:1500] for doc in docs if doc]
+            docs = search_web(db_query, num_results=10)
+            docs_text = [doc['text'] for doc in docs if 'text' in doc]
             if len(docs_text) == 0:
                 estado.docs_relevantes = []
                 return estado
