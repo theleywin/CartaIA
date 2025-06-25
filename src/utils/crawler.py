@@ -15,24 +15,16 @@ def search_web(query: str, num_results: int = 10) -> list[dict[str, str]]:
     
     # crawl
     wikipedia_urls = crawl_wikipedia_urls(query, max_visits=num_wiki)
-    gfg_urls = get_gfg_urls(query, limit=num_gfg)
+    gfg_urls = crawl_gfg_urls(query, max_visits=num_gfg)
     
     # scrape
     scraped_wikipedia = scrap_text_from_urls_wikipedia(wikipedia_urls)
+    scraped_gfg = scrap_text_from_gfg(gfg_urls)
     
     result = []
     result.extend(scraped_wikipedia)
+    result.extend(scraped_gfg)
     return result
-    
-
-def crawl( query: str, num_results: int = 10) -> list[dict[str, str]]:
-    result = crawl_wikipedia_urls(query, max_visits=num_results)
-    result.extend(get_gfg_urls(query, limit=num_results))
-    return result
-    
-
-def scrape(sites: list[dict[str, str]]) -> list[dict[str, str]]:
-    return scrap_text_from_urls_wikipedia(sites)
 
 def get_wikipedia_urls(query: str, language: str = "en", limit=5) -> list[dict[str, str]]:
     url = f"https://{language}.wikipedia.org/w/api.php"
@@ -98,7 +90,7 @@ def scrap_text_from_urls_wikipedia(links: list[dict[str, str]]) -> list[dict[str
             soup = BeautifulSoup(page.text, 'html.parser')
             body = soup.find('div', id='bodyContent')
             if body:
-                for tag in body(['script', 'style']):
+                for tag in body(['script', 'style', 'footer', 'nav', 'aside']):
                     tag.decompose()
 
                 text = body.get_text(separator=' ', strip=True)
@@ -130,8 +122,77 @@ def get_gfg_urls(query: str, limit: int = 5) -> list[dict[str, str]]:
     for article in articles:
         a_tag = article.find('a', href=True)
         if a_tag:
-            links.append({"url": a_tag['href']})
+            links.append({"title": a_tag.get("title", "").replace("Permalink to ", ""), "url": a_tag["href"]})
         if len(links) >= limit:
             break
 
     return links
+
+def crawl_gfg_urls(seed_query: str, max_visits: int = 30) -> list[dict[str, str]]:
+    visited = set()
+    queue = deque()
+    results = []
+
+    seeds = get_gfg_urls(seed_query)
+    for seed in seeds:
+        queue.append(seed)
+
+    while queue and len(visited) < max_visits:
+        current = queue.popleft()
+        current_url = current["url"]
+        if current_url in visited:
+            continue
+        
+        visited.add(current_url)
+        results.append({"title": current.get("title", ""), "url": current_url})
+
+        try:
+            response = requests.get(current_url, headers=headers, timeout=10)
+            soup = BeautifulSoup(response.text, "html.parser")
+
+            # Extraer enlaces a otros artículos
+            for link in soup.find_all("a", href=True):
+                href = link["href"]
+                if (
+                    href.startswith("https://www.geeksforgeeks.org/")
+                    and href not in visited
+                    and "#" not in href  # evitar anchors
+                    and "category" not in href
+                    and "tag" not in href
+                ):
+                    link_title = link.get("title") or href.split("/")[-2].replace("-", " ").title()
+                    queue.append({"title": link_title, "url": href})
+
+            time.sleep(0.5)
+        except Exception:
+            continue
+
+    return results
+
+def scrap_text_from_gfg(links: list[dict[str, str]]) -> list[dict[str, str]]:
+    results = []
+
+    for item in links:
+        url = item.get("url")
+        title = item.get("title", "")
+        try:
+            response = requests.get(url, headers=headers, timeout=10)
+            soup = BeautifulSoup(response.text, "html.parser")
+            article_tag = soup.find("article")
+            if not article_tag:
+                continue
+            for tag in article_tag(['script', 'style', 'footer', 'nav', 'aside']):
+                tag.decompose()
+            text = article_tag.get_text(separator=" ", strip=True)
+            text = re.sub(r"\s+", " ", text)
+            results.append({
+                "url": url,
+                "title": title,
+                "text": text[:10000],
+                "length": len(text)
+            })
+            time.sleep(0.5)
+        except Exception:
+            continue
+
+    return results

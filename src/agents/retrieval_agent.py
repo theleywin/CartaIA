@@ -21,7 +21,7 @@ def crear_agente_retrieval(vector_store: FAISS, llm):
         
         if len(filtered_docs) < 3:
             print("Buscando en la web ...")
-            docs = search_web(db_query, num_results=10)
+            docs = search_web(db_query, num_results=20)
             docs_text = [doc['text'] for doc in docs if 'text' in doc]
             if len(docs_text) == 0:
                 estado.docs_relevantes = []
