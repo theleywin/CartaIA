@@ -9,6 +9,7 @@ import torch
 from utils.chunking import chunk_docs
 
 DEFAULT_PATH = "./data/faiss_vectorstore"
+WORST_L2_SCORE = 4.
 
 def load_vector_store(embeddings: HuggingFaceEmbeddings, path=DEFAULT_PATH): 
     device = "cuda" if torch.cuda.is_available() else "cpu"

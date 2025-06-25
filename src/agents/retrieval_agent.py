@@ -17,7 +17,7 @@ def crear_agente_retrieval(vector_store: FAISS, llm):
         db_query = result.content.strip()
         documentos = vector_store.similarity_search_with_score(db_query, k=10)
         filtered_docs = [doc.page_content for doc, score in documentos if is_relevant_l2(score)]
-        if len(filtered_docs) < 3:
+        if len(filtered_docs) == 0:
             print("Buscando en la web ...")
             docs = search_web(db_query, num_results=20)
             docs_text = [doc['text'] for doc in docs if 'text' in doc]
