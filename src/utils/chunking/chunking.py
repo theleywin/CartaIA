@@ -32,6 +32,8 @@ def create_vector_stores(chunked_docs: dict[int, list[Document]]) -> dict[int, a
 
     for size, chunks in chunked_docs.items():
         print(f"[DEBUG] Creating vector store for chunk size {size}...")
+        if not chunks or len(chunks) == 0:
+            chunks = [Document(page_content="init")]  # Ensure at least one chunk exists
         vector_store = FAISS.from_documents(
             documents=chunks,
             embedding=embeddings

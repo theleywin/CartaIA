@@ -22,16 +22,16 @@ def crear_agente_retrieval(vector_store: FAISS, llm):
         
         if len(filtered_docs) < 3:
             print("Buscando en la web ...")
-            # print(f"[RETRIEVAL AGENT] Buscando nuevos documentos para: {estado.tema}")
-            crawl_response = crawler.crawl(estado.tema, num_results=10)
-            urls = [result.get("url", "") for result in crawl_response]
-            docs = [crawler.scrape(url) for url in urls if url]
-            docs_text= [doc.markdown[:1500] for doc in docs if doc]
+            crawl_response = crawler.crawl(db_query, num_results=10)
+            docs = crawler.scrape(crawl_response)
+            docs_text= [doc["text"][:1500] for doc in docs if doc]
+            if len(docs_text) == 0:
+                estado.docs_relevantes = []
+                return estado
             update_vector_store(vector_store, docs_text)
             documentos = vector_store.similarity_search_with_score(estado.tema, k=10)
             filtered_docs = [doc.page_content for doc, score in documentos if score < THRESHOLD]            
             if len(filtered_docs) == 0:
-                # print(f"[RETRIEVAL AGENT] No se encontraron suficientes documentos relevantes para: {estado.tema}")
                 estado.docs_relevantes = []
                 return estado
         
