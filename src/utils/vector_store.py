@@ -46,6 +46,6 @@ def init_vector_store(embeddings: HuggingFaceEmbeddings, documents=None, path=DE
 
 def update_vector_store(vector_store: FAISS, docs_str: List[str]):
     docs = [Document(page_content=doc) for doc in docs_str]   
-    documents = chunk_docs(docs, 1000, ["\n\n", "\n", " ", ""], overlap_ratio=0.1)
+    documents = chunk_docs(docs, 137, ["\n\n", "\n", " ", ""], overlap_ratio=0.1)
     vector_store.add_documents(documents)
     vector_store.save_local("./data/faiss_vectorstore")

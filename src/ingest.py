@@ -6,7 +6,7 @@ from utils.vector_store import init_vector_store
 def run_ingestion():
     docs = load_documents("./data/algoritmos")
     # aqui usamos un chunk size optimizado por nuestros experimentos
-    documents = chunk_docs(docs, 1000, ["\n\n", "\n", " ", ""], overlap_ratio=0.1)
+    documents = chunk_docs(docs, 137, ["\n\n", "\n", " ", ""], overlap_ratio=0.1)
     embeddings = embedding_loader()
     init_vector_store(embeddings, documents)
     
