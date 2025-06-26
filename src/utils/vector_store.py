@@ -4,13 +4,12 @@ from langchain_community.vectorstores import FAISS
 from typing import List
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 import torch
-from utils import embedding_loader
-from utils.chunking.chunking import chunk_docs
+from utils.chunking import chunk_docs
 
 DEFAULT_PATH = "./data/faiss_vectorstore"
+WORST_L2_SCORE = 4.
 
 def load_vector_store(embeddings: HuggingFaceEmbeddings, path=DEFAULT_PATH): 
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -47,6 +46,6 @@ def init_vector_store(embeddings: HuggingFaceEmbeddings, documents=None, path=DE
 
 def update_vector_store(vector_store: FAISS, docs_str: List[str]):
     docs = [Document(page_content=doc) for doc in docs_str]   
-    documents = chunk_docs(docs, 1000, ["\n\n", "\n", " ", ""], overlap_ratio=0.1)
+    documents = chunk_docs(docs, 137, ["\n\n", "\n", " ", ""], overlap_ratio=0.1)
     vector_store.add_documents(documents)
     vector_store.save_local("./data/faiss_vectorstore")
