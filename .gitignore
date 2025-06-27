@@ -200,4 +200,7 @@ data1
 index.faiss
 index.pkl
 
+# Ignore bdi state
+estado_bdi.json
+
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode

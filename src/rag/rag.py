@@ -1,17 +1,16 @@
+from xml.dom.minidom import Document
 from langchain_google_genai import ChatGoogleGenerativeAI
 from rag.crawler import search_web
 from utils.thresholds import is_relevant_l2
-from langchain_community.vectorstores import FAISS
+from rag.vector_store import VectorDB
 
-from utils.vector_store import update_vector_store
-
-class Rag():
-    def __init__(self, vector_store: FAISS, llm: ChatGoogleGenerativeAI):
-        self.vector_store = vector_store
+class Rag:
+    def __init__(self, vector_db: VectorDB, llm: ChatGoogleGenerativeAI):
+        self.vector_db = vector_db
         self.llm = llm
 
     def get_relevant_docs(self, query: str) -> list[str]:
-        documents = self.vector_store.similarity_search_with_score(query, k=10)
+        documents: list[tuple[Document, float]] = self.vector_db.get_docs_with_relevance(query, k=10)
         filtered_docs = [doc.page_content for doc, score in documents if is_relevant_l2(score)]
         return filtered_docs    
     
@@ -32,6 +31,6 @@ class Rag():
             docs_text = [doc['text'] for doc in docs if 'text' in doc]
             if len(docs_text) == 0:
                 return []
-            update_vector_store(self.vector_store, docs_text)
+            self.vector_db.add_docs(docs_text)
             filtered_docs = self.get_relevant_docs(db_query)
         return filtered_docs

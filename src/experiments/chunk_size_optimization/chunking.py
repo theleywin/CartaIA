@@ -6,7 +6,7 @@ from utils.chunking import chunk_docs
 from utils.document_load import load_documents
 from utils.embedding_loader import embedding_loader
 from langchain_community.vectorstores import FAISS
-from utils.vector_store import WORST_L2_SCORE
+from rag.vector_store import WORST_L2_SCORE
 
 def chunk_with_different_sizes(docs: list[Document], chunk_sizes: list[int], overlap_ratio=0.1):
     all_chunks = {}

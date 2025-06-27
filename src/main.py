@@ -1,8 +1,8 @@
 import os
 from graphs.tutor_workflow import crear_workflow_tutor
 from langchain_google_genai import ChatGoogleGenerativeAI
+from rag.vector_store import VectorDB
 from utils.input import get_initial_state
-from utils.vector_store import load_vector_store
 from utils.embedding_loader import embedding_loader
 from utils.prettty_print import print_output
 from dotenv import dotenv_values
@@ -38,7 +38,7 @@ async def main():
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
     embeddings = embedding_loader()
-    vector_store = load_vector_store(embeddings)
+    vector_store = VectorDB.load_existing(embeddings)
     tutor_workflow = crear_workflow_tutor(llm, vector_store)
     
     is_running = True
