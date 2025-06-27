@@ -1,11 +1,12 @@
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_community.vectorstores import FAISS
 from langgraph.graph import StateGraph, END
 from agents import supervisor_agent, teoria_agent, ejemplo_agent, practica_agent, retrieval_agent
 from utils.bdi_evaluator import evaluar_y_actualizar_bdi
-from utils.embedding_loader import embedding_loader
 from schemas.estado import EstadoConversacion, TipoAyuda
 from agents.bdi_agent import BDIAgent
 
-def crear_workflow_tutor(llm, vector_store):
+def crear_workflow_tutor(llm: ChatGoogleGenerativeAI, vector_store: FAISS):
     # Crear agentes
     supervisor_agent_instance = supervisor_agent.crear_supervisor(llm)
     teoria_agent_instance = teoria_agent.crear_agente_teoria(llm)
