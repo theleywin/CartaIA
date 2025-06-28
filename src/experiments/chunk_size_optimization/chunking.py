@@ -1,12 +1,17 @@
+import json
 import os
+import random
 import re
 from langchain_core.documents import Document
-from experiments.chunk_size_optimization.initial_data import get_testing_chunk_sizes, db_topics
+from experiments.initial_data import db_topics
 from utils.chunking import chunk_docs
 from utils.document_load import load_documents
 from utils.embedding_loader import embedding_loader
 from langchain_community.vectorstores import FAISS
 from rag.vector_store import WORST_L2_SCORE
+
+def get_testing_chunk_sizes(amount: int) -> list[int]:
+    return sorted(random.sample(range(128, 1025), amount))
 
 def chunk_with_different_sizes(docs: list[Document], chunk_sizes: list[int], overlap_ratio=0.1):
     all_chunks = {}
@@ -75,13 +80,14 @@ def get_created_sizes_from_folders(base_path: str) -> list[int]:
             sizes.append(int(match.group(1)))
     return sorted(sizes)
 
-def run_chunking_experiment(overlap_ratio=0.1) -> dict[int, list[dict]]:
+def run_chunking_experiment(overlap_ratio=0.1, path: str = "./src/experiments/chunk_size_optimization/results.json"):
     docs = load_documents("./data/algoritmos")
-    chunk_sizes = get_testing_chunk_sizes(10)
+    chunk_sizes = get_testing_chunk_sizes(30)
     print("[DEBUG] Starting chunking experiment...")
     chunked_docs = chunk_with_different_sizes(docs, chunk_sizes, overlap_ratio)
     create_vector_stores(chunked_docs)
     created_sizes = get_created_sizes_from_folders("./data/experiments")
     stats = get_stats(created_sizes, db_topics)
     print("[DEBUG] Experiment completed.")
-    return stats
+    with open(path, "w") as f:
+        json.dump(stats, f, indent=4, ensure_ascii=False)

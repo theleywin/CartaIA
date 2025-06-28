@@ -1,8 +1,3 @@
-import random
-
-def get_testing_chunk_sizes(amount: int) -> list[int]:
-    return sorted(random.sample(range(128, 1025), amount))
-
 db_topics = [
     "Maximum average subarray",
     "Finding polynomial roots modulo a prime",
