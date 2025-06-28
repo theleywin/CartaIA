@@ -1,6 +1,5 @@
 from schemas.bdi import TipoAyuda
 
-
 def print_output(estado_final):
     show_final_result(estado_final)
     show_final_evaluation(estado_final)

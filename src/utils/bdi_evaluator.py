@@ -1,14 +1,7 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
 from pydantic import BaseModel
 from schemas.estado import EstadoConversacion
-import os
-import re
-from dotenv import dotenv_values
-
 async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent, llm):
     solucion = estado.solucion_estudiante or ""
-    # print("[Debug] Tema actual:", repr(estado.tema))
-
     comprension = await evaluar_dimension_llm("comprensión", estado.problema_actual.enunciado, solucion, llm)
     precision = await evaluar_dimension_llm("precisión",estado.problema_actual.enunciado, solucion, llm)
     profundidad = await evaluar_dimension_llm("profundidad", estado.problema_actual.enunciado, solucion, llm)

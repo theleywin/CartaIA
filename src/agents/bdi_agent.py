@@ -1,4 +1,3 @@
-
 import re
 from schemas.bdi import Belief, Desire, Intention, BDIState
 from utils.optimizador_ag import optimizar_plan

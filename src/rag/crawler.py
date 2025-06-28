@@ -3,7 +3,6 @@ from time import time
 from bs4 import BeautifulSoup
 import re
 import requests
-from googlesearch import search
 from urllib.parse import quote
 
 

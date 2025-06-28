@@ -1,11 +1,8 @@
-import os
 from graphs.tutor_workflow import crear_workflow_tutor
-from langchain_google_genai import ChatGoogleGenerativeAI
 from rag.vector_store import VectorDB
 from utils.input import get_initial_state
-from utils.embedding_loader import embedding_loader
+from utils.embedding_loader import embedding_loader, llm_loader
 from utils.prettty_print import print_output
-from dotenv import dotenv_values
 from langchain_core.language_models.chat_models import BaseChatModel
 
 async def es_tema_valido(llm: BaseChatModel, tema: str) -> bool:
@@ -33,9 +30,7 @@ async def run(tutor, llm):
 
 async def main():
     print("Cargando el tutor...")
-    config = dotenv_values(".env")
-    os.environ["GOOGLE_API_KEY"] = config["GOOGLE_API_KEY_1"]
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
+    llm = llm_loader()
 
     embeddings = embedding_loader()
     vector_store = VectorDB.load_existing(embeddings)
