@@ -1,4 +1,3 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
 from schemas.estado import EstadoConversacion
 from schemas.contenido import ProblemaPractico
 

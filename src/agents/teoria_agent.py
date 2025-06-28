@@ -5,7 +5,6 @@ from utils.test_generador import generar_test_teoria
 from utils.simulador_estudiante import simular_respuesta_estudiante
 
 def crear_agente_teoria(llm):
-    print("Buscando teoría ...")
     llm_teoria = llm.with_structured_output(ExplicacionTeorica)
 
     prompt = ChatPromptTemplate.from_template(
@@ -34,6 +33,7 @@ def crear_agente_teoria(llm):
     )
 
     async def obtener_teoria(estado: EstadoConversacion) -> EstadoConversacion:
+        print("Buscando teoría ...")
         # 1. Paso BDI actual (opcional)
         bdi_step = ""
         if estado.bdi_state and estado.bdi_state.intentions.action_plan:
