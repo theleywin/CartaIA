@@ -1,4 +1,4 @@
-from xml.dom.minidom import Document
+from langchain.schema import Document
 from langchain_google_genai import ChatGoogleGenerativeAI
 from rag.crawler import search_web
 from utils.thresholds import is_relevant_l2
