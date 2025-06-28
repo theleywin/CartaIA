@@ -1,6 +1,5 @@
 import os
 from dotenv import dotenv_values
-from langchain_community.vectorstores import FAISS
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_huggingface import HuggingFaceEmbeddings
 import torch

@@ -4,7 +4,6 @@ from skfuzzy import control as ctrl
 from typing import List
 from schemas.bdi import Belief
 
-
 # --- Variables lingüísticas
 cobertura = ctrl.Antecedent(np.arange(0, 1.01, 0.01), 'cobertura')
 progresion = ctrl.Antecedent(np.arange(0, 1.01, 0.01), 'progresion')

@@ -3,8 +3,8 @@ from typing import List
 from schemas.bdi import Belief
 from utils.evaluador_fuzzy import evaluar_calidad_difusa, calcular_metricas_action_plan
 
-def generar_individuo(action_plan, tamaño=5) -> List[str]:
-    individuo = random.sample(action_plan, tamaño)
+def generar_individuo(action_plan, size=5) -> List[str]:
+    individuo = random.sample(action_plan, size)
     return individuo
 
 def mutar(action_plan, individuo: List[str], tasa=0.4, debug=False) -> List[str]:
