@@ -3,15 +3,35 @@ import os
 import random
 import re
 from langchain_core.documents import Document
+from langchain_google_genai import ChatGoogleGenerativeAI
+from pydantic import BaseModel
 from experiments.initial_data import db_topics
 from utils.chunking import chunk_docs
 from utils.document_load import load_documents
-from utils.embedding_loader import embedding_loader
+from utils.embedding_loader import embedding_loader, llm_loader
 from langchain_community.vectorstores import FAISS
 from rag.vector_store import WORST_L2_SCORE
 
 def get_testing_chunk_sizes(amount: int) -> list[int]:
-    return sorted(random.sample(range(128, 1025), amount))
+    return list(range(128, 1025, 1025 // amount))
+
+class ChunkLabel(BaseModel):
+    is_relevant: bool
+
+def label_chunk_with_llm(query: str, chunk_text: str, llm: ChatGoogleGenerativeAI) -> bool:
+    llm = llm.with_structured_output(ChunkLabel)
+
+    prompt = f"""
+    Pregunta: "{query}"
+
+    ¿Es el siguiente texto relevante para responderla, en un contexto de estructuras de datos y algoritmos?
+
+    Texto: "{chunk_text}"
+
+    Responde solo con un JSON que contenga el campo booleano `is_relevant`.
+    """
+    result: ChunkLabel = llm.invoke(prompt)
+    return result.is_relevant
 
 def chunk_with_different_sizes(docs: list[Document], chunk_sizes: list[int], overlap_ratio=0.1):
     all_chunks = {}
@@ -36,13 +56,20 @@ def create_vector_stores(chunked_docs: dict[int, list[Document]]) -> dict[int, a
         print(f"[DEBUG] Vector store created with {len(chunks)} chunks")
 
 
-def get_query_scores(vector_store: FAISS, query: str, k: int = 10) -> list[float]:
+def get_query_scores(vector_store: FAISS, query: str, llm: ChatGoogleGenerativeAI, k: int = 10) -> list[dict]:
     if not vector_store or not query:
         return [WORST_L2_SCORE] * k
     try:
         results = vector_store.similarity_search_with_score(query, k=k)
         if results and len(results) > 0:
-            scores =  [float(score) for _, score in results]
+            scores =  [
+                { 
+                    "score": float(score), 
+                    "text": chunk.page_content, 
+                    "is_relevant": label_chunk_with_llm(query, chunk, llm) 
+                } 
+                for chunk, score in results
+            ]
             scores.extend([WORST_L2_SCORE] * (k - len(scores)))
             return scores
         else:
@@ -54,6 +81,7 @@ def get_query_scores(vector_store: FAISS, query: str, k: int = 10) -> list[float
 def get_stats(sizes: list[int], queries: list[str]) -> list[dict]:
     results = []
     embeddings = embedding_loader()
+    llm = llm_loader()
     for size in sizes:
         result = { "size": size, "results": [] }
         vector_store = FAISS.load_local(
@@ -61,16 +89,15 @@ def get_stats(sizes: list[int], queries: list[str]) -> list[dict]:
             embeddings=embeddings,
             allow_dangerous_deserialization=True
             )
-        for query in queries:
-            score = get_query_scores(vector_store, query, 30)
+        sampled_queries = random.sample(queries, min(10, len(queries)))
+        for query in sampled_queries:
+            print(f"[DEBUG] Processing query: {query} for size {size}")
+            score = get_query_scores(vector_store, query, llm, 8)
             result["results"].append({"query": query, "scores": score})
         results.append(result)
     return results
 
 def get_created_sizes_from_folders(base_path: str) -> list[int]:
-    """
-    Busca carpetas en base_path con el patrón size_{size}_chunks y devuelve la lista de tamaños (int).
-    """
     sizes = []
     if not os.path.isdir(base_path):
         return sizes
@@ -80,9 +107,9 @@ def get_created_sizes_from_folders(base_path: str) -> list[int]:
             sizes.append(int(match.group(1)))
     return sorted(sizes)
 
-def run_chunking_experiment(overlap_ratio=0.1, path: str = "./src/experiments/chunk_size_optimization/results.json"):
+def run_chunking_experiment(overlap_ratio=0.5, path: str = "./src/experiments/chunk_size_optimization/results.json"):
     docs = load_documents("./data/algoritmos")
-    chunk_sizes = get_testing_chunk_sizes(30)
+    chunk_sizes = get_testing_chunk_sizes(10)
     print("[DEBUG] Starting chunking experiment...")
     chunked_docs = chunk_with_different_sizes(docs, chunk_sizes, overlap_ratio)
     create_vector_stores(chunked_docs)
