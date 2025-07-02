@@ -12,7 +12,7 @@ INDEX_FILE = "src/utils/kg/index.txt"
 def extract_entities(text):
     """Extrae entidades nombradas del texto usando scispacy"""
     doc = nlp(text)
-    return list(set(ent.text.strip() for ent in doc.ents if ent.text.strip()))
+    return list({ent.text.strip() for ent in doc.ents if ent.text.strip()})
 
 def is_chapter_line(line):
     """Detecta si una línea es título de capítulo: empieza con número entero y espacio, ej: '4 Getting Started'"""
@@ -22,7 +22,7 @@ def is_subsection_line(line):
     """Detecta si es línea de subsección (ej: '4.2 Strassens algorithm for matrix multiplication')"""
     return re.match(r"^\d+(\.\d+)+\s", line.strip()) is not None
 
-def parse_index(file_path):
+def parse_index(file_path: str) -> tuple[defaultdict[set], list[tuple[str, list[str]]]]:
     """
     Procesa el índice completo y extrae:
     - capítulos con sus entidades
@@ -57,7 +57,7 @@ def parse_index(file_path):
 
     return chapter_entities, line_entities
 
-def build_graph(chapter_entities, line_entities):
+def build_graph(chapter_entities: defaultdict[set], line_entities: list[tuple[str, list[str]]]) -> tuple[set, set, set]:
     """
     Construye listas para nodos y relaciones para Neo4j.
     Relaciones fuertes: entre todas las entidades del mismo capítulo.
@@ -93,7 +93,7 @@ def build_graph(chapter_entities, line_entities):
 
     return nodes, strong_edges, weak_edges
 
-def save_to_csv(nodes, strong_edges, weak_edges):
+def save_to_csv(nodes: set, strong_edges: set, weak_edges: set):
     # Guardar nodos
     with open("nodes.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
