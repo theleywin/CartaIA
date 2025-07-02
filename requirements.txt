@@ -22,3 +22,5 @@ pandas
 matplotlib
 seaborn
 googlesearch-python
+pdfpumbler
+scispacy
