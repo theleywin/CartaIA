@@ -6,7 +6,7 @@ from utils.embedding_loader import embedding_loader
 def run_ingestion():
     docs = load_documents("./data/algoritmos")
     # aqui usamos un chunk size optimizado por nuestros experimentos
-    documents = chunk_docs(docs, 137, ["\n\n", "\n", " ", ""], overlap_ratio=0.1)
+    documents = chunk_docs(docs, 337, ["\n\n", "\n", " ", ""], overlap_ratio=0.5)
     embeddings = embedding_loader()
     VectorDB.create_new(embeddings, documents)
     
