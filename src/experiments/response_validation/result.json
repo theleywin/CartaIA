@@ -1,0 +1,111 @@
+[
+  {
+    "pregunta": "¿Cuál es la complejidad temporal promedio de QuickSort?",
+    "dificultad": "Media",
+    "result": "Análisis de la complejidad temporal promedio del algoritmo QuickSort QuickSort es un algoritmo de ordenamiento que utiliza la estrategia divide y vencerás.  Selecciona un elemento (pivote) y divide la lista en dos sublistas: elementos menores que el pivote y elementos mayores.  Recursivamente, ordena las sublistas hasta obtener una lista completamente ordenada. La complejidad promedio se deriva del análisis de la probabilidad de diferentes particiones, mostrando que en promedio, la profundidad de la recursión es log n, resultando en una complejidad total de n log n.",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿ En una lista enlazada simple, la operación de inserción al inicio que complejidad tiene ?",
+    "dificultad": "Fácil",
+    "result":"La inserción de un nuevo nodo al inicio de una lista enlazada simple implica crear un nuevo nodo, hacer que este nuevo nodo apunte al nodo que previamente era el primero, y finalmente actualizar la cabeza de la lista para que apunte al nuevo nodo.  Esto requiere un número constante de operaciones, independientemente del tamaño de la lista.",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿Qué estructura sigue el principio LIFO (Last-In-First-Out)?",
+    "dificultad": "Fácil",
+    "result": "La estructura que sigue el principio LIFO (Last-In-First-Out) es la pila (stack). En una pila, el último elemento insertado es el primero en ser eliminado, y sus operaciones principales son push() para insertar y pop() para eliminar. Se usa en casos como gestión de llamadas a funciones, algoritmos de backtracking y manejo de historial (undo/redo).",
+    "nota": 4
+  },
+  {
+    "pregunta": "¿ Para encontrar el camino más corto en grafos con pesos negativos que se usa ?",
+    "dificultad": "Difícil",
+    "result": "Para encontrar el camino más corto en grafos con pesos negativos, se utiliza el algoritmo de Bellman-Ford. A diferencia de Dijkstra, este algoritmo puede manejar pesos negativos",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿ La altura de un árbol AVL con n nodos está acotada por que complejidad ?",
+    "dificultad": "Media",
+    "result": "La altura de un árbol AVL con n nodos está acotada por O(logn)O(logn). Esto se debe a que los árboles AVL mantienen un equilibrio estricto (la diferencia de alturas entre subárboles izquierdo y derecho no supera 1), garantizando que la altura crezca logarítmicamente con respecto al número de nodos.",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿Cuál algoritmo de ordenamiento tiene complejidad O(n²) en el peor caso?",
+    "dificultad": "Fácil",
+    "result": "El algoritmo de ordenamiento que tiene complejidad O(n²) en el peor caso es el Bubble Sort. Este algoritmo compara pares de elementos adyacentes y los intercambia si están en el orden incorrecto, repitiendo este proceso hasta que la lista está ordenada. En el peor caso, cuando la lista está en orden inverso, requiere n-1 pasadas y cada pasada toma O(n) tiempo, resultando en una complejidad total de O(n²).",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿ En una tabla hash con sondeo lineal, una colisión como se resuelve ?",
+    "dificultad": "Media",
+    "result": "En una tabla hash con sondeo lineal, una colisión se resuelve buscando la siguiente posición disponible en la tabla. Cuando se produce una colisión (es decir, cuando dos claves hash diferentes generan el mismo índice), se verifica la siguiente posición en la tabla (incrementando el índice) hasta encontrar una celda vacía. Este enfoque puede llevar a agrupamientos y, en el peor de los casos, a una degradación del rendimiento.",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿Qué estructura es óptima para implementar una cola de prioridad?",
+    "dificultad": "Media",
+    "result": "La estructura óptima para implementar una cola de prioridad es un Heap (montículo). Los heaps son árboles binarios completos que satisfacen la propiedad del montículo, donde cada nodo es mayor (o menor, en el caso de un min-heap) que sus hijos.",
+    "nota": 4
+  },
+  {
+    "pregunta": "¿ Cual es la complejidad de BFS en un grafo con V vértices y E aristas ?",
+    "dificultad": "Media",
+    "result": "La complejidad de BFS (Breadth-First Search) en un grafo con V vértices y E aristas es O(V + E). Esto se debe a que BFS explora cada vértice y cada arista una vez. En el caso de un grafo denso, donde E puede ser hasta V², la complejidad puede aproximarse a O(V²).",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿ Un árbol binario completo con 15 nodos que altura tiene ?",
+    "dificultad": "Media",
+    "result": "Un árbol binario completo con n nodos tiene una altura de ⌊log₂n⌋. Esto se debe a que en un árbol binario completo todos los niveles están completamente llenos, excepto posiblemente el último, que se llena de izquierda a derecha. La altura crece logarítmicamente con respecto al número de nodos, manteniendo una estructura equilibrada.",
+    "nota": 3
+
+  },
+  {
+    "pregunta": "¿ En un Heap binario, el máximo se extrae con que complejidad ?",
+    "dificultad": "Media",
+    "result": "En un Heap binario (max-heap), extraer el máximo tiene complejidad O(log n).",
+    "nota": 4
+  },
+  {
+    "pregunta": "¿Qué algoritmo usa la estrategia Divide y Vencerás?",
+    "dificultad": "Media",
+    "result": "El algoritmo que usa la estrategia Divide y Vencerás es el Merge Sort. Este algoritmo divide la lista en mitades, ordena cada mitad de forma recursiva y luego combina las dos mitades ordenadas en una sola lista ordenada.",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿ Cual es la complejidad del problema del Fibonacci con recursión ingenua ?:",
+    "dificultad": "Media",
+    "result": "La complejidad del problema del Fibonacci con recursión ingenua es O(2^n). Esto se debe a que cada llamada recursiva genera dos llamadas adicionales, lo que resulta en un crecimiento exponencial del número de llamadas.",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿ En un árbol binario de búsqueda (BST), que produce un recorrido in-order ?",
+    "dificultad": "Fácil",
+    "result": "El recorrido in-order en un árbol binario de búsqueda (BST) devuelve los nodos en orden ascendente, ya que primero procesa el subárbol izquierdo (valores menores), luego la raíz y finalmente el subárbol derecho (valores mayores), garantizando el orden con una complejidad de O(n)",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿ Que se usa para detectar un ciclo en un grafo dirigido ?",
+    "dificultad": "Difícil",
+    "result": "Para detectar un ciclo en un grafo dirigido se utiliza el algoritmo de búsqueda en profundidad (DFS) con un mecanismo de seguimiento de nodos visitados y nodos en la pila de recursión actual. Durante el recorrido, si se encuentra un nodo adyacente que está en la pila de recursión (es decir, ya está siendo procesado en el camino actual), se confirma la existencia de un ciclo",
+    "nota": 4
+  },
+  {
+    "pregunta": "¿Qué operación en un árbol AVL requiere rotaciones?",
+    "dificultad": "Media",
+    "result": "Las operaciones de inserción y eliminación en un árbol AVL pueden requerir rotaciones para mantener el equilibrio del árbol. Si la altura de los subárboles difiere en más de uno después de una operación, se realizan rotaciones simples o dobles para restaurar el equilibrio.",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿ Cual es la complejidad de MergeSort ?",
+    "dificultad": "Media",
+    "result": "La complejidad de MergeSort es O(n log n). Este algoritmo divide la lista en mitades, ordena cada mitad de forma recursiva y luego combina las dos mitades ordenadas. La división toma log n niveles y en cada nivel se combinan n elementos, resultando en una complejidad total de O(n log n).",
+    "nota": 5
+  },
+  {
+    "pregunta": "¿Qué estructura de datos usa el algoritmo DFS?",
+    "dificultad": "Media",
+    "result": "El algoritmo DFS (Depth-First Search) utiliza una estructura de datos de tipo pila (stack) para llevar un seguimiento de los nodos a explorar. En su implementación recursiva, la pila se maneja de forma implícita a través de las llamadas a la función.",
+    "nota": 5
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "pregunta": "¿Cuál es la complejidad temporal promedio de QuickSort?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿ En una lista enlazada simple, la operación de inserción al inicio que complejidad tiene ?",
+    "dificultad": "Fácil"
+  },
+  {
+    "pregunta": "¿Qué estructura sigue el principio LIFO (Last-In-First-Out)?",
+    "dificultad": "Fácil"
+  },
+  {
+    "pregunta": "¿ Para encontrar el camino más corto en grafos con pesos negativos que se usa ?",
+    "dificultad": "Difícil"
+  },
+  {
+    "pregunta": "¿ La altura de un árbol AVL con n nodos está acotada por que complejidad ?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿Cuál algoritmo de ordenamiento tiene complejidad O(n²) en el peor caso?",
+    "dificultad": "Fácil"
+  },
+  {
+    "pregunta": "¿ En una tabla hash con sondeo lineal, una colisión como se resuelve ?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿Qué estructura es óptima para implementar una cola de prioridad?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿ Cual es la complejidad de BFS en un grafo con V vértices y E aristas ?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿ Un árbol binario completo con 15 nodos que altura tiene ?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿ En un Heap binario, el máximo se extrae con que complejidad ?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿Qué algoritmo usa la estrategia Divide y Vencerás?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿ Cual es la complejidad del problema del Fibonacci con recursión ingenua ?:",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿ En un árbol binario de búsqueda (BST), que produce un recorrido in-order ?",
+    "dificultad": "Fácil"
+  },
+  {
+    "pregunta": "¿ Que se usa para detectar un ciclo en un grafo dirigido ?",
+    "dificultad": "Difícil"
+  },
+  {
+    "pregunta": "¿Qué operación en un árbol AVL requiere rotaciones?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿ Cual es la complejidad de MergeSort ?",
+    "dificultad": "Media"
+  },
+  {
+    "pregunta": "¿Qué estructura de datos usa el algoritmo DFS?",
+    "dificultad": "Media"
+  }
+]
