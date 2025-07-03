@@ -39,7 +39,7 @@ def build_directed_graph(nodes_file: str, strong_edges_file: str, weak_edges_fil
 def visualize_directed_graph(graph: nx.DiGraph):
     plt.figure(figsize=(12, 8))
 
-    pos = nx.spring_layout(graph, seed=10)  # Posiciones de los nodos (puedes usar otros layouts)
+    pos = nx.spring_layout(graph, seed=10, k=0.1, iterations=20)  # Posiciones de los nodos (puedes usar otros layouts)
 
     # Dibuja nodos
     nx.draw_networkx_nodes(graph, pos, node_color='lightblue', node_size=200)
@@ -52,10 +52,10 @@ def visualize_directed_graph(graph: nx.DiGraph):
     weak_edges = [(u, v) for u, v, d in graph.edges(data=True) if d.get('type') == 'WEAK']
 
     # Dibuja aristas fuertes en rojo, con flechas sólidas
-    nx.draw_networkx_edges(graph, pos, edgelist=strong_edges, edge_color='red', arrows=True, arrowsize=10, width=2)
+    nx.draw_networkx_edges(graph, pos, edgelist=strong_edges, edge_color='red', arrows=True, arrowsize=10, width=1)
 
     # Dibuja aristas débiles en azul, con flechas punteadas
-    nx.draw_networkx_edges(graph, pos, edgelist=weak_edges, edge_color='blue', style='dashed', arrows=True, arrowsize=20, width=1)
+    nx.draw_networkx_edges(graph, pos, edgelist=weak_edges, edge_color='blue', style='dashed', arrows=True, arrowsize=10, width=1)
 
     plt.title("Grafo dirigido de entidades y relaciones")
     plt.axis('off')

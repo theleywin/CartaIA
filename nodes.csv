@@ -1,141 +1,132 @@
 name
-Aggregateanalysis
-Algorithms 5
-Algorithmsasatechnology
-All-PairsShortestPaths
-AmortizedAnalysis
-Anactivity-selection problem
-ApproximationAlgorithms
-Arandomized
-Arecursivestructure
-Asymptoticnotation
-AugmentingDataStructures
-B-Trees 484
-Basicoperations
-BinarySearchTrees
-Boundingthemaximumdegree 523
-Breadth-firstsearch
-Bucketsort
-ComputationalGeometry
-Countingsort
-DataStructuresforDisjointSets
-Decreasingakeyanddeleting anode
-DefinitionofB-trees 488
+Aggregate Analysis
+Algorithms
+Algorithms as a technology
+All-Pairs Shortest Paths
+Amortized Analysis
+Activity-selection problem
+Approximation Algorithms
+A randomized version of quicksort
+A recursive structure
+Asymptotic notation
+Augmenting Data Structures
+B-Trees
+Basic operations
+Binary Search Trees
+Bounding the maximum degree
+Breadth-first search
+Bucket sort
+Computational Geometry
+Counting sort
+Data Structures for Disjoint Sets
+Decreasing a key and deleting a node
+Definitionof B-trees
 Deletion
-Depth-firstsearch 603
-Description
+Depth-first search
 Designing
-Determiningwhetheranypairofsegmentsintersects
-Differenceconstraints andshortestpaths
-Dijkstra’salgorithm
+Determining whether any pair of segments intersects
+Difference constraints and shortest paths
+Dijkstra’s algorithm
 Direct-address tables
 Divide-and-Conquer
 Duality
-DynamicProgramming
-Dynamicorderstatistics
-Dynamictables
-ElementaryGraphAlgorithms
-Elementarynumber-theoretic notions
-Elementsofdynamicprogramming
-Elementsofthegreedy strategy
-FibonacciHeaps
-Findingtheclosestpairofpoints
-Findingtheconvexhull
-Flownetworks
-GettingStarted
-Greatestcommondivisor
-GreedyAlgorithms
-Growingaminimumspanning
-GrowthofFunctions
-HashTables 253
-Hashfunctions
-Hashtables
+Dynamic Programming
+Dynamic order statistics
+Dynamic tables
+Elementary Graph Algorithms
+Elementary number-theoretic notions
+Elements of Dynamic Programming
+Elements of the greedy strategy
+Fibonacci Heaps
+Finding the closest pair of points
+Finding the convex hull
+Flow networks
+Getting Started
+Greatest common divisor
+Greedy Algorithms
+Growing a minimum spanning tree
+Growth of Functions
+Hash Tables
+Hash functions
+Hash Tables
 Heapsort
-Huffmancodes
-Indicator randomvariables
+Huffman codes
+Indicator random variables
 Insertion
-Insertion anddeletion
-Intervaltrees
+Insertion and deletion
+Interval trees
 Inverting matrices
-Johnson’s algorithm
-Line-segmentproperties
-LinearProgramming
-Linked-list
-Linkedlists
-Longestcommonsubsequence
-Lowerbounds forsorting
+Johnson’s algorithm for sparse graphs
+Line-segment properties
+Linear Programming
+Linked-list representation of disjoint sets
+Linked lists
+Longest common subsequence
+Lower bounds forsorting
 Matrix-chain multiplication
-MatrixOperations
-MaximumFlow 708
-MediansandOrderStatistics
+Matrix Operations
+Maximum Flow
+Medians and Order Statistics
 Mergeable-heap operations
-MinimumSpanningTrees
-Minimumandmaximum
-Modulararithmetic
-Multithreaded matrixmultiplication
-Multithreaded mergesort
-MultithreadedAlgorithms
+Minimum Spanning Trees
+Minimum and maximum
+Modular arithmetic
+Multi threaded matrix multiplication
+Multi threaded merge sort
+Multi threaded Algorithms
 NP-completeness
-NP-completeproblems
-Number-TheoreticAlgorithms
-Openaddressing
-Optimalbinarysearchtrees
-Performanceofquicksort
+NP-complete problems
+Number-Theoretic Algorithms
+Open addressing
+Optimal Binary Search Trees
+Performance of quicksort
 Polynomial-time verification
-Polynomialtime
-Powersofanelement
-Preliminaryapproaches
-ProbabilisticAnalysisandRandomizedAlgorithms
-Proofsofshortest-paths
-Propertiesofred-black trees
-Queryingabinarysearchtree
+Polynomial time
+Powers of an element
+Preliminary approaches
+Probabilistic Analysis and Randomized Algorithms
+Proofs of shortest-paths properties
+Properties of red-black trees
+Querying a binary search tree
 Quicksort
-Radixsort
-Randomization andlinearprogramming
-Randomizedalgorithms
-Red-BlackTrees
-Representations
-Rodcutting
+Radix sort
+Randomization and Linear Programming
+Randomized algorithms
+Red-Black Trees
+Representations of graphs
+Rod cutting
 Rotations
-Selectioninexpected lineartime
-Selectioninworst-case lineartime
-Shortestpathsandmatrixmultiplication
-Single-source shortestpathsindirected acyclicgraphs
-Solvingsystemsoflinearequations
-Stacksandqueues
-Standardnotations
-StringMatching
-Stringmatchingwithfiniteautomata
-Stronglyconnected components
-StructureofFibonacciheaps
-Symmetricpositive-definite matricesandleast-squares approximation
-TheDFTandFFT
-TheFloyd-Warshall algorithm
-TheFord-Fulkerson
-Theaccounting method
-Theheapsort algorithm
-Thehiringproblem
-Theinitialbasicfeasiblesolution
-Themastermethodforsolving
-Themaximum-subarray problem
-Thenaivestring-matching algorithm
-Thepotential method
-Theset-covering problem
-Thesimplexalgorithm
-Thesubstitution methodforsolving
-Thetraveling-salesman problem
-Thevertex-coverproblem 1108
-Topological
-Whatisabinarysearchtree
+Selection in expected linear time
+Selection in worst-case linear time
+Shortest path sand matrix multiplication
+Single-source shortest paths in directed acyclic graphs
+Solving systems of linear equations
+Stacks and queues
+Standard notations and common functions
+String Matching
+String Matching with finite automata
+Strongly connected components
+Structure of Fibonacci Heaps
+Symmetric positive-definite matrices and least-squares approximation
+The DFT and FFT
+The Floyd-Warshall algorithm
+The Ford-Fulkerson
+The accounting method
+The heapsort algorithm
+The hiring problem
+The initial basic feasible solution
+The master method for solving recurrences
+The maximum-subarray problem
+The naive string-matching algorithm
+The potential method
+The set-covering problem
+The simplex algorithm
+The substitution method for solving recurrences
+The traveling-salesman problem
+The vertex-cover problem
+Topological sort
+What is a binary search tree
 algorithms
-andcommonfunctions
-cryptosystem
-forsparsegraphs
-ofgraphs
-properties
-recurrences
-representation
-rootedtrees
-tree
-vanEmdeBoasTrees
-versionofquicksort
+The RSA public-key cryptosystem
+Representing rooted trees
+van Emde Boas Trees

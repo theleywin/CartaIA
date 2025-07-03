@@ -1,241 +1,228 @@
 source,target,type
-Aggregateanalysis,AmortizedAnalysis,STRONG
-Aggregateanalysis,Dynamictables,STRONG
-Aggregateanalysis,Theaccounting method,STRONG
-Aggregateanalysis,Thepotential method,STRONG
-Algorithms 5,Algorithmsasatechnology,STRONG
-All-PairsShortestPaths,Johnson’s algorithm,STRONG
-All-PairsShortestPaths,Shortestpathsandmatrixmultiplication,STRONG
-All-PairsShortestPaths,TheFloyd-Warshall algorithm,STRONG
-All-PairsShortestPaths,forsparsegraphs,STRONG
-AmortizedAnalysis,Dynamictables,STRONG
-AmortizedAnalysis,Theaccounting method,STRONG
-AmortizedAnalysis,Thepotential method,STRONG
-Anactivity-selection problem,Elementsofthegreedy strategy,STRONG
-Anactivity-selection problem,GreedyAlgorithms,STRONG
-Anactivity-selection problem,Huffmancodes,STRONG
-ApproximationAlgorithms,Randomization andlinearprogramming,STRONG
-ApproximationAlgorithms,Theset-covering problem,STRONG
-ApproximationAlgorithms,Thetraveling-salesman problem,STRONG
-ApproximationAlgorithms,Thevertex-coverproblem 1108,STRONG
-Arandomized,Description,STRONG
-Arandomized,Performanceofquicksort,STRONG
-Arandomized,Quicksort,STRONG
-Arandomized,versionofquicksort,STRONG
-Arecursivestructure,Preliminaryapproaches,STRONG
-Arecursivestructure,vanEmdeBoasTrees,STRONG
-Asymptoticnotation,GrowthofFunctions,STRONG
-Asymptoticnotation,Standardnotations,STRONG
-Asymptoticnotation,andcommonfunctions,STRONG
-AugmentingDataStructures,Dynamicorderstatistics,STRONG
-AugmentingDataStructures,Intervaltrees,STRONG
-B-Trees 484,Basicoperations,STRONG
-B-Trees 484,DefinitionofB-trees 488,STRONG
-Basicoperations,DefinitionofB-trees 488,STRONG
-BinarySearchTrees,Insertion anddeletion,STRONG
-BinarySearchTrees,Queryingabinarysearchtree,STRONG
-BinarySearchTrees,Whatisabinarysearchtree,STRONG
-Boundingthemaximumdegree 523,Decreasingakeyanddeleting anode,STRONG
-Boundingthemaximumdegree 523,FibonacciHeaps,STRONG
-Boundingthemaximumdegree 523,Mergeable-heap operations,STRONG
-Boundingthemaximumdegree 523,StructureofFibonacciheaps,STRONG
-Breadth-firstsearch,Depth-firstsearch 603,STRONG
-Breadth-firstsearch,ElementaryGraphAlgorithms,STRONG
-Breadth-firstsearch,Representations,STRONG
-Breadth-firstsearch,Stronglyconnected components,STRONG
-Breadth-firstsearch,Topological,STRONG
-Breadth-firstsearch,ofgraphs,STRONG
-Bucketsort,Countingsort,STRONG
-Bucketsort,Lowerbounds forsorting,STRONG
-Bucketsort,Radixsort,STRONG
-ComputationalGeometry,Determiningwhetheranypairofsegmentsintersects,STRONG
-ComputationalGeometry,Findingtheclosestpairofpoints,STRONG
-ComputationalGeometry,Findingtheconvexhull,STRONG
-ComputationalGeometry,Line-segmentproperties,STRONG
-Countingsort,Lowerbounds forsorting,STRONG
-Countingsort,Radixsort,STRONG
-DataStructuresforDisjointSets,Linked-list,STRONG
-DataStructuresforDisjointSets,representation,STRONG
-Decreasingakeyanddeleting anode,FibonacciHeaps,STRONG
-Decreasingakeyanddeleting anode,Mergeable-heap operations,STRONG
-Decreasingakeyanddeleting anode,StructureofFibonacciheaps,STRONG
+Aggregate Analysis,Amortized Analysis,STRONG
+Aggregate Analysis,Dynamic tables,STRONG
+Aggregate Analysis,The accounting method,STRONG
+Aggregate Analysis,The potential method,STRONG
+Algorithms,Algorithms as a technology,STRONG
+All-Pairs Shortest Paths,Johnson’s algorithm for sparse graphs,STRONG
+All-Pairs Shortest Paths,Shortest path sand matrix multiplication,STRONG
+All-Pairs Shortest Paths,The Floyd-Warshall algorithm,STRONG
+All-Pairs Shortest Paths,Johnson’s algorithm for sparse graphs,STRONG
+Amortized Analysis,Dynamic tables,STRONG
+Amortized Analysis,The accounting method,STRONG
+Amortized Analysis,The potential method,STRONG
+Activity-selection problem,Elements of the greedy strategy,STRONG
+Activity-selection problem,Greedy Algorithms,STRONG
+Activity-selection problem,Huffman codes,STRONG
+Approximation Algorithms,Randomization and Linear Programming,STRONG
+Approximation Algorithms,The set-covering problem,STRONG
+Approximation Algorithms,The traveling-salesman problem,STRONG
+Approximation Algorithms,The vertex-cover problem,STRONG
+A randomized version of quicksort,Description of quicksort,STRONG
+A randomized version of quicksort,Performance of quicksort,STRONG
+A randomized version of quicksort,Quicksort,STRONG
+A recursive structure,Preliminary approaches,STRONG
+A recursive structure,van Emde Boas Trees,STRONG
+Asymptotic notation,Growth of Functions,STRONG
+Asymptotic notation,Standard notations and common functions,STRONG
+Augmenting Data Structures,Dynamic order statistics,STRONG
+Augmenting Data Structures,Interval trees,STRONG
+B-Trees,Basic operations,STRONG
+B-Trees,Definitionof B-trees,STRONG
+Basic operations,Definitionof B-trees,STRONG
+Binary Search Trees,Insertion and deletion,STRONG
+Binary Search Trees,Querying a binary search tree,STRONG
+Binary Search Trees,What is a binary search tree,STRONG
+Bounding the maximum degree,Decreasing a key and deleting a node,STRONG
+Bounding the maximum degree,Fibonacci Heaps,STRONG
+Bounding the maximum degree,Mergeable-heap operations,STRONG
+Bounding the maximum degree,Structure of Fibonacci Heaps,STRONG
+Breadth-first search,Depth-first search,STRONG
+Breadth-first search,Elementary Graph Algorithms,STRONG
+Breadth-first search,Representations of graphs,STRONG
+Breadth-first search,Strongly connected components,STRONG
+Breadth-first search,Topological sort,STRONG
+Breadth-first search,Representations of graphs,STRONG
+Bucket sort,Counting sort,STRONG
+Bucket sort,Lower bounds forsorting,STRONG
+Bucket sort,Radix sort,STRONG
+Computational Geometry,Determining whether any pair of segments intersects,STRONG
+Computational Geometry,Finding the closest pair of points,STRONG
+Computational Geometry,Finding the convex hull,STRONG
+Computational Geometry,Line-segment properties,STRONG
+Counting sort,Lower bounds forsorting,STRONG
+Counting sort,Radix sort,STRONG
+Data Structures for Disjoint Sets,Linked-list representation of disjoint sets,STRONG
+Data Structures for Disjoint Sets,Linked-list representation of disjoint sets,STRONG
+Decreasing a key and deleting a node,Fibonacci Heaps,STRONG
+Decreasing a key and deleting a node,Mergeable-heap operations,STRONG
+Decreasing a key and deleting a node,Structure of Fibonacci Heaps,STRONG
 Deletion,Insertion,STRONG
-Deletion,Propertiesofred-black trees,STRONG
-Deletion,Red-BlackTrees,STRONG
+Deletion,Properties of red-black trees,STRONG
+Deletion,Red-Black Trees,STRONG
 Deletion,Rotations,STRONG
-Depth-firstsearch 603,ElementaryGraphAlgorithms,STRONG
-Depth-firstsearch 603,Representations,STRONG
-Depth-firstsearch 603,Stronglyconnected components,STRONG
-Depth-firstsearch 603,Topological,STRONG
-Depth-firstsearch 603,ofgraphs,STRONG
-Description,Performanceofquicksort,STRONG
-Description,Quicksort,STRONG
-Description,versionofquicksort,STRONG
-Designing,GettingStarted,STRONG
+Depth-first search,Elementary Graph Algorithms,STRONG
+Depth-first search,Representations of graphs,STRONG
+Depth-first search,Strongly connected components,STRONG
+Depth-first search,Topological sort,STRONG
+Depth-first search,Representations of graphs,STRONG
+Description of quicksort,Performance of quicksort,STRONG
+Description of quicksort,Quicksort,STRONG
+Description of quicksort,A randomized version of quicksort,STRONG
+Designing,Getting Started,STRONG
 Designing,Insertion,STRONG
 Designing,algorithms,STRONG
-Determiningwhetheranypairofsegmentsintersects,Findingtheclosestpairofpoints,STRONG
-Determiningwhetheranypairofsegmentsintersects,Findingtheconvexhull,STRONG
-Determiningwhetheranypairofsegmentsintersects,Line-segmentproperties,STRONG
-Differenceconstraints andshortestpaths,Dijkstra’salgorithm,STRONG
-Differenceconstraints andshortestpaths,Proofsofshortest-paths,STRONG
-Differenceconstraints andshortestpaths,Single-source shortestpathsindirected acyclicgraphs,STRONG
-Differenceconstraints andshortestpaths,properties,STRONG
-Dijkstra’salgorithm,Proofsofshortest-paths,STRONG
-Dijkstra’salgorithm,Single-source shortestpathsindirected acyclicgraphs,STRONG
-Dijkstra’salgorithm,properties,STRONG
-Direct-address tables,HashTables 253,STRONG
-Direct-address tables,Hashfunctions,STRONG
-Direct-address tables,Hashtables,STRONG
-Direct-address tables,Openaddressing,STRONG
-Divide-and-Conquer,Themastermethodforsolving,STRONG
-Divide-and-Conquer,Themaximum-subarray problem,STRONG
-Divide-and-Conquer,Thesubstitution methodforsolving,STRONG
-Divide-and-Conquer,recurrences,STRONG
-Duality,LinearProgramming,STRONG
-Duality,Theinitialbasicfeasiblesolution,STRONG
-Duality,Thesimplexalgorithm,STRONG
-DynamicProgramming,Elementsofdynamicprogramming,STRONG
-DynamicProgramming,Longestcommonsubsequence,STRONG
-DynamicProgramming,Matrix-chain multiplication,STRONG
-DynamicProgramming,Optimalbinarysearchtrees,STRONG
-DynamicProgramming,Rodcutting,STRONG
-Dynamicorderstatistics,Intervaltrees,STRONG
-Dynamictables,Theaccounting method,STRONG
-Dynamictables,Thepotential method,STRONG
-ElementaryGraphAlgorithms,Representations,STRONG
-ElementaryGraphAlgorithms,Stronglyconnected components,STRONG
-ElementaryGraphAlgorithms,Topological,STRONG
-ElementaryGraphAlgorithms,ofgraphs,STRONG
-Elementarynumber-theoretic notions,Greatestcommondivisor,STRONG
-Elementarynumber-theoretic notions,Modulararithmetic,STRONG
-Elementarynumber-theoretic notions,Number-TheoreticAlgorithms,STRONG
-Elementarynumber-theoretic notions,Powersofanelement,STRONG
-Elementarynumber-theoretic notions,cryptosystem,STRONG
-Elementsofdynamicprogramming,Longestcommonsubsequence,STRONG
-Elementsofdynamicprogramming,Matrix-chain multiplication,STRONG
-Elementsofdynamicprogramming,Optimalbinarysearchtrees,STRONG
-Elementsofdynamicprogramming,Rodcutting,STRONG
-Elementsofthegreedy strategy,GreedyAlgorithms,STRONG
-Elementsofthegreedy strategy,Huffmancodes,STRONG
-FibonacciHeaps,Mergeable-heap operations,STRONG
-FibonacciHeaps,StructureofFibonacciheaps,STRONG
-Findingtheclosestpairofpoints,Findingtheconvexhull,STRONG
-Findingtheclosestpairofpoints,Line-segmentproperties,STRONG
-Findingtheconvexhull,Line-segmentproperties,STRONG
-Flownetworks,MaximumFlow 708,STRONG
-Flownetworks,TheFord-Fulkerson,STRONG
-GettingStarted,Insertion,STRONG
-GettingStarted,algorithms,STRONG
-Greatestcommondivisor,Modulararithmetic,STRONG
-Greatestcommondivisor,Number-TheoreticAlgorithms,STRONG
-Greatestcommondivisor,Powersofanelement,STRONG
-Greatestcommondivisor,cryptosystem,STRONG
-GreedyAlgorithms,Huffmancodes,STRONG
-Growingaminimumspanning,MinimumSpanningTrees,STRONG
-Growingaminimumspanning,tree,STRONG
-GrowthofFunctions,Standardnotations,STRONG
-GrowthofFunctions,andcommonfunctions,STRONG
-HashTables 253,Hashfunctions,STRONG
-HashTables 253,Hashtables,STRONG
-HashTables 253,Openaddressing,STRONG
-Hashfunctions,Hashtables,STRONG
-Hashfunctions,Openaddressing,STRONG
-Hashtables,Openaddressing,STRONG
-Heapsort,Theheapsort algorithm,STRONG
-Indicator randomvariables,ProbabilisticAnalysisandRandomizedAlgorithms,STRONG
-Indicator randomvariables,Randomizedalgorithms,STRONG
-Indicator randomvariables,Thehiringproblem,STRONG
-Insertion,Propertiesofred-black trees,STRONG
-Insertion,Red-BlackTrees,STRONG
+Determining whether any pair of segments intersects,Finding the closest pair of points,STRONG
+Determining whether any pair of segments intersects,Finding the convex hull,STRONG
+Determining whether any pair of segments intersects,Line-segment properties,STRONG
+Difference constraints and shortest paths,Dijkstra’s algorithm,STRONG
+Difference constraints and shortest paths,Proofs of shortest-paths properties,STRONG
+Difference constraints and shortest paths,Single-source shortest paths in directed acyclic graphs,STRONG
+Difference constraints and shortest paths,Proofs of shortest-paths properties,STRONG
+Dijkstra’s algorithm,Proofs of shortest-paths properties,STRONG
+Dijkstra’s algorithm,Single-source shortest paths in directed acyclic graphs,STRONG
+Direct-address tables,Hash Tables,STRONG
+Direct-address tables,Hash functions,STRONG
+Direct-address tables,Open addressing,STRONG
+Divide-and-Conquer,The master method for solving recurrences,STRONG
+Divide-and-Conquer,The maximum-subarray problem,STRONG
+Divide-and-Conquer,The substitution method for solving recurrences,STRONG
+Duality,Linear Programming,STRONG
+Duality,The initial basic feasible solution,STRONG
+Duality,The simplex algorithm,STRONG
+Dynamic Programming,Elements of Dynamic Programming,STRONG
+Dynamic Programming,Longest common subsequence,STRONG
+Dynamic Programming,Matrix-chain multiplication,STRONG
+Dynamic Programming,Optimal Binary Search Trees,STRONG
+Dynamic Programming,Rod cutting,STRONG
+Dynamic order statistics,Interval trees,STRONG
+Dynamic tables,The accounting method,STRONG
+Dynamic tables,The potential method,STRONG
+Elementary Graph Algorithms,Representations of graphs,STRONG
+Elementary Graph Algorithms,Strongly connected components,STRONG
+Elementary Graph Algorithms,Topological sort,STRONG
+Elementary Graph Algorithms,Representations of graphs,STRONG
+Elementary number-theoretic notions,Greatest common divisor,STRONG
+Elementary number-theoretic notions,Modular arithmetic,STRONG
+Elementary number-theoretic notions,Number-Theoretic Algorithms,STRONG
+Elementary number-theoretic notions,Powers of an element,STRONG
+Elementary number-theoretic notions,The RSA public-key cryptosystem,STRONG
+Elements of Dynamic Programming,Longest common subsequence,STRONG
+Elements of Dynamic Programming,Matrix-chain multiplication,STRONG
+Elements of Dynamic Programming,Optimal Binary Search Trees,STRONG
+Elements of Dynamic Programming,Rod cutting,STRONG
+Elements of the greedy strategy,Greedy Algorithms,STRONG
+Elements of the greedy strategy,Huffman codes,STRONG
+Fibonacci Heaps,Mergeable-heap operations,STRONG
+Fibonacci Heaps,Structure of Fibonacci Heaps,STRONG
+Finding the closest pair of points,Finding the convex hull,STRONG
+Finding the closest pair of points,Line-segment properties,STRONG
+Finding the convex hull,Line-segment properties,STRONG
+Flow networks,Maximum Flow,STRONG
+Flow networks,The Ford-Fulkerson,STRONG
+Getting Started,Insertion,STRONG
+Getting Started,algorithms,STRONG
+Greatest common divisor,Modular arithmetic,STRONG
+Greatest common divisor,Number-Theoretic Algorithms,STRONG
+Greatest common divisor,Powers of an element,STRONG
+Greatest common divisor,The RSA public-key cryptosystem,STRONG
+Greedy Algorithms,Huffman codes,STRONG
+Growing a minimum spanning tree,Minimum Spanning Trees,STRONG
+Growth of Functions,Standard notations and common functions,STRONG
+Growth of Functions,Standard notations and common functions,STRONG
+Hash Tables,Hash functions,STRONG
+Hash Tables,Open addressing,STRONG
+Hash functions,Hash Tables,STRONG
+Hash functions,Open addressing,STRONG
+Hash Tables,Open addressing,STRONG
+Heapsort,The heapsort algorithm,STRONG
+Indicator random variables,Probabilistic Analysis and Randomized Algorithms,STRONG
+Indicator random variables,Randomized algorithms,STRONG
+Indicator random variables,The hiring problem,STRONG
+Insertion,Properties of red-black trees,STRONG
+Insertion,Red-Black Trees,STRONG
 Insertion,Rotations,STRONG
 Insertion,algorithms,STRONG
-Insertion anddeletion,Queryingabinarysearchtree,STRONG
-Insertion anddeletion,Whatisabinarysearchtree,STRONG
-Inverting matrices,MatrixOperations,STRONG
-Inverting matrices,Solvingsystemsoflinearequations,STRONG
-Inverting matrices,Symmetricpositive-definite matricesandleast-squares approximation,STRONG
-Johnson’s algorithm,Shortestpathsandmatrixmultiplication,STRONG
-Johnson’s algorithm,TheFloyd-Warshall algorithm,STRONG
-Johnson’s algorithm,forsparsegraphs,STRONG
-LinearProgramming,Theinitialbasicfeasiblesolution,STRONG
-LinearProgramming,Thesimplexalgorithm,STRONG
-Linked-list,representation,STRONG
-Linkedlists,Stacksandqueues,STRONG
-Linkedlists,rootedtrees,STRONG
-Longestcommonsubsequence,Matrix-chain multiplication,STRONG
-Longestcommonsubsequence,Optimalbinarysearchtrees,STRONG
-Longestcommonsubsequence,Rodcutting,STRONG
-Lowerbounds forsorting,Radixsort,STRONG
-Matrix-chain multiplication,Optimalbinarysearchtrees,STRONG
-Matrix-chain multiplication,Rodcutting,STRONG
-MatrixOperations,Solvingsystemsoflinearequations,STRONG
-MatrixOperations,Symmetricpositive-definite matricesandleast-squares approximation,STRONG
-MaximumFlow 708,TheFord-Fulkerson,STRONG
-MediansandOrderStatistics,Minimumandmaximum,STRONG
-MediansandOrderStatistics,Selectioninexpected lineartime,STRONG
-MediansandOrderStatistics,Selectioninworst-case lineartime,STRONG
-Mergeable-heap operations,StructureofFibonacciheaps,STRONG
-MinimumSpanningTrees,tree,STRONG
-Minimumandmaximum,Selectioninexpected lineartime,STRONG
-Minimumandmaximum,Selectioninworst-case lineartime,STRONG
-Modulararithmetic,Number-TheoreticAlgorithms,STRONG
-Modulararithmetic,Powersofanelement,STRONG
-Modulararithmetic,cryptosystem,STRONG
-Multithreaded matrixmultiplication,Multithreaded mergesort,STRONG
-Multithreaded matrixmultiplication,MultithreadedAlgorithms,STRONG
-Multithreaded mergesort,MultithreadedAlgorithms,STRONG
-NP-completeness,NP-completeproblems,STRONG
+Insertion and deletion,Querying a binary search tree,STRONG
+Insertion and deletion,What is a binary search tree,STRONG
+Inverting matrices,Matrix Operations,STRONG
+Inverting matrices,Solving systems of linear equations,STRONG
+Inverting matrices,Symmetric positive-definite matrices and least-squares approximation,STRONG
+Johnson’s algorithm for sparse graphs,Shortest path sand matrix multiplication,STRONG
+Johnson’s algorithm for sparse graphs,The Floyd-Warshall algorithm,STRONG
+Linear Programming,The initial basic feasible solution,STRONG
+Linear Programming,The simplex algorithm,STRONG
+Linked lists,Stacks and queues,STRONG
+Linked lists,Representing rooted trees,STRONG
+Longest common subsequence,Matrix-chain multiplication,STRONG
+Longest common subsequence,Optimal Binary Search Trees,STRONG
+Longest common subsequence,Rod cutting,STRONG
+Lower bounds forsorting,Radix sort,STRONG
+Matrix-chain multiplication,Optimal Binary Search Trees,STRONG
+Matrix-chain multiplication,Rod cutting,STRONG
+Matrix Operations,Solving systems of linear equations,STRONG
+Matrix Operations,Symmetric positive-definite matrices and least-squares approximation,STRONG
+Maximum Flow,The Ford-Fulkerson,STRONG
+Medians and Order Statistics,Minimum and maximum,STRONG
+Medians and Order Statistics,Selection in expected linear time,STRONG
+Medians and Order Statistics,Selection in worst-case linear time,STRONG
+Mergeable-heap operations,Structure of Fibonacci Heaps,STRONG
+Minimum Spanning Trees,Growing a minimum spanning tree,STRONG
+Minimum and maximum,Selection in expected linear time,STRONG
+Minimum and maximum,Selection in worst-case linear time,STRONG
+Modular arithmetic,Number-Theoretic Algorithms,STRONG
+Modular arithmetic,Powers of an element,STRONG
+Modular arithmetic,The RSA public-key cryptosystem,STRONG
+Multi threaded matrix multiplication,Multi threaded merge sort,STRONG
+Multi threaded matrix multiplication,Multi threaded Algorithms,STRONG
+Multi threaded merge sort,Multi threaded Algorithms,STRONG
+NP-completeness,NP-complete problems,STRONG
 NP-completeness,Polynomial-time verification,STRONG
-NP-completeness,Polynomialtime,STRONG
-NP-completeproblems,Polynomial-time verification,STRONG
-NP-completeproblems,Polynomialtime,STRONG
-Number-TheoreticAlgorithms,Powersofanelement,STRONG
-Number-TheoreticAlgorithms,cryptosystem,STRONG
-Optimalbinarysearchtrees,Rodcutting,STRONG
-Performanceofquicksort,Quicksort,STRONG
-Performanceofquicksort,versionofquicksort,STRONG
-Polynomial-time verification,Polynomialtime,STRONG
-Powersofanelement,cryptosystem,STRONG
-Preliminaryapproaches,vanEmdeBoasTrees,STRONG
-ProbabilisticAnalysisandRandomizedAlgorithms,Randomizedalgorithms,STRONG
-ProbabilisticAnalysisandRandomizedAlgorithms,Thehiringproblem,STRONG
-Proofsofshortest-paths,Single-source shortestpathsindirected acyclicgraphs,STRONG
-Proofsofshortest-paths,properties,STRONG
-Propertiesofred-black trees,Red-BlackTrees,STRONG
-Propertiesofred-black trees,Rotations,STRONG
-Queryingabinarysearchtree,Whatisabinarysearchtree,STRONG
-Quicksort,versionofquicksort,STRONG
-Randomization andlinearprogramming,Theset-covering problem,STRONG
-Randomization andlinearprogramming,Thetraveling-salesman problem,STRONG
-Randomization andlinearprogramming,Thevertex-coverproblem 1108,STRONG
-Randomizedalgorithms,Thehiringproblem,STRONG
-Red-BlackTrees,Rotations,STRONG
-Representations,Stronglyconnected components,STRONG
-Representations,Topological,STRONG
-Representations,ofgraphs,STRONG
-Selectioninexpected lineartime,Selectioninworst-case lineartime,STRONG
-Shortestpathsandmatrixmultiplication,TheFloyd-Warshall algorithm,STRONG
-Shortestpathsandmatrixmultiplication,forsparsegraphs,STRONG
-Single-source shortestpathsindirected acyclicgraphs,properties,STRONG
-Solvingsystemsoflinearequations,Symmetricpositive-definite matricesandleast-squares approximation,STRONG
-Stacksandqueues,rootedtrees,STRONG
-Standardnotations,andcommonfunctions,STRONG
-StringMatching,Stringmatchingwithfiniteautomata,STRONG
-StringMatching,Thenaivestring-matching algorithm,STRONG
-Stringmatchingwithfiniteautomata,Thenaivestring-matching algorithm,STRONG
-Stronglyconnected components,Topological,STRONG
-Stronglyconnected components,ofgraphs,STRONG
-TheFloyd-Warshall algorithm,forsparsegraphs,STRONG
-Theaccounting method,Thepotential method,STRONG
-Theinitialbasicfeasiblesolution,Thesimplexalgorithm,STRONG
-Themastermethodforsolving,Themaximum-subarray problem,STRONG
-Themastermethodforsolving,Thesubstitution methodforsolving,STRONG
-Themastermethodforsolving,recurrences,STRONG
-Themaximum-subarray problem,Thesubstitution methodforsolving,STRONG
-Themaximum-subarray problem,recurrences,STRONG
-Theset-covering problem,Thetraveling-salesman problem,STRONG
-Theset-covering problem,Thevertex-coverproblem 1108,STRONG
-Thesubstitution methodforsolving,recurrences,STRONG
-Thetraveling-salesman problem,Thevertex-coverproblem 1108,STRONG
-Topological,ofgraphs,STRONG
+NP-completeness,Polynomial time,STRONG
+NP-complete problems,Polynomial-time verification,STRONG
+NP-complete problems,Polynomial time,STRONG
+Number-Theoretic Algorithms,Powers of an element,STRONG
+Number-Theoretic Algorithms,The RSA public-key cryptosystem,STRONG
+Optimal Binary Search Trees,Rod cutting,STRONG
+Performance of quicksort,Quicksort,STRONG
+Performance of quicksort,A randomized version of quicksort,STRONG
+Polynomial-time verification,Polynomial time,STRONG
+Powers of an element,The RSA public-key cryptosystem,STRONG
+Preliminary approaches,van Emde Boas Trees,STRONG
+Probabilistic Analysis and Randomized Algorithms,Randomized algorithms,STRONG
+Probabilistic Analysis and Randomized Algorithms,The hiring problem,STRONG
+Proofs of shortest-paths properties,Single-source shortest paths in directed acyclic graphs,STRONG
+Properties of red-black trees,Red-Black Trees,STRONG
+Properties of red-black trees,Rotations,STRONG
+Querying a binary search tree,What is a binary search tree,STRONG
+Quicksort,A randomized version of quicksort,STRONG
+Randomization and Linear Programming,The set-covering problem,STRONG
+Randomization and Linear Programming,The traveling-salesman problem,STRONG
+Randomization and Linear Programming,The vertex-cover problem,STRONG
+Randomized algorithms,The hiring problem,STRONG
+Red-Black Trees,Rotations,STRONG
+Representations of graphs,Strongly connected components,STRONG
+Representations of graphs,Topological sort,STRONG
+Selection in expected linear time,Selection in worst-case linear time,STRONG
+Shortest path sand matrix multiplication,The Floyd-Warshall algorithm,STRONG
+Shortest path sand matrix multiplication,Johnson’s algorithm for sparse graphs,STRONG
+Single-source shortest paths in directed acyclic graphs,Proofs of shortest-paths properties,STRONG
+Solving systems of linear equations,Symmetric positive-definite matrices and least-squares approximation,STRONG
+Stacks and queues,Representing rooted trees,STRONG
+String Matching,String Matching with finite automata,STRONG
+String Matching,The naive string-matching algorithm,STRONG
+String Matching with finite automata,The naive string-matching algorithm,STRONG
+Strongly connected components,Topological sort,STRONG
+Strongly connected components,Representations of graphs,STRONG
+The Floyd-Warshall algorithm,Johnson’s algorithm for sparse graphs,STRONG
+The accounting method,The potential method,STRONG
+The initial basic feasible solution,The simplex algorithm,STRONG
+The master method for solving recurrences,The maximum-subarray problem,STRONG
+The master method for solving recurrences,The substitution method for solving recurrences,STRONG
+The maximum-subarray problem,The substitution method for solving recurrences,STRONG
+The maximum-subarray problem,The master method for solving recurrences,STRONG
+The set-covering problem,The traveling-salesman problem,STRONG
+The set-covering problem,The vertex-cover problem,STRONG
+The substitution method for solving recurrences,The master method for solving recurrences,STRONG
+The traveling-salesman problem,The vertex-cover problem,STRONG
+Topological sort,Representations of graphs,STRONG
