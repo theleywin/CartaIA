@@ -7,7 +7,13 @@ def load_nodes(filepath: str) -> list:
     with open(filepath, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            nodes.append(row["name"])
+            node_attrs = {
+                "name": row["name"],
+                "type": row.get("type", ""),
+                "difficulty": float(row.get("difficulty", 1.0)),
+                "estimated_time": float(row.get("estimated_time", 1.0))
+            }
+            nodes.append((row["name"], node_attrs))
     return nodes
 
 def load_edges(filepath: str) -> list:
@@ -24,11 +30,12 @@ def load_edges(filepath: str) -> list:
 def build_directed_graph(nodes_file: str, strong_edges_file: str, weak_edges_file: str) -> nx.DiGraph:
     graph = nx.DiGraph()
 
-    # Agregar nodos
+    # Agregar nodos con atributos
     nodes = load_nodes(nodes_file)
-    graph.add_nodes_from(nodes)
+    for node_id, node_attrs in nodes:
+        graph.add_node(node_id, **node_attrs)
 
-    # Agregar relaciones fuertes y débiles (aristas dirigidas)
+    # Agregar relaciones fuertes y débiles
     strong_edges = load_edges(strong_edges_file)
     weak_edges = load_edges(weak_edges_file)
 
@@ -36,29 +43,28 @@ def build_directed_graph(nodes_file: str, strong_edges_file: str, weak_edges_fil
     graph.add_edges_from(weak_edges)
 
     return graph
-def visualize_directed_graph(graph: nx.DiGraph):
-    plt.figure(figsize=(12, 8))
 
-    pos = nx.spring_layout(graph, seed=10, k=0.1, iterations=20)  # Posiciones de los nodos (puedes usar otros layouts)
+def visualize_directed_graph(graph: nx.DiGraph):
+    plt.figure(figsize=(14, 10))
+
+    pos = nx.spring_layout(graph, seed=10, k=0.15, iterations=50)
 
     # Dibuja nodos
-    nx.draw_networkx_nodes(graph, pos, node_color='lightblue', node_size=200)
+    nx.draw_networkx_nodes(graph, pos, node_color='lightblue', node_size=100)
 
-    # Etiquetas de nodos
-    nx.draw_networkx_labels(graph, pos, font_size=6, font_weight='bold')
+   
+    nx.draw_networkx_labels(graph, pos, font_size=6)
 
-    # Separa aristas por tipo para colorear diferente
-    strong_edges = [(u, v) for u, v, d in graph.edges(data=True) if d.get('type') == 'STRONG']
-    weak_edges = [(u, v) for u, v, d in graph.edges(data=True) if d.get('type') == 'WEAK']
+    # Aristas fuertes (rojo) y débiles (azul punteado)
+    strong_edges = [(u, v) for u, v, d in graph.edges(data=True) if d.get("type") == "STRONG"]
+    weak_edges = [(u, v) for u, v, d in graph.edges(data=True) if d.get("type") == "WEAK"]
 
-    # Dibuja aristas fuertes en rojo, con flechas sólidas
-    nx.draw_networkx_edges(graph, pos, edgelist=strong_edges, edge_color='red', arrows=True, arrowsize=10, width=1)
+    nx.draw_networkx_edges(graph, pos, edgelist=strong_edges, edge_color="red", arrows=True, arrowsize=10, width=1)
+    nx.draw_networkx_edges(graph, pos, edgelist=weak_edges, edge_color="blue", style="dashed", arrows=True, arrowsize=10, width=1)
 
-    # Dibuja aristas débiles en azul, con flechas punteadas
-    nx.draw_networkx_edges(graph, pos, edgelist=weak_edges, edge_color='blue', style='dashed', arrows=True, arrowsize=10, width=1)
-
-    plt.title("Grafo dirigido de entidades y relaciones")
-    plt.axis('off')
+    plt.title("📚 Grafo dirigido de conocimiento", fontsize=12)
+    plt.axis("off")
+    plt.tight_layout()
     plt.show()
 
 if __name__ == "__main__":

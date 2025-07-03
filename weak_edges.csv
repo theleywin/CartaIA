@@ -1,156 +1,65 @@
 source,target,type
-Aggregate Analysis,Standard notations and common functions,WEAK
-Aggregate Analysis,Direct-address tables,WEAK
-Aggregate Analysis,The substitution method for solving recurrences,WEAK
-Aggregate Analysis,Data Structures for Disjoint Sets,WEAK
-Aggregate Analysis,Structure of Fibonacci Heaps,WEAK
-Aggregate Analysis,Algorithms,WEAK
-Aggregate Analysis,Growth of Functions,WEAK
-Aggregate Analysis,Fibonacci Heaps,WEAK
-Aggregate Analysis,A randomized version of quicksort,WEAK
-Aggregate Analysis,Randomized algorithms,WEAK
-Aggregate Analysis,Probabilistic Analysis and Randomized Algorithms,WEAK
-Aggregate Analysis,Asymptotic notation,WEAK
-Algorithms,Elements of Dynamic Programming,WEAK
-Algorithms,The substitution method for solving recurrences,WEAK
-Algorithms,Performance of quicksort,WEAK
-Algorithms,Hash Tables,WEAK
-Algorithms,Amortized Analysis,WEAK
-Algorithms,Shortest path sand matrix multiplication,WEAK
-Algorithms,Data Structures for Disjoint Sets,WEAK
-Algorithms,Augmenting Data Structures,WEAK
-Algorithms,Multi threaded matrix multiplication,WEAK
-Algorithms,Elementary Graph Algorithms,WEAK
-Algorithms,The traveling-salesman problem,WEAK
-Algorithms,Breadth-first search,WEAK
-Algorithms,Symmetric positive-definite matrices and least-squares approximation,WEAK
-Algorithms,The DFT and FFT,WEAK
-Algorithms,The RSA public-key cryptosystem,WEAK
-Algorithms,Bucket sort,WEAK
-Algorithms,Maximum Flow,WEAK
-Algorithms,Solving systems of linear equations,WEAK
-Algorithms,Approximation Algorithms,WEAK
-Algorithms,String Matching with finite automata,WEAK
-Algorithms,Heapsort,WEAK
-Algorithms,van Emde Boas Trees,WEAK
-Algorithms,Linear Programming,WEAK
-Algorithms,Fibonacci Heaps,WEAK
-Algorithms,Minimum Spanning Trees,WEAK
-Algorithms,Divide-and-Conquer,WEAK
-Algorithms,Dijkstra’s algorithm,WEAK
-Algorithms,Greedy Algorithms,WEAK
-Algorithms,Dynamic Programming,WEAK
-Algorithms,Designing,WEAK
-Algorithms,Number-Theoretic Algorithms,WEAK
-Algorithms,Randomized algorithms,WEAK
-Algorithms,Stacks and queues,WEAK
-Algorithms,Probabilistic Analysis and Randomized Algorithms,WEAK
-Algorithms,Asymptotic notation,WEAK
-Algorithms as a technology,Elements of Dynamic Programming,WEAK
-All-Pairs Shortest Paths,Elements of Dynamic Programming,WEAK
-All-Pairs Shortest Paths,Representations of graphs,WEAK
-All-Pairs Shortest Paths,Elementary Graph Algorithms,WEAK
-All-Pairs Shortest Paths,Flow networks,WEAK
-All-Pairs Shortest Paths,Breadth-first search,WEAK
-All-Pairs Shortest Paths,Symmetric positive-definite matrices and least-squares approximation,WEAK
-All-Pairs Shortest Paths,Algorithms,WEAK
-Amortized Analysis,Standard notations and common functions,WEAK
-Amortized Analysis,Structure of Fibonacci Heaps,WEAK
-Amortized Analysis,Linked-list representation of disjoint sets,WEAK
-Amortized Analysis,Quicksort,WEAK
-Amortized Analysis,Growth of Functions,WEAK
-Amortized Analysis,van Emde Boas Trees,WEAK
-Amortized Analysis,Fibonacci Heaps,WEAK
-Amortized Analysis,Lower bounds forsorting,WEAK
-Amortized Analysis,Hash functions,WEAK
-Amortized Analysis,Probabilistic Analysis and Randomized Algorithms,WEAK
-Amortized Analysis,Polynomial time,WEAK
-Activity-selection problem,Elements of Dynamic Programming,WEAK
-Activity-selection problem,Dynamic Programming,WEAK
-Approximation Algorithms,Symmetric positive-definite matrices and least-squares approximation,WEAK
-Approximation Algorithms,Dynamic order statistics,WEAK
-Approximation Algorithms,A randomized version of quicksort,WEAK
-Approximation Algorithms,Randomized algorithms,WEAK
-Approximation Algorithms,Probabilistic Analysis and Randomized Algorithms,WEAK
-A randomized version of quicksort,Counting sort,WEAK
-A randomized version of quicksort,Bucket sort,WEAK
-A randomized version of quicksort,Querying a binary search tree,WEAK
-A randomized version of quicksort,Medians and Order Statistics,WEAK
-A randomized version of quicksort,Heapsort,WEAK
-A randomized version of quicksort,Probabilistic Analysis and Randomized Algorithms,WEAK
-A randomized version of quicksort,Randomization and Linear Programming,WEAK
-A randomized version of quicksort,Asymptotic notation,WEAK
-A recursive structure,Properties of red-black trees,WEAK
-A recursive structure,Data Structures for Disjoint Sets,WEAK
-A recursive structure,Structure of Fibonacci Heaps,WEAK
-A recursive structure,Optimal Binary Search Trees,WEAK
-A recursive structure,Definitionof B-trees,WEAK
-A recursive structure,Interval trees,WEAK
-A recursive structure,Fibonacci Heaps,WEAK
-A recursive structure,Minimum Spanning Trees,WEAK
-A recursive structure,What is a binary search tree,WEAK
-Asymptotic notation,Selection in worst-case linear time,WEAK
-Asymptotic notation,Probabilistic Analysis and Randomized Algorithms,WEAK
-Augmenting Data Structures,Properties of red-black trees,WEAK
-Augmenting Data Structures,Hash Tables,WEAK
-Augmenting Data Structures,Amortized Analysis,WEAK
-Augmenting Data Structures,Data Structures for Disjoint Sets,WEAK
-Augmenting Data Structures,Representations of graphs,WEAK
-Augmenting Data Structures,Approximation Algorithms,WEAK
-Augmenting Data Structures,B-Trees,WEAK
-B-Trees,Hash Tables,WEAK
-B-Trees,Binary Search Trees,WEAK
-B-Trees,Quicksort,WEAK
-B-Trees,Optimal Binary Search Trees,WEAK
-B-Trees,Interval trees,WEAK
-B-Trees,van Emde Boas Trees,WEAK
-Binary Search Trees,Properties of red-black trees,WEAK
-Binary Search Trees,Data Structures for Disjoint Sets,WEAK
-Binary Search Trees,Breadth-first search,WEAK
-Binary Search Trees,Basic operations,WEAK
-Binary Search Trees,Counting sort,WEAK
-Binary Search Trees,Deletion,WEAK
-Binary Search Trees,Bucket sort,WEAK
-Binary Search Trees,Quicksort,WEAK
-Binary Search Trees,Optimal Binary Search Trees,WEAK
-Binary Search Trees,van Emde Boas Trees,WEAK
-Binary Search Trees,Fibonacci Heaps,WEAK
-Binary Search Trees,Minimum Spanning Trees,WEAK
-Bounding the maximum degree,Properties of red-black trees,WEAK
-Bounding the maximum degree,Amortized Analysis,WEAK
-Bounding the maximum degree,Augmenting Data Structures,WEAK
-Breadth-first search,Shortest path sand matrix multiplication,WEAK
-Breadth-first search,Minimum Spanning Trees,WEAK
-Breadth-first search,The Ford-Fulkerson,WEAK
-Breadth-first search,Single-source shortest paths in directed acyclic graphs,WEAK
-Bucket sort,The heapsort algorithm,WEAK
-Bucket sort,Stacks and queues,WEAK
-Counting sort,Heapsort,WEAK
-Counting sort,Stacks and queues,WEAK
-Data Structures for Disjoint Sets,Representations of graphs,WEAK
-Deletion,Representing rooted trees,WEAK
-Deletion,Optimal Binary Search Trees,WEAK
-Depth-first search,The vertex-cover problem,WEAK
-Depth-first search,The Floyd-Warshall algorithm,WEAK
-Depth-first search,The set-covering problem,WEAK
-Difference constraints and shortest paths,Elementary Graph Algorithms,WEAK
-Difference constraints and shortest paths,Johnson’s algorithm for sparse graphs,WEAK
+Algorithms 5,GreedyAlgorithms,WEAK
+Algorithms 5,Randomizedalgorithms,WEAK
+Algorithms 5,algorithms,WEAK
+Algorithmsasatechnology,algorithms,WEAK
+Asymptoticnotation,Basicoperations,WEAK
+Basicoperations,MatrixOperations,WEAK
+BinarySearchTrees,Optimalbinarysearchtrees,WEAK
+Description,Deletion,WEAK
+Dijkstra’salgorithm,Johnson’s algorithm,WEAK
+DynamicProgramming,LinearProgramming,WEAK
+GreedyAlgorithms,MultithreadedAlgorithms,WEAK
+GreedyAlgorithms,Thesimplexalgorithm,WEAK
+GrowthofFunctions,Hashfunctions,WEAK
+GrowthofFunctions,Rotations,WEAK
+Hashtables,Dynamictables,WEAK
+LinearProgramming,Randomization andlinearprogramming,WEAK
+Linkedlists,Linked-list,WEAK
+Matrix-chain multiplication,Multithreaded matrixmultiplication,WEAK
+Matrix-chain multiplication,Shortestpathsandmatrixmultiplication,WEAK
+MediansandOrderStatistics,Dynamicorderstatistics,WEAK
+MultithreadedAlgorithms,Thesimplexalgorithm,WEAK
+Optimalbinarysearchtrees,Preliminaryapproaches,WEAK
+Proofsofshortest-paths,All-PairsShortestPaths,WEAK
+Queryingabinarysearchtree,Optimalbinarysearchtrees,WEAK
+Quicksort,Bucketsort,WEAK
+Randomizedalgorithms,ApproximationAlgorithms,WEAK
+Randomizedalgorithms,Arandomized,WEAK
+Randomizedalgorithms,GreedyAlgorithms,WEAK
+Randomizedalgorithms,MultithreadedAlgorithms,WEAK
+Rotations,MatrixOperations,WEAK
+Rotations,Representations,WEAK
+Rotations,Rodcutting,WEAK
+Rotations,representation,WEAK
+Shortestpathsandmatrixmultiplication,Multithreaded matrixmultiplication,WEAK
+Standardnotations,Rotations,WEAK
+Theheapsort algorithm,Johnson’s algorithm,WEAK
+Theheapsort algorithm,Number-TheoreticAlgorithms,WEAK
+Theheapsort algorithm,TheFloyd-Warshall algorithm,WEAK
+Theheapsort algorithm,Thesimplexalgorithm,WEAK
+Thehiringproblem,Theset-covering problem,WEAK
+Thehiringproblem,Thetraveling-salesman problem,WEAK
+Whatisabinarysearchtree,Optimalbinarysearchtrees,WEAK
+algorithms,ApproximationAlgorithms,WEAK
+algorithms,Dijkstra’salgorithm,WEAK
+algorithms,GreedyAlgorithms,WEAK
+algorithms,Johnson’s algorithm,WEAK
+algorithms,MultithreadedAlgorithms,WEAK
+algorithms,Randomizedalgorithms,WEAK
+algorithms,Thesimplexalgorithm,WEAK
+andcommonfunctions,Hashfunctions,WEAK
+ofgraphs,forsparsegraphs,WEAK
+properties,Line-segmentproperties,WEAK
+properties,MatrixOperations,WEAK
+representation,Representations,WEAK
+rootedtrees,Red-BlackTrees,WEAK
 Difference constraints and shortest paths,Stacks and queues,WEAK
 Dijkstra’s algorithm,Depth-first search,WEAK
 Dijkstra’s algorithm,The Ford-Fulkerson,WEAK
 Dijkstra’s algorithm,Stacks and queues,WEAK
 Dijkstra’s algorithm,Fibonacci Heaps,WEAK
-Direct-address tables,Stacks and queues,WEAK
-Direct-address tables,Insertion,WEAK
-Direct-address tables,Huffman codes,WEAK
-Divide-and-Conquer,Depth-first search,WEAK
-Divide-and-Conquer,Representing rooted trees,WEAK
-Divide-and-Conquer,Performance of quicksort,WEAK
-Divide-and-Conquer,Dynamic Programming,WEAK
-Dynamic Programming,Depth-first search,WEAK
-Dynamic Programming,Modular arithmetic,WEAK
-The vertex-cover problem,Computational Geometry,WEAK
-Aggregate Analysis,Computational Geometry,WEAK
-Growth of Functions,Finding the closest pair of points,WEAK
-The set-covering problem,Finding the convex hull,WEAK
-Algorithms as a technology,Computational Geometry,WEAK
+Breadth-first search,Shortest path sand matrix multiplication,WEAK
+Breadth-first search,Minimum Spanning Trees,WEAK
+Breadth-first search,The Ford-Fulkerson,WEAK
+Breadth-first search,Single-source shortest paths in directed acyclic graphs,WEAK
