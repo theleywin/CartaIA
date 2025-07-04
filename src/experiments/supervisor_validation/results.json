@@ -1,0 +1,102 @@
+[
+    {
+        "pregunta": "Muestra un ejemplo de implementación de una pila (stack) en Python.",
+        "agente_esperado": "Ejemplo",
+        "resultado": "Ejemplo"
+    },
+    {
+        "pregunta": "¿Cómo se vería el árbol AVL después de insertar las claves 10, 20, 5, 30, 15?",
+        "agente_esperado": "Ejemplo",
+        "resultado": "Teoría"
+    },
+    {
+        "pregunta": "Ejemplifica un caso donde QuickSort tenga complejidad O(n²)",
+        "agente_esperado": "Ejemplo",
+        "resultado": "Ejemplo"
+    },
+    {
+        "pregunta": "Muestra un grafo representado como matriz de adyacencia y como lista de adyacencia.",
+        "agente_esperado": "Ejemplo",
+        "resultado": "Ejemplo"
+    },
+    {
+        "pregunta": "Implementa BFS (Breadth-First Search) en pseudocódigo.",
+        "agente_esperado": "Ejemplo",
+        "resultado": "Ejemplo"
+    },
+    {
+        "pregunta": "¿Qué es un árbol binario de búsqueda (ABB) y cuáles son sus propiedades?",
+        "agente_esperado": "Teoría",
+        "resultado": "Teoría"
+    },
+    {
+        "pregunta": "Explica el concepto de complejidad temporal Big-O y da un ejemplo.",
+        "agente_esperado": "Teoría",
+        "resultado": "Ejemplo"
+    },
+    {
+        "pregunta": "¿En qué casos se usa una tabla hash frente a un árbol binario?",
+        "agente_esperado": "Teoría",
+        "resultado": "Teoría"
+    },
+    {
+        "pregunta": "Describe el algoritmo de Dijkstra y su complejidad.",
+        "agente_esperado": "Teoría",
+        "resultado": "Teoría"
+    },
+    {
+        "pregunta": "¿Qué es la recursión de cola (tail recursion)?",
+        "agente_esperado": "Teoría",
+        "resultado": "Teoría"
+    },
+    {
+        "pregunta": "Genera un problema donde deba invertir una lista enlazada in-place (sin estructuras adicionales).",
+        "agente_esperado": "Práctica",
+        "resultado": "Teoría"
+    },
+    {
+        "pregunta": "Crea un problema para calcular la profundidad de un nodo en un árbol binario.",
+        "agente_esperado": "Práctica",
+        "resultado": "Teoría"
+    },
+    {
+        "pregunta": "Genera un ejercicio que implique detectar ciclos en un grafo dirigido usando DFS.",
+        "agente_esperado": "Práctica",
+        "resultado": "Práctica"
+    },
+    {
+        "pregunta": "Crea un problema que requiera implementar Binary Search en una lista rotada ordenada.",
+        "agente_esperado": "Práctica",
+        "resultado": "Práctica"
+    },
+    {
+        "pregunta": "Crea un ejercicio para calcular el número mínimo de operaciones (insertar, borrar, reemplazar) para convertir un string en otro.",
+        "agente_esperado": "Práctica",
+        "resultado": "Práctica"
+    },
+    {
+        "pregunta": "¿Por qué el balanceo en un árbol rojo-negro garantiza O(log n) en operaciones?",
+        "agente_esperado": "Teoría",
+        "resultado": "Teoría"
+    },
+    {
+        "pregunta": "Ejemplifica como detectar un ciclo en un grafo dirigido. Implementa en C++.",
+        "agente_esperado": "Ejemplo",
+        "resultado": "Ejemplo"
+    },
+    {
+        "pregunta": "Plantea un problema práctico que requiera usar un trie para autocompletar palabras en un buscador.",
+        "agente_esperado": "Práctica",
+        "resultado": "Práctica"
+    },
+    {
+        "pregunta": "¿Cuándo usarías Counting Sort?",
+        "agente_esperado": "Teoría",
+        "resultado": "Teoría"
+    },
+    {
+        "pregunta": "Escribe una función que revierta una lista enlazada.",
+        "agente_esperado": "Ejemplo",
+        "resultado": "Ejemplo"
+    }
+]
