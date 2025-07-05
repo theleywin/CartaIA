@@ -1,6 +1,7 @@
 import re
 from schemas.bdi import Belief, Desire, Intention, BDIState
 from utils.optimizador_ag import optimizar_plan
+from langchain_core.language_models.chat_models import BaseChatModel
 
 def extract_json_block(text: str) -> str:
     """
@@ -12,7 +13,7 @@ def extract_json_block(text: str) -> str:
     return text.strip()
 
 class BDIAgent:
-    def __init__(self, llm):
+    def __init__(self, llm: BaseChatModel):
         self.llm = llm
         self.state = BDIState(
             beliefs=Belief(
@@ -124,7 +125,6 @@ class BDIAgent:
         valores = [assessment.get(dim, 0.0) for dim in dims]
         promedio = sum(valores) / len(valores)
 
-        # print(f"[Debug] Promedio BDI: {promedio:.2f}")
         return promedio >= 0.8  # aquí decides el umbral
 
     

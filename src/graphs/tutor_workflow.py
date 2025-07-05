@@ -1,4 +1,4 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.language_models.chat_models import BaseChatModel
 from langgraph.graph import StateGraph, END
 from agents import supervisor_agent, teoria_agent, ejemplo_agent, practica_agent, retrieval_agent
 from rag.vector_store import VectorDB
@@ -6,7 +6,7 @@ from utils.bdi_evaluator import evaluar_y_actualizar_bdi
 from schemas.estado import EstadoConversacion, TipoAyuda
 from agents.bdi_agent import BDIAgent
 
-def crear_workflow_tutor(llm: ChatGoogleGenerativeAI, vector_store: VectorDB):
+def crear_workflow_tutor(llm: BaseChatModel, vector_store: VectorDB):
     # Crear agentes
     supervisor_agent_instance = supervisor_agent.crear_supervisor(llm)
     teoria_agent_instance = teoria_agent.crear_agente_teoria(llm)
