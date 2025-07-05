@@ -1,0 +1,232 @@
+
+
+
+Contents
+Preface xiii
+I Foundations
+Introduction 3
+1 TheRoleofAlgorithmsinComputing 5
+1.1 Algorithms 5
+1.2 Algorithmsasatechnology 11
+2 GettingStarted 16
+2.1 Insertion sort 16
+2.2 Analyzing algorithms 23
+2.3 Designing algorithms 29
+3 GrowthofFunctions 43
+3.1 Asymptoticnotation 43
+3.2 Standardnotations andcommonfunctions 53
+4 Divide-and-Conquer 65
+4.1 Themaximum-subarray problem 68
+4.2 Strassen’salgorithm formatrixmultiplication 75
+4.3 Thesubstitution methodforsolving recurrences 83
+4.4 Therecursion-tree methodforsolvingrecurrences 88
+4.5 Themastermethodforsolving recurrences 93
+? 4.6 Proofofthemastertheorem 97
+5 ProbabilisticAnalysisandRandomizedAlgorithms 114
+5.1 Thehiringproblem 114
+5.2 Indicator randomvariables 118
+5.3 Randomizedalgorithms 122
+? 5.4 Probabilistic analysis andfurtherusesofindicator randomvariables
+130
+
+vi Contents
+II Sorting and OrderStatistics
+Introduction 147
+6 Heapsort 151
+6.1 Heaps 151
+6.2 Maintaining theheapproperty 154
+6.3 Buildingaheap 156
+6.4 Theheapsort algorithm 159
+6.5 Priorityqueues 162
+7 Quicksort 170
+7.1 Description ofquicksort 170
+7.2 Performanceofquicksort 174
+7.3 Arandomized versionofquicksort 179
+7.4 Analysisofquicksort 180
+8 SortinginLinearTime 191
+8.1 Lowerbounds forsorting 191
+8.2 Countingsort 194
+8.3 Radixsort 197
+8.4 Bucketsort 200
+9 MediansandOrderStatistics 213
+9.1 Minimumandmaximum 214
+9.2 Selectioninexpected lineartime 215
+9.3 Selectioninworst-case lineartime 220
+III DataStructures
+Introduction 229
+10 ElementaryDataStructures 232
+10.1 Stacksandqueues 232
+10.2 Linkedlists 236
+10.3 Implementing pointersandobjects 241
+10.4 Representing rootedtrees 246
+11 HashTables 253
+11.1 Direct-address tables 254
+11.2 Hashtables 256
+11.3 Hashfunctions 262
+11.4 Openaddressing 269
+? 11.5 Perfecthashing 277
+
+Contents vii
+12 BinarySearchTrees 286
+12.1 Whatisabinarysearchtree? 286
+12.2 Queryingabinarysearchtree 289
+12.3 Insertion anddeletion 294
+? 12.4 Randomlybuiltbinarysearchtrees 299
+13 Red-BlackTrees 308
+13.1 Propertiesofred-black trees 308
+13.2 Rotations 312
+13.3 Insertion 315
+13.4 Deletion 323
+14 AugmentingDataStructures 339
+14.1 Dynamicorderstatistics 339
+14.2 Howtoaugmentadatastructure 345
+14.3 Intervaltrees 348
+IV Advanced Designand Analysis Techniques
+Introduction 357
+15 DynamicProgramming 359
+15.1 Rodcutting 360
+15.2 Matrix-chain multiplication 370
+15.3 Elementsofdynamicprogramming 378
+15.4 Longestcommonsubsequence 390
+15.5 Optimalbinarysearchtrees 397
+16 GreedyAlgorithms 414
+16.1 Anactivity-selection problem 415
+16.2 Elementsofthegreedy strategy 423
+16.3 Huffmancodes 428
+? 16.4 Matroidsandgreedymethods 437
+? 16.5 Atask-scheduling problem asamatroid 443
+17 AmortizedAnalysis 451
+17.1 Aggregateanalysis 452
+17.2 Theaccounting method 456
+17.3 Thepotential method 459
+17.4 Dynamictables 463
+
+viii Contents
+V Advanced DataStructures
+Introduction 481
+18 B-Trees 484
+18.1 DefinitionofB-trees 488
+18.2 Basicoperations onB-trees 491
+18.3 DeletingakeyfromaB-tree 499
+19 FibonacciHeaps 505
+19.1 StructureofFibonacciheaps 507
+19.2 Mergeable-heap operations 510
+19.3 Decreasingakeyanddeleting anode 518
+19.4 Boundingthemaximumdegree 523
+20 vanEmdeBoasTrees 531
+20.1 Preliminaryapproaches 532
+20.2 Arecursivestructure 536
+20.3 ThevanEmdeBoastree 545
+21 DataStructuresforDisjointSets 561
+21.1 Disjoint-set operations 561
+21.2 Linked-list representation ofdisjointsets 564
+21.3 Disjoint-set forests 568
+? 21.4 Analysisofunionbyrankwithpathcompression 573
+VI GraphAlgorithms
+Introduction 587
+22 ElementaryGraphAlgorithms 589
+22.1 Representations ofgraphs 589
+22.2 Breadth-firstsearch 594
+22.3 Depth-firstsearch 603
+22.4 Topological sort 612
+22.5 Stronglyconnected components 615
+23 MinimumSpanningTrees 624
+23.1 Growingaminimumspanning tree 625
+23.2 ThealgorithmsofKruskalandPrim 631
+
+Contents ix
+24 Single-SourceShortestPaths 643
+24.1 TheBellman-Fordalgorithm 651
+24.2 Single-source shortestpathsindirected acyclicgraphs 655
+24.3 Dijkstra’salgorithm 658
+24.4 Differenceconstraints andshortestpaths 664
+24.5 Proofsofshortest-paths properties 671
+25 All-PairsShortestPaths 684
+25.1 Shortestpathsandmatrixmultiplication 686
+25.2 TheFloyd-Warshall algorithm 693
+25.3 Johnson’s algorithm forsparsegraphs 700
+26 MaximumFlow 708
+26.1 Flownetworks 709
+26.2 TheFord-Fulkerson method 714
+26.3 Maximumbipartitematching 732
+? 26.4 Push-relabel algorithms 736
+? 26.5 Therelabel-to-front algorithm 748
+VII Selected Topics
+Introduction 769
+27 MultithreadedAlgorithms 772
+27.1 Thebasicsofdynamicmultithreading 774
+27.2 Multithreaded matrixmultiplication 792
+27.3 Multithreaded mergesort 797
+28 MatrixOperations 813
+28.1 Solvingsystemsoflinearequations 813
+28.2 Inverting matrices 827
+28.3 Symmetricpositive-definite matricesandleast-squares approximation
+832
+29 LinearProgramming 843
+29.1 Standardandslackforms 850
+29.2 Formulatingproblemsaslinearprograms 859
+29.3 Thesimplexalgorithm 864
+29.4 Duality 879
+29.5 Theinitialbasicfeasiblesolution 886
+
+x Contents
+30 PolynomialsandtheFFT 898
+30.1 Representing polynomials 900
+30.2 TheDFTandFFT 906
+30.3 EfficientFFTimplementations 915
+31 Number-TheoreticAlgorithms 926
+31.1 Elementarynumber-theoretic notions 927
+31.2 Greatestcommondivisor 933
+31.3 Modulararithmetic 939
+31.4 Solvingmodularlinearequations 946
+31.5 TheChineseremainder theorem 950
+31.6 Powersofanelement 954
+31.7 TheRSApublic-key cryptosystem 958
+? 31.8 Primalitytesting 965
+? 31.9 Integerfactorization 975
+32 StringMatching 985
+32.1 Thenaivestring-matching algorithm 988
+32.2 TheRabin-Karpalgorithm 990
+32.3 Stringmatchingwithfiniteautomata 995
+? 32.4 TheKnuth-Morris-Pratt algorithm 1002
+33 ComputationalGeometry 1014
+33.1 Line-segmentproperties 1015
+33.2 Determiningwhetheranypairofsegmentsintersects 1021
+33.3 Findingtheconvexhull 1029
+33.4 Findingtheclosestpairofpoints 1039
+34 NP-Completeness 1048
+34.1 Polynomialtime 1053
+34.2 Polynomial-time verification 1061
+34.3 NP-completeness andreducibility 1067
+34.4 NP-completeness proofs 1078
+34.5 NP-completeproblems 1086
+35 ApproximationAlgorithms 1106
+35.1 Thevertex-coverproblem 1108
+35.2 Thetraveling-salesman problem 1111
+35.3 Theset-covering problem 1117
+35.4 Randomization andlinearprogramming 1123
+35.5 Thesubset-sum problem 1128
+
+Contents xi
+VIII Appendix: MathematicalBackground
+Introduction 1143
+A Summations 1145
+A.1 Summationformulasandproperties 1145
+A.2 Boundingsummations 1149
+B Sets,Etc. 1158
+B.1 Sets 1158
+B.2 Relations 1163
+B.3 Functions 1166
+B.4 Graphs 1168
+B.5 Trees 1173
+C CountingandProbability 1183
+C.1 Counting 1183
+C.2 Probability 1189
+C.3 Discreterandomvariables 1196
+C.4 Thegeometricandbinomialdistributions 1201
+? C.5 Thetailsofthebinomialdistribution 1208
+D Matrices 1217
+D.1 Matricesandmatrixoperations 1217
+D.2 Basicmatrixproperties 1222
+Bibliography 1231
+Index 1251

@@ -1,0 +1,65 @@
+source,target,type
+Algorithms 5,GreedyAlgorithms,WEAK
+Algorithms 5,Randomizedalgorithms,WEAK
+Algorithms 5,algorithms,WEAK
+Algorithmsasatechnology,algorithms,WEAK
+Asymptoticnotation,Basicoperations,WEAK
+Basicoperations,MatrixOperations,WEAK
+BinarySearchTrees,Optimalbinarysearchtrees,WEAK
+Description,Deletion,WEAK
+Dijkstra’salgorithm,Johnson’s algorithm,WEAK
+DynamicProgramming,LinearProgramming,WEAK
+GreedyAlgorithms,MultithreadedAlgorithms,WEAK
+GreedyAlgorithms,Thesimplexalgorithm,WEAK
+GrowthofFunctions,Hashfunctions,WEAK
+GrowthofFunctions,Rotations,WEAK
+Hashtables,Dynamictables,WEAK
+LinearProgramming,Randomization andlinearprogramming,WEAK
+Linkedlists,Linked-list,WEAK
+Matrix-chain multiplication,Multithreaded matrixmultiplication,WEAK
+Matrix-chain multiplication,Shortestpathsandmatrixmultiplication,WEAK
+MediansandOrderStatistics,Dynamicorderstatistics,WEAK
+MultithreadedAlgorithms,Thesimplexalgorithm,WEAK
+Optimalbinarysearchtrees,Preliminaryapproaches,WEAK
+Proofsofshortest-paths,All-PairsShortestPaths,WEAK
+Queryingabinarysearchtree,Optimalbinarysearchtrees,WEAK
+Quicksort,Bucketsort,WEAK
+Randomizedalgorithms,ApproximationAlgorithms,WEAK
+Randomizedalgorithms,Arandomized,WEAK
+Randomizedalgorithms,GreedyAlgorithms,WEAK
+Randomizedalgorithms,MultithreadedAlgorithms,WEAK
+Rotations,MatrixOperations,WEAK
+Rotations,Representations,WEAK
+Rotations,Rodcutting,WEAK
+Rotations,representation,WEAK
+Shortestpathsandmatrixmultiplication,Multithreaded matrixmultiplication,WEAK
+Standardnotations,Rotations,WEAK
+Theheapsort algorithm,Johnson’s algorithm,WEAK
+Theheapsort algorithm,Number-TheoreticAlgorithms,WEAK
+Theheapsort algorithm,TheFloyd-Warshall algorithm,WEAK
+Theheapsort algorithm,Thesimplexalgorithm,WEAK
+Thehiringproblem,Theset-covering problem,WEAK
+Thehiringproblem,Thetraveling-salesman problem,WEAK
+Whatisabinarysearchtree,Optimalbinarysearchtrees,WEAK
+algorithms,ApproximationAlgorithms,WEAK
+algorithms,Dijkstra’salgorithm,WEAK
+algorithms,GreedyAlgorithms,WEAK
+algorithms,Johnson’s algorithm,WEAK
+algorithms,MultithreadedAlgorithms,WEAK
+algorithms,Randomizedalgorithms,WEAK
+algorithms,Thesimplexalgorithm,WEAK
+andcommonfunctions,Hashfunctions,WEAK
+ofgraphs,forsparsegraphs,WEAK
+properties,Line-segmentproperties,WEAK
+properties,MatrixOperations,WEAK
+representation,Representations,WEAK
+rootedtrees,Red-BlackTrees,WEAK
+Difference constraints and shortest paths,Stacks and queues,WEAK
+Dijkstra’s algorithm,Depth-first search,WEAK
+Dijkstra’s algorithm,The Ford-Fulkerson,WEAK
+Dijkstra’s algorithm,Stacks and queues,WEAK
+Dijkstra’s algorithm,Fibonacci Heaps,WEAK
+Breadth-first search,Shortest path sand matrix multiplication,WEAK
+Breadth-first search,Minimum Spanning Trees,WEAK
+Breadth-first search,The Ford-Fulkerson,WEAK
+Breadth-first search,Single-source shortest paths in directed acyclic graphs,WEAK
