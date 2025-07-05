@@ -13,6 +13,7 @@ class AntColony(Generic[State]):
         alpha: float = 1.0,
         beta: float = 2.0,
         rho: float = 0.1,
+        k: float = 1.0,
         iterations: int = 100
     ):
         self.problem = problem
@@ -21,6 +22,7 @@ class AntColony(Generic[State]):
         self.alpha = alpha
         self.beta = beta
         self.rho = rho
+        self.k = k
         self.iterations = iterations
         self.best_solution: List[State] = []
         self.best_cost: float = float("inf")
@@ -42,4 +44,5 @@ class AntColony(Generic[State]):
             self.pheromones.evaporate(self.rho)
             for sol, cost in zip(solutions, costs):
                 if cost > 0:
-                    self.pheromones.reinforce(sol, 1.0 / cost)
+                    self.pheromones.reinforce(sol, self.k / cost)
+        return self.best_solution, self.best_cost
