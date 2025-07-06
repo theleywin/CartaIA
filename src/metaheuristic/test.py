@@ -11,9 +11,9 @@ def run_metaheuristic_test():
     graph = build_directed_graph(nodes_file, strong_edges_file, weak_edges_file)
     problem = LearningPathProblem(
         graph=graph,
-        known_topics={"Breadth-firstsearch", "Depth-firstsearch 603"},
+        known_topics={"Breadth-first-search", "Depth-first-search"},
         weak_topics={"Heapsort"},
-        target_topic="TheFord-Fulkerson"
+        target_topic="The-Ford-Fulkerson"
     )
 
     ant_colony = AntColony(

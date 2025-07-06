@@ -1,3 +1,4 @@
+import re
 from schemas.estado import EstadoConversacion, EstadoConversacionResponse
 from langchain_core.language_models.chat_models import BaseChatModel
 from utils.document_load import load_topics
@@ -38,4 +39,11 @@ async def get_initial_state(input, llm: BaseChatModel) -> EstadoConversacion:
     )
     return estado_inicial
     
-    
+def extract_json_block(text: str) -> str:
+    """
+    Extrae el bloque JSON de una respuesta tipo ```json ... ``` o lo devuelve tal cual si ya es JSON plano.
+    """
+    match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
+    if match:
+        return match.group(1)
+    return text.strip()

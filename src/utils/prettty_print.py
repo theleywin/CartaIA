@@ -2,10 +2,7 @@ from schemas.bdi import TipoAyuda
 
 def print_output(estado_final):
     show_final_result(estado_final)
-    show_final_evaluation(estado_final)
-    save_bdi_state(estado_final)
-    
-        
+            
 def show_final_result(estado_final):
     print("\n=== RESULTADO DEL TUTOR ===")
     problema = estado_final["problema_actual"]
@@ -26,6 +23,12 @@ def show_final_result(estado_final):
     else:
         print("⚠️ Tipo de ayuda no reconocido o información incompleta.")
         print(f"Tipo de ayuda recibido: {tipo}")
+        return
+    plan = estado_final["planificacion"]
+    if plan:
+        print("\n🎯 Para entender mejor el tema te recomiendo estudiar lo siguiente:")
+        for paso in plan:
+            print(f"- {paso.strip('"').strip("'")}")
         
 def show_final_evaluation(estado_final):
     if estado_final["ultima_evaluacion"] is not None:

@@ -1,16 +1,8 @@
 import re
 from schemas.bdi import Belief, Desire, Intention, BDIState
+from utils.input import extract_json_block
 from utils.optimizador_ag import optimizar_plan
 from langchain_core.language_models.chat_models import BaseChatModel
-
-def extract_json_block(text: str) -> str:
-    """
-    Extrae el bloque JSON de una respuesta tipo ```json ... ``` o lo devuelve tal cual si ya es JSON plano.
-    """
-    match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
-    if match:
-        return match.group(1)
-    return text.strip()
 
 class BDIAgent:
     def __init__(self, llm: BaseChatModel):
