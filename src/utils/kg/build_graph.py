@@ -65,7 +65,7 @@ def visualize_directed_graph(graph: nx.DiGraph):
     plt.title("📚 Grafo dirigido de conocimiento", fontsize=12)
     plt.axis("off")
     plt.tight_layout()
-    plt.show()
+    plt.savefig("directed_graph.png", dpi=300)
 
 if __name__ == "__main__":
     nodes_file = "nodes.csv"

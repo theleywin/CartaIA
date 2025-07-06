@@ -1,122 +1,162 @@
 name,type,difficulty,estimated_time
-Algorithms,algorithm,2,1.5
-All-Pairs-Shortest-Paths,other,2,2.0
-Amortized-Analysis,other,3,2.0
-Approximation-Algorithms,algorithm,4,4.0
-A-recursive-structure,other,1,1.0
-Asymptotic-notation,other,1,1.0
-Augmenting-Data-Structures,other,1,1.0
-B-Trees,structure,4,4.5
-Basic-operations,other,1,1.0
-Binary-Search-Trees,algorithm,2,2.0
-Bounding-the-maximum-degree,other,2,1.5
-Breadth-first-search,algorithm,1,1.5
-Bucketsort,algorithm,2,1.5
-Computational-Geometry,other,4,4.0
-Countingsort,algorithm,2,1.0
-Data-Structures-for-Disjoint-Sets,other,2,1.5
-Decreasing-a-key-and-deleting-a-node,other,2,1.5
-Definition-of-B-trees,structure,2,1.5
-Depth-first-search,algorithm,2,1.5
-Determining-whether-any-pair-of-segments-intersects,other,1,1.0
-Difference-constraints-and-shortest-paths,other,2,1.5
-Dijkstra’s-algorithm,algorithm,3,2.0
-Direct-address-tables,other,2,1.5
-Divide-and-Conquer,other,3,5.0
-Duality,other,3,2.0
-Dynamic-Programming,other,4,4.0
-Dynamic-order-statistics,other,4,3.0
-Dynamic-tables,other,2,1.5
-Elementary-Graph-Algorithms,algorithm,1,1.0
-Elements-of-dynamic-programming,other,1,1.0
-Elements-of-the-greedy-strategy,other,2,1.5
-Fibonacci-Heaps,structure,3,2.0
-Finding-the-closest-pair-of-points,other,3,1.0
-Finding-the-convex-hull,other,4,3.0
-Flow-networks,other,5,4.0
-Getting-Started,other,1,1.0
-Greatest-common-divisor,other,1,1.0
-Greedy-Algorithms,algorithm,3,2.0
-Growing-a-minimum-spanning-tree,other,2,1.0
-Growth-of-Functions,other,1,1.0
-Hash-Tables,structure,3,1.5
-Hash-functions,structure,3,1.0
-Hashtables,structure,3,1.0
-Heapsort,algorithm,2,1.0
-Huffman-codes,other,3,1.0
-Indicator-random-variables,other,2,1.5
-Insertion,other,1,1.0
-Insertion-and-deletion,other,2,1.5
-Interval-trees,structure,1,1.0
-Inverting-matrices,other,2,1.5
-Line-segment-properties,other,2,1.0
-Linear-Programming,other,3,1.0
-Linked-list,other,1,1.0
-Longest-common-subsequence,other,2,1.0
-Lower-bounds-for-sorting,algorithm,2,1.5
-Matrix-chain-multiplication,other,2,1.5
-Matrix-Operations,other,1,1.0
-Maximum-Flow,other,3,1.5
-Medians-and-Order-Statistics,other,1,1.0
-Mergeable-heap-operations,structure,2,1.5
-Minimum-Spanning-Trees,structure,2,1.5
-Minimum-and-maximum,other,1,1.0
-Modular-arithmetic,other,1,1.0
-Multithreaded-matrix-multiplication,other,2,1.5
-Multithreaded-mergesort,algorithm,2,1.5
-Multithreaded-Algorithms,algorithm,3,1.0
-NP-completeness,other,4,1.0
-NP-complete-problems,other,4,4.0
-Number-Theoretic-Algorithms,algorithm,3,1.0
-Open-addressing,other,1,1.0
-Optimal-binary-search-trees,algorithm,3,1.0
-Performance-of-quicksort,algorithm,3,1.0
-Polynomial-time-verification,other,3,1.5
-Polynomial-time,other,1,1.0
-Powers-of-an-element,other,2,1.0
-Probabilistic-Analysis-and-Randomized-Algorithms,algorithm,1,1.0
-Proofs-of-shortest-paths,other,1,1.0
-Properties-of-red-black-trees,structure,2,1.5
-Querying-a-binary-search-tree,algorithm,1,1.0
-Quicksort,algorithm,1,1.0
-Radixsort,algorithm,1,1.0
-Randomization-and-linear-programming,other,3,1.5
-Randomized-algorithms,algorithm,4,1.0
-Red-Black-Trees,structure,4,1.0
-Representations,other,1,1.0
-Rodcutting,other,2,1.0
-Rotations,other,3,1.0
-Selection-in-expected-linear-time,other,2,1.5
-Selection-in-worst-case-linear-time,other,2,1.5
-Shortest-paths-and-matrix-multiplication,other,2,1.0
-Single-source-shortest-paths-in-directed-acyclic-graphs,structure,3,2.0
-Solving-systems-of-linear-equations,other,2,1.0
-Stacks-and-queues,structure,1,1.0
-Standard-notations,other,1,1.0
-String-Matching,algorithm,3,1.0
-String-matching-with-finite-automata,algorithm,3,1.0
-Strongly-connected-components,other,3,1.5
-Structure-of-Fibonacci-heaps,structure,3,1.0
-Symmetric-positive-definite-matrices-and-least-squares-approximation,other,3,2.0
-The-DFT-and-FFT,other,5,5.0
-The-Floyd-Warshall-algorithm,algorithm,2,1.5
-The-Ford-Fulkerson,other,4,3.0
-The-accounting-method,other,2,1.5
-The-heapsort-algorithm,algorithm,2,1.5
-The-hiring-problem,other,1,1.0
-The-initial-basic-feasible-solution,other,1,1.0
-The-maximum-subarray-problem,other,2,1.5
-The-naive-string-matching-algorithm,algorithm,2,1.5
-The-set-covering-problem,other,2,1.5
-The-simplex-algorithm,algorithm,1,1.0
-The-substitution-method-for-solving,other,2,1.5
-The-traveling-salesman-problem,other,2,1.5
-The-vertex-cover-problem,other,2,1.5
-Topological,other,1,1.0
-binary-search-tree,algorithm,1,1.0
-recurrences,other,1,1.0
-representation,other,1,1.0
-rooted-trees,structure,1,1.0
-sorting,algorithm,1,1.0
-
-tree,structure,1,2.5
+Finding the largest zero submatrix,algorithm,4.0,4.0
+Calculating the determinant of a matrix by Gauss,algorithm,4.0,3.0
+Longest increasing subsequence,algorithm,4.0,6.0
+Range Minimum Query,algorithm,4.0,6.0
+Finding common tangents to two circles,algorithm,4.0,6.0
+Convex hull trick and Li Chao tree,algorithm,4.0,6.0
+Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,algorithm,4.0,6.0
+Finding Power of Factorial Divisor,algorithm,3.0,2.0
+Submask Enumeration,algorithm,4.0,6.0
+Minimum stack / Minimum queue,algorithm,4.0,6.0
+Integer factorization,algorithm,4.0,6.0
+Kirchhoff's theorem. Finding the number of spanning trees,theory,4.0,6.0
+Euclidean algorithm for computing the greatest common divisor,algorithm,3.0,2.0
+Stars and bars,theory,3.0,2.0
+Sqrt Tree,algorithm,4.5,6.0
+Manhattan Distance,algorithm,4.0,6.0
+Circle-Circle Intersection,problem,3.0,2.0
+Ternary Search,algorithm,3.0,2.0
+The Stern-Brocot tree and Farey sequences,theory,4.0,6.0
+Suffix Tree. Ukkonen's Algorithm,algorithm,4.0,8.0
+Number of paths of fixed length / Shortest paths of fixed length,algorithm,4.0,4.0
+Newton's method for finding roots,algorithm,3.0,4.0
+Point location in $O(log n)$,algorithm,4.5,6.0
+Discrete Root,algorithm,4.0,6.0
+Randomized Heap,algorithm,3.0,4.0
+Bellman-Ford Algorithm,algorithm,4.0,6.0
+Edge connectivity / Vertex connectivity,theory,4.0,6.0
+Article Preview,other,2.0,1.0
+Hungarian algorithm for solving the assignment problem,algorithm,4.0,6.0
+Segment Tree,structure,4.0,6.0
+Fibonacci Numbers,theory,4.0,6.0
+Divide and Conquer DP,algorithm,4.0,6.0
+Lowest Common Ancestor - Farach-Colton and Bender Algorithm,algorithm,4.5,6.0
+Maximum flow - Dinic's algorithm,algorithm,4.0,6.0
+Finding area of simple polygon in $O(N)$,algorithm,3.0,2.0
+Floyd-Warshall Algorithm,algorithm,4.0,6.0
+Balanced Ternary,theory,3.0,2.0
+Strongly connected components and the condensation graph,algorithm,4.0,6.0
+Linear Diophantine Equation,theory,4.0,6.0
+Binary search,algorithm,3.0,4.0
+Finding the Eulerian path in $O(M)$,algorithm,4.0,4.0
+Games on arbitrary graphs,algorithm,4.0,6.0
+Sprague-Grundy theorem. Nim,theory,4.0,6.0
+Minimum spanning tree - Prim's algorithm,algorithm,4.0,6.0
+Knuth's Optimization,algorithm,4.0,6.0
+Vertical decomposition,algorithm,4.0,6.0
+Second Best Minimum Spanning Tree,algorithm,4.5,6.0
+Finding articulation points in a graph in $O(N+M)$,algorithm,4.0,4.0
+Finding bridges in a graph in $O(N+M)$,algorithm,4.0,4.0
+Finding Bridges Online,algorithm,4.5,6.0
+Convex Hull construction,algorithm,4.0,6.0
+Oriented area of a triangle,theory,3.0,2.0
+"Dynamic Programming on Broken Profile. Problem ""Parquet""",algorithm,4.0,6.0
+Placing Bishops on a Chessboard,algorithm,4.0,4.0
+Euler's totient function,theory,4.0,6.0
+Lowest Common Ancestor - Tarjan's off-line algorithm,algorithm,4.0,4.0
+Finding the nearest pair of points,algorithm,4.0,6.0
+Aho-Corasick algorithm,algorithm,4.0,6.0
+Deleting from a data structure in $O(T(n)\log n)$,algorithm,4.0,6.0
+Maximum flow - Ford-Fulkerson and Edmonds-Karp,algorithm,4.0,6.0
+Simulated Annealing,algorithm,4.0,6.0
+Suffix Automaton,theory,4.5,12.0
+Check whether a graph is bipartite,algorithm,3.0,4.0
+MEX (minimal excluded) of a sequence,algorithm,4.0,6.0
+Rabin-Karp Algorithm for string matching,algorithm,3.0,4.0
+Scheduling jobs on two machines,algorithm,4.0,4.0
+Introduction to Dynamic Programming,algorithm,3.0,4.0
+Intersection Point of Lines,algorithm,3.0,2.0
+Catalan Numbers,theory,4.0,6.0
+Prefix function. Knuth–Morris–Pratt algorithm,algorithm,4.0,6.0
+Floyd's Linked List Cycle Finding Algorithm,algorithm,4.0,2.0
+Number of divisors / sum of divisors,theory,3.5,4.0
+Prüfer code,theory,4.0,6.0
+Expression parsing,algorithm,4.0,6.0
+Solving assignment problem using min-cost-flow,algorithm,4.0,4.0
+15 Puzzle Game: Existence Of The Solution,problem,3.0,4.0
+Finding repetitions,algorithm,4.0,6.0
+Search for a pair of intersecting segments,algorithm,4.0,6.0
+Garner's algorithm,algorithm,4.0,6.0
+0-1 BFS,algorithm,4.0,6.0
+Modular Multiplicative Inverse,algorithm,4.0,6.0
+Fenwick Tree,algorithm,4.0,6.0
+Checking a graph for acyclicity and finding a cycle in $O(M)$,algorithm,3.0,4.0
+Lyndon factorization,algorithm,4.0,6.0
+Heavy-light decomposition,algorithm,4.0,6.0
+Balanced bracket sequences,theory,4.0,6.0
+Primality tests,algorithm,4.0,6.0
+Primitive Root,theory,4.0,6.0
+Knapsack Problem,algorithm,4.0,6.0
+Minkowski sum of convex polygons,algorithm,4.0,6.0
+Minimum-cost flow - Successive shortest path algorithm,algorithm,4.0,6.0
+Depth First Search,algorithm,4.0,6.0
+Check if two segments intersect,algorithm,3.0,2.0
+Suffix Array,algorithm,4.0,6.0
+Fast Fourier transform,algorithm,4.0,6.0
+Manacher's Algorithm - Finding all sub-palindromes in $O(N)$,algorithm,4.0,6.0
+Linear Sieve,algorithm,4.0,4.0
+Lowest Common Ancestor - Binary Lifting,algorithm,4.0,4.0
+Calculating the determinant using Kraut method in $O(N^3)$,algorithm,4.0,6.0
+Minimum spanning tree - Kruskal's algorithm,algorithm,4.0,6.0
+Dijkstra Algorithm,algorithm,4.0,4.0
+Search for connected components in a graph,algorithm,3.0,4.0
+Sqrt Decomposition,algorithm,4.0,6.0
+Josephus Problem,algorithm,4.0,6.0
+Maximum flow - Push-relabel method improved,algorithm,4.0,4.0
+Extended Euclidean Algorithm,algorithm,4.0,3.0
+Chinese Remainder Theorem,theory,4.0,6.0
+Linear Congruence Equation,theory,4.0,4.0
+Treap (Cartesian tree),algorithm,4.0,8.0
+$K$th order statistic in $O(N)$,algorithm,4.0,2.0
+Dijkstra on sparse graphs,algorithm,4.0,4.0
+Continued fractions,theory,4.0,12.0
+The Inclusion-Exclusion Principle,theory,3.5,6.0
+Gauss method for solving system of linear equations,algorithm,4.0,6.0
+Circle-Line Intersection,algorithm,4.0,3.0
+Finding the rank of a matrix,algorithm,3.0,4.0
+Topological Sorting,algorithm,3.0,4.0
+D´Esopo-Pape algorithm,algorithm,4.0,6.0
+Binary Exponentiation by Factoring,algorithm,4.5,6.0
+Maximum flow - MPM algorithm,algorithm,4.0,6.0
+Basic Geometry,theory,4.0,6.0
+2-SAT,algorithm,4.0,6.0
+Solve RMQ (Range Minimum Query) by finding LCA (Lowest Common Ancestor),algorithm,4.0,4.0
+Finding intersection of two segments,algorithm,4.0,4.0
+Arbitrary-Precision Arithmetic,theory,4.0,6.0
+Minimum spanning tree - Kruskal with Disjoint Set Union,algorithm,3.0,4.0
+String Hashing,algorithm,4.0,6.0
+Paint the edges of the tree,algorithm,4.0,6.0
+Maximum flow - Push-relabel algorithm,algorithm,4.0,6.0
+Check if point belongs to the convex polygon in $O(\log N)$,algorithm,4.0,4.0
+Burnside's lemma / Pólya enumeration theorem,theory,4.0,6.0
+Sparse Table,structure,4.0,6.0
+Optimal schedule of jobs given their deadlines and durations,algorithm,4.0,4.0
+Pick's Theorem,theory,3.0,2.0
+Strong Orientation,algorithm,4.0,6.0
+Scheduling jobs on one machine,algorithm,4.0,6.0
+Delaunay triangulation and Voronoi diagram,theory,4.5,12.0
+Finding faces of a planar graph,algorithm,4.0,6.0
+Gray code,algorithm,3.0,4.0
+Binomial Coefficients,theory,4.0,6.0
+Factorial modulo $p$,algorithm,4.0,4.0
+Lattice points inside non-lattice polygon,algorithm,4.5,6.0
+Half-plane intersection,algorithm,4.0,6.0
+Breadth-first search,algorithm,3.0,4.0
+Integration by Simpson's formula,theory,4.0,6.0
+Discrete Logarithm,algorithm,4.0,4.0
+Length of the union of segments,algorithm,3.0,2.0
+Search the subarray with the maximum/minimum sum,algorithm,4.0,6.0
+Bit manipulation,theory,3.0,4.0
+Finding the equation of a line for a segment,theory,3.0,2.0
+Binary Exponentiation,algorithm,3.0,4.0
+Counting labeled graphs,theory,4.0,6.0
+Montgomery Multiplication,algorithm,4.0,6.0
+Generating all $K$-combinations,algorithm,4.0,6.0
+Kuhn's Algorithm for Maximum Bipartite Matching,algorithm,4.0,6.0
+Sieve of Eratosthenes,algorithm,4.0,6.0
+Flows with demands,algorithm,4.0,6.0
+Finding a negative cycle in the graph,algorithm,4.0,6.0
+Disjoint Set Union,structure,4.0,6.0
+Z-function and its calculation,algorithm,4.0,6.0
+Operations on polynomials and series,theory,4.0,12.0
