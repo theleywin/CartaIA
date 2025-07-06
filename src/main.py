@@ -25,11 +25,8 @@ async def run(tutor, llm):
     if not await es_tema_valido(llm, tema_usuario):
         print(f"\n⚠️ El tema \"{tema_usuario}\" no pertenece al dominio de mis conocimientos. Yo solo fui entrenado para ayudarte en temas relacionados con estructuras de datos y algoritmos, lo siento")
     else:
-        inicio = time.time()
         estado_final = await tutor.ainvoke(estado_inicial)
         print_output(estado_final)
-        fin = time.time()
-        print(f"\nTiempo de ejecución: {fin - inicio:.2f} segundos\n")
     return True
 
 async def main():
