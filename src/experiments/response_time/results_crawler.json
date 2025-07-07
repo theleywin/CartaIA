@@ -1,0 +1,183 @@
+
+[
+    {
+        "question":"¿Qué es una lista enlazada y cuáles son sus operaciones básicas?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 48.77
+    },
+    {
+        "question":"Explica cómo funciona el algoritmo de ordenamiento Bubble Sort",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 50.44
+    },
+    {
+        "question":"¿Cuál es la diferencia entre un árbol binario y un árbol binario de búsqueda?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 60.22
+    },
+    {
+        "question":"¿Qué es la recursión y cuándo debería usarse?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 45.55
+    },
+    {
+        "question":"Define qué es una cola (queue) y menciona sus operaciones principales.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 47.33
+    },
+    {
+        "question":"Compara el rendimiento de Quicksort vs Mergesort en conjuntos de datos grandes con acceso lento a memoria.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 46.57
+    },
+    {
+        "question":"¿Qué es la recursión y cuándo debería usarse?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 48.88
+    },
+    {
+        "question":"Define qué es una cola (queue) y menciona sus operaciones principales.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 59.11
+    },
+    {
+        "question":"Compara el rendimiento de Quicksort vs Mergesort en conjuntos de datos grandes con acceso lento a memoria.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 52.32
+    },
+    {
+        "question":"Qué son los grafos cúanticos y cómo se diferencian de los grafos clásicos?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 54.91
+    },
+    {
+        "question":"Explica el algoritmo A (A-star) y cómo optimizarlo para pathfinding en videojuegos open-world.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 56.16
+    },
+    {
+        "question":"Implementa BFS (Breadth-First Search) en pseudocódigo.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 57.78
+    },
+    {
+        "question":"¿Qué es Heap Sort y cómo utiliza un heap?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 58.67
+    },
+    {
+        "question":"Ejercicio Práctico de el algoritmo de Counting Sort y su limitación.",
+        "agent": "Práctica",
+        "crawler": true,
+        "execution_time": 62.12
+    },
+    {
+        "question":"Explica Bellman-Ford y compara con Dijkstra.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 57.56
+    },
+    {
+        "question":"¿Qué es Kruskal y cómo detecta ciclos?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 60.15
+    },
+    {
+        "question":"Explica Prim y compara con Kruskal.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 63.22
+    },
+    {
+        "question":"Da un ejemplo de programción dinámica (Fibonacci).",
+        "agent": "Ejemplo",
+        "crawler": true,
+        "execution_time": 55.37
+    },
+    {
+        "question":"Define divide y vencerás y menciona un algoritmo que lo use.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 58.90
+    },
+    {
+        "question":"¿Qué es una estructura FIFO? Da un ejemplo.",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 50.56
+    },
+    {
+        "question":"¿ Para encontrar el camino más corto en grafos con pesos negativos que se usa ?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 57.34
+    },
+    {
+        "question":"La altura de un árbol AVL con n nodos está acotada por que complejidad",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 49.22
+    },
+    {
+        "question":"¿Qué es un árbol AVL?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 55.23
+    },
+    {
+        "question":"Cuál algoritmo de ordenamiento tiene complejidad O(n²) en el peor caso?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 52.67
+    },
+    {
+        "question":"¿Qué es un árbol rojo-negro?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 52.27
+    },
+    {
+        "question":"¿Qué estructura es óptima para implementar una cola de prioridad?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 55.56
+    },
+    {
+        "question":"¿ Cual es la complejidad de BFS en un grafo con V vértices y E aristas ?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 60.53
+    },
+    {
+        "question":"¿ En un Heap binario, el máximo se extrae con que complejidad ?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 49.32
+    },
+    {
+        "question":"¿ Que se usa para detectar un ciclo en un grafo dirigido ?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 58.32
+    },
+    {
+        "question":"¿Qué estructura de datos usa el algoritmo DFS?",
+        "agent": "Teoría",
+        "crawler": true,
+        "execution_time": 52.11
+    }
+]

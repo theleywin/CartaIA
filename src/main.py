@@ -39,8 +39,10 @@ async def main():
     tutor_workflow = crear_workflow_tutor(llm, vector_store)
     
     is_running = True
-    while(is_running):
+    while(is_running): 
         is_running = await run(tutor_workflow, llm)
-        
+       
+
+
 if __name__ == "__main__":
     asyncio.run(main())
