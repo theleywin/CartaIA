@@ -1,175 +1,126 @@
-import csv
-import os
 import re
-from langchain_google_genai import ChatGoogleGenerativeAI
-from matplotlib import pyplot as plt
-from utils.embedding_loader import llm_loader
-from utils.kg.schemas import TopicMetadata
-import networkx as nx
-from typing import Dict, Any
+import spacy
+import csv
+from collections import defaultdict
+from itertools import combinations
+from difflib import SequenceMatcher
 
-MD_FOLDER = "data/algoritmos/md"
+nlp = spacy.load("en_core_sci_md")
+INDEX_FILE = "src/utils/kg/index.txt"
 
-def extract_title_and_content(filepath: str):
-    title = None
-    content_lines = []
+def extract_entities(text):
+    doc = nlp(text)
+    return list({ent.text.strip() for ent in doc.ents if ent.text.strip()})
 
-    with open(filepath, "r", encoding="utf-8") as f:
+def is_chapter_line(line):
+    return re.match(r"^\d+\s", line.strip()) is not None
+
+def is_subsection_line(line):
+    return re.match(r"^\d+(\.\d+)+\s", line.strip()) is not None
+
+def parse_index(file_path):
+    chapter = None
+    chapter_entities = defaultdict(list)  # usamos lista para preservar orden
+    line_entities = []
+
+    with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
-            content_lines.append(line)
-            if title is None:
-                match = re.match(r"#\s+(.+)", line)
-                if match:
-                    title = match.group(1).strip()
+            line = line.strip()
+            if not line:
+                continue
 
-    return title, "".join(content_lines)
+            if is_chapter_line(line):
+                chapter = line
+                ents = extract_entities(line)
+                chapter_entities[chapter].extend(ents)
+                line_entities.append((line, ents))
 
-def load_all_md_documents(md_folder: str = MD_FOLDER):
-    title_by_file = {}
-    content_by_file = {}
+            elif is_subsection_line(line):
+                ents = extract_entities(line)
+                if chapter:
+                    chapter_entities[chapter].extend(ents)
+                line_entities.append((line, ents))
 
-    for filename in os.listdir(md_folder):
-        if filename.endswith(".md"):
-            path = os.path.join(md_folder, filename)
-            title, content = extract_title_and_content(path)
+    return chapter_entities, line_entities
 
-            if not title:
-                print(f"⚠️  No se encontró título en: {filename}")
-                title = filename.replace(".md", "")
+def string_similarity(a, b):
+    """Permite detectar similitud parcial entre cadenas"""
+    return SequenceMatcher(None, a.lower(), b.lower()).ratio()
 
-            title_by_file[filename] = title
-            content_by_file[filename] = content
+def build_graph(chapter_entities, line_entities):
+    nodes = set()
+    strong_edges = set()
+    weak_edges = set()
 
-    return title_by_file, content_by_file
+    for ents in chapter_entities.values():
+        nodes.update(ents)
+    for _, ents in line_entities:
+        nodes.update(ents)
 
-def infer_metadata_for_topic(llm: ChatGoogleGenerativeAI, content: str) -> TopicMetadata:
-    chain = llm.with_structured_output(TopicMetadata)
+    # Relaciones fuertes dirigidas (por orden de aparición en el capítulo)
+    for ents in chapter_entities.values():
+        for i in range(len(ents) - 1):
+            src = ents[i]
+            dst = ents[i + 1]
+            if src != dst:
+                strong_edges.add((src, dst))  # dirigido: src → dst
 
-    prompt = f"""
-    Eres un experto en estructuras de datos y algoritmos. Lee el siguiente artículo técnico y determina:
+    # Relaciones débiles más permisivas entre capítulos
+    chapters = list(chapter_entities.items())
+    for (ch1, ents1), (ch2, ents2) in combinations(chapters, 2):
+        for e1 in ents1:
+            for e2 in ents2:
+                if string_similarity(e1, e2) > 0.6:
+                    edge = (e1, e2)
+                    reverse_edge = (e2, e1)
+                    if edge not in strong_edges and reverse_edge not in strong_edges:
+                        weak_edges.add(edge)
 
-    - El tipo de contenido: uno de ALGORITHM, STRUCT, THEORY, PROBLEM, OTHER.
-    - La dificultad del contenido del 1.0 (muy fácil) al 5.0 (muy difícil).
-    - El tiempo estimado en horas para que un estudiante de nivel intermedio entienda este contenido.
+    return nodes, strong_edges, weak_edges
 
-    Artículo:
-    \"\"\"
-    {content}
-    \"\"\"
-    """
+def classify_node_type(name):
+    name = name.lower()
+    if any(keyword in name for keyword in ["sort", "algorithm", "search", "matching"]):
+        return "algorithm"
+    elif any(keyword in name for keyword in ["tree", "heap", "queue", "stack", "hash", "graph"]):
+        return "structure"
+    else:
+        return "other"
 
-    try:
-        result = chain.invoke(prompt)
-        result = result.model_dump(mode="json", exclude_none=True)
-        return result
-    except Exception as e:
-        print(f"❌ Error en inferencia del LLM: {e}")
-        return None
-
-def build_knowledge_graph(
-    title_by_file: Dict[str, str],
-    content_by_file: Dict[str, str],
-    attrs_by_file: Dict[str, Dict[str, Any]]
-) -> nx.DiGraph:
-    graph = nx.DiGraph()
-
-    for filename, title in title_by_file.items():
-        attrs = attrs_by_file.get(filename, {})
-        graph.add_node(
-            title,
-            type=attrs.get("type", "OTHER"),
-            difficulty=attrs.get("difficulty", 1.0),
-            estimated_time=attrs.get("estimated_time", 1.0)
-        )
-
-    for source_file, content in content_by_file.items():
-        source_title = title_by_file[source_file]
-
-        linked_files = re.findall(r"\]\((.+?\.md)\)", content)
-
-        for raw_link in linked_files:
-            linked_filename = os.path.basename(raw_link)
-
-            if linked_filename in title_by_file:
-                target_title = title_by_file[linked_filename]
-                graph.add_edge(target_title, source_title, type="STRONG")
-    return graph
-
-def save_graph_to_csv(graph: nx.DiGraph, nodes_filepath: str, edges_filepath: str):
-    # Guardar nodos
-    with open(nodes_filepath, "w", newline="", encoding="utf-8") as f_nodes:
-        fieldnames = ["name", "type", "difficulty", "estimated_time"]
-        writer = csv.DictWriter(f_nodes, fieldnames=fieldnames)
+def save_nodes_with_attributes(nodes):
+    with open("nodes.csv", "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["name", "type", "difficulty", "estimated_time"])
         writer.writeheader()
-        for node, data in graph.nodes(data=True):
+        for node in sorted(nodes):
+            node_type = classify_node_type(node)
+            difficulty = min(10, max(1, len(node.split())))
+            estimated_time = round(0.5 + difficulty * 0.5, 1)
             writer.writerow({
                 "name": node,
-                "type": data.get("type", "OTHER"),
-                "difficulty": data.get("difficulty", 1.0),
-                "estimated_time": data.get("estimated_time", 1.0)
+                "type": node_type,
+                "difficulty": difficulty,
+                "estimated_time": estimated_time
             })
 
-    # Guardar aristas fuertes
-    with open(edges_filepath, "w", newline="", encoding="utf-8") as f_edges:
-        fieldnames = ["source", "target", "type"]
-        writer = csv.DictWriter(f_edges, fieldnames=fieldnames)
-        writer.writeheader()
-        for u, v, data in graph.edges(data=True):
-            if data.get("type") == "STRONG":
-                writer.writerow({
-                    "source": u,
-                    "target": v,
-                    "type": "STRONG"
-                })
+def save_edges(edges, filename, relation_type):
+    with open(filename, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["source", "target", "type"])
+        for s, t in sorted(edges):
+            writer.writerow([s, t, relation_type])
 
-def visualize_directed_graph(graph: nx.DiGraph):
-    plt.figure(figsize=(14, 10))
+def main():
+    chapter_entities, line_entities = parse_index(INDEX_FILE)
+    nodes, strong_edges, weak_edges = build_graph(chapter_entities, line_entities)
 
-    pos = nx.spring_layout(graph, seed=10, k=0.15, iterations=50)
+    save_nodes_with_attributes(nodes)
+    save_edges(strong_edges, "strong_edges.csv", "STRONG")
+    save_edges(weak_edges, "weak_edges.csv", "WEAK")
 
-    # Dibuja nodos
-    nx.draw_networkx_nodes(graph, pos, node_color='lightblue', node_size=100)
+    print(f"✅ Nodos: {len(nodes)}")
+    print(f"✅ Relaciones fuertes: {len(strong_edges)}")
+    print(f"✅ Relaciones débiles: {len(weak_edges)}")
+    print("📦 Archivos generados: nodes.csv, strong_edges.csv, weak_edges.csv")
 
-   
-    nx.draw_networkx_labels(graph, pos, font_size=6)
-
-    # Aristas fuertes (rojo) y débiles (azul punteado)
-    strong_edges = [(u, v) for u, v, d in graph.edges(data=True) if d.get("type") == "STRONG"]
-    weak_edges = [(u, v) for u, v, d in graph.edges(data=True) if d.get("type") == "WEAK"]
-
-    nx.draw_networkx_edges(graph, pos, edgelist=strong_edges, edge_color="red", arrows=True, arrowsize=10, width=1)
-    nx.draw_networkx_edges(graph, pos, edgelist=weak_edges, edge_color="blue", style="dashed", arrows=True, arrowsize=10, width=1)
-
-    plt.title("📚 Grafo dirigido de conocimiento", fontsize=12)
-    plt.axis("off")
-    plt.tight_layout()
-    plt.savefig("knowledge_graph.png", dpi=300)
-
-def create_knowledge_graph():
-    MD_FOLDER = "data/algoritmos/md"
-    NODES_CSV = "nodes.csv"
-    EDGES_CSV = "strong_edges.csv"
-
-    print("Cargando archivos markdown...")
-    title_by_file, content_by_file = load_all_md_documents(MD_FOLDER)
-
-    print("Cargando LLM...")
-    llm = llm_loader()
-    if llm is None:
-        print("No se pudo cargar LLM, saliendo.")
-        return
-
-    print("Inferiendo metadatos para cada documento...")
-    attrs_by_file = {}
-    for filename, content in content_by_file.items():
-        print(f"Procesando {filename}...")
-        attrs_by_file[filename] = infer_metadata_for_topic(llm, content)
-        
-
-    print("Construyendo grafo de conocimiento...")
-    graph = build_knowledge_graph(title_by_file, content_by_file, attrs_by_file)
-
-    print("Guardando grafo en CSV...")
-    save_graph_to_csv(graph, NODES_CSV, EDGES_CSV)
-
-    print("¡Proceso completado!")
+if __name__ == "__main__":
+    main()
