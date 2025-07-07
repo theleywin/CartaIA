@@ -19,6 +19,9 @@ def crear_agente_planificacion(llm: BaseChatModel):
         known_topics = {topic for topic in estado.estado_estudiante.temas_vistos if graph.has_node(topic)}
         weak_topics = {topic for topic in estado.estado_estudiante.errores_comunes if graph.has_node(topic)}
 
+        if len(known_topics) == 0:
+            return estado
+        
         problem = LearningPathProblem(
             graph=graph,
             known_topics=known_topics,

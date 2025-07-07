@@ -11,8 +11,8 @@ async def es_tema_valido(llm: BaseChatModel, tema: str) -> bool:
     prompt = f"""
     Dado el siguiente tema: "{tema}"
 
-    Responde únicamente con "Sí" si el tema pertenece al dominio de estructuras de datos y algoritmos (como listas, árboles, grafos, complejidad, etc.), 
-    o con "No" si no pertenece. No des ninguna explicación adicional.
+    Responde únicamente con "Sí" si el tema pertenece al dominio de estructuras de datos y algoritmos (como listas, árboles, grafos, complejidad, etc.),
+    y temas relacionados (como teoria de numeros o algebra) o con "No" si no pertenece. No des ninguna explicación adicional.
     """
     respuesta = await llm.ainvoke(prompt)
     return respuesta.content.strip().lower().startswith("sí")

@@ -1,144 +1,392 @@
 source,target,type
-All-PairsShortestPaths,Shortest-paths-and-matrix-multiplication,STRONG
-AmortizedAnalysis,Aggregate-analysis,STRONG
-Asymptotic-notation,and-common-functions,STRONG
-Augmenting-Data-Structures,Dynamic-order-statistics,STRONG
-Definition-of-B-trees,B-Trees,STRONG
-BinarySearchTrees,What-is-a-binary-search-tree,STRONG
-Breadth-first-search,Depth-first-search,STRONG
-Countingsort,Radixsort,STRONG
-Data-Structures-for-Disjoint-Sets,representation,STRONG
-Decreasing-a-key-and-deleting-a-node,Bounding-the-maximum-degree 523,STRONG
-Definition-of-B-trees,Basic-operations,STRONG
-Depth-first-search,Topological,STRONG
-Determining-whether-any-pair-of-segments-intersects,Finding-the-convex-hull,STRONG
-Difference-constraints-and-shortest-paths,Proofs-of-shortest-paths,STRONG
-Dijkstra’s-algorithm,Difference-constraints-and-shortest-paths,STRONG
-Direct-address-tables,Hashtables,STRONG
-Divide-and-Conquer,The-maximum-subarray-problem,STRONG
-Dynamic-Programming,Rodcutting,STRONG
-Dynamic-order-statistics,Interval-trees,STRONG
-Elementary-Graph-Algorithms,Representations,STRONG
-Elementary-number-theoretic-notions,Greatest-common-divisor,STRONG
-Elements-of-dynamic-programming,Longest-common-subsequence,STRONG
-Elements-of-the-greedy-strategy,Huffman-codes,STRONG
-Fibonacci-Heaps,Structure-of-Fibonacci-heaps,STRONG
-Finding-the-convex-hull,Finding-the-closest-pair-of-points,STRONG
-Flownetworks,The-Ford-Fulkerson,STRONG
-GettingStarted,Insertion,STRONG
-Greatestcommondivisor,Modulararithmetic,STRONG
-Greedy-Algorithms,An-activity-selection-problem,STRONG
-Growth-of-Functions,Asymptotic-notation,STRONG
-Hash-Tables,Direct-address-tables,STRONG
-Hash-functions,Open-addressing,STRONG
-Hashtables,Hash-functions,STRONG
-Heapsort,The-heapsort-algorithm,STRONG
-Indicator-random-variables,Randomized-algorithms,STRONG
-sorting,Lower-bounds-for-sorting,STRONG
-sorting,Quicksort,STRONG
-sorting,Heapsort,STRONG
-sorting,Mergesort,STRONG
-sorting,Countingsort,STRONG
-sorting,Radixsort,STRONG
-sorting,Bucketsort,STRONG
-Insertion,Deletion,STRONG
-Inverting-matrices,Symmetric-positive-definite-matrices-and-least-squares-approximation,STRONG
-Line-segment-properties,Determining-whether-any-pair-of-segments-intersects,STRONG
-Linear-Programming,The-simplex-algorithm,STRONG
-Linked-lists,Rooted-trees,STRONG
-Optimal-binary-search-trees,Longest-common-subsequence,STRONG
-Lower-bounds-for-sorting,Counting-sort,STRONG
-Matrix-chain-multiplication,Elements-of-dynamic-programming,STRONG
-Matrix-Operations,Solving-systems-of-linear-equations,STRONG
-Flow-networks,Maximum-Flow,STRONG
-Mergeable-heap-operations,Decreasing-a-key-and-deleting-a-node,STRONG
-tree,Minimum-Spanning-Trees,STRONG
-Minimum-and-maximum,Selection-in-expected-linear-time,STRONG
-Modular-arithmetic,Powers-of-an-element,STRONG
-Multithreaded-matrix-multiplication,Multithreaded-mergesort,STRONG
-Multithreaded-Algorithms,Multithreaded-matrix-multiplication,STRONG
-NP-completeness,NP-complete-problems,STRONG
-Elementary-number-theoretic-notions,Number-Theoretic-Algorithms,STRONG
-Polynomial-time-verification,NP-completeness,STRONG
-Polynomial-time,Polynomial-time-verification,STRONG
-Basic-operations,Linked-list,STRONG
-Insertion,Linked-list,STRONG
-Insertion-and-deletion,Linked-list,STRONG
-representation,Linked-list,STRONG
-Representations,Linked-list,STRONG
-Stacks-and-queues,Linked-list,STRONG
-Powers-of-an-element,Cryptosystem,STRONG
-Rotations,Properties-of-red-black-trees,STRONG
-Querying-a-binary-search-tree,Insertion-and-deletion,STRONG
-Radixsort,Bucketsort,STRONG
-Properties-of-red-black-trees,Red-Black-Trees,STRONG
-Insertion,Rotations,STRONG
-Selection-in-expected-linear-time,Selection-in-worst-case-linear-time,STRONG
-Shortest-paths-and-matrix-multiplication,The-Floyd-Warshall-algorithm,STRONG
-Single-source-shortest-paths-in-directed-acyclic-graphs,Dijkstra’s-algorithm,STRONG
-Inverting-matrices,Solving-systems-of-linear-equations,STRONG
-Stacks-and-queues,Linked-lists,STRONG
-The-naive-string-matching-algorithm,String-Matching,STRONG
-Structure-of-Fibonacci-heaps,Mergeable-heap-operations,STRONG
-The-set-covering-problem,Randomization-and-linear-programming,STRONG
-The-simplex-algorithm,Duality,STRONG
-recurrences,The-substitution-method-for-solving,STRONG
-Strongly-connected-components,Topological,STRONG
-
-
-Getting-Started,Algorithms,STRONG
-Growth-of-Functions,Asymptotic-notation,STRONG
-Asymptotic-notation,Divide-and-Conquer,STRONG
-Divide-and-Conquer,Quicksort,STRONG
-Divide-and-Conquer,Mergesort,STRONG
-Quicksort,Performance-of-quicksort,STRONG
-Mergesort,Multithreaded-mergesort,STRONG
-Stacks-and-queues,Breadth-first-search,STRONG
-Breadth-first-search,Depth-first-search 603,STRONG
-Depth-first-search 603,Topological,STRONG
-Hash-Tables 253,Open-addressing,STRONG
-Direct-address-tables,Hash-Tables 253,STRONG
-Hash-functions,Hash-Tables 253,STRONG
-Heapsort,Fibonacci-Heaps,STRONG
-Fibonacci-Heaps,Structure-of-Fibonacci-heaps,STRONG
-Binary-Search-Trees,Optimal-binary-search-trees,STRONG
-Binary-Search-Trees,Red-Black-Trees,STRONG
-Red-Black-Trees,Properties-of-red-black-trees,STRONG
-Binary-Search-Trees,Querying-a-binary-search-tree,STRONG
-Matrix-Operations,Matrix-chain-multiplication,STRONG
-Matrix-Operations,Solving-systems-of-linear-equations,STRONG
-Solving-systems-of-linear-equations,Symmetric-positive-definite-matrices-and-least-squares-approximation,STRONG
-Greatest-common-divisor,Modular-arithmetic,STRONG
-Modular-arithmetic,Number-Theoretic-Algorithms,STRONG
-Elements-of-dynamic-programming,Rodcutting,STRONG
-Rodcutting,Matrix-chain-multiplication,STRONG
-Elements-of-the-greedy-strategy,Greedy-Algorithms,STRONG
-Greedy-Algorithms,Dijkstra’s-algorithm,STRONG
-Greedy-Algorithms,Huffman-codes,STRONG
-Elementary-Graph-Algorithms,Minimum-Spanning-Trees,STRONG
-Elementary-Graph-Algorithms,Single-source-shortest-paths-in-directed-acyclic-graphs,STRONG
-Minimum-Spanning-Trees,Growing-a-minimum-spanning-tree,STRONG
-Fibonacci-Heaps,Dijkstra’s-algorithm,STRONG
-Dynamic-Programming,Longest-common-subsequence,STRONG
-Dynamic-Programming,Optimal-binary-search-trees,STRONG
-Dynamic-Programming,Matrix-chain-multiplication,STRONG
-Dynamic-order-statistics,Selection-in-expected-linear-time,STRONG
-Dynamic-order-statistics,Selection-in-worst-case-linear-time,STRONG
-Probabilistic-Analysis-and-Randomized-Algorithms,Randomized-algorithms,STRONG
-Randomized-algorithms,Selection-in-expected-linear-time,STRONG
-NP-completeness,NP-complete-problems,STRONG
-The-naive-string-matching-algorithm,String-matching-with-finite-automata,STRONG
-String-Matching,The-naive-string-matching-algorithm,STRONG
-String-Matching,String-matching-with-finite-automata,STRONG
-The-Ford-Fulkerson,Maximum-Flow,STRONG
-Matrix-Operations,The-DFT-and-FFT,STRONG
-Linear-Programming,The-simplex-algorithm,STRONG
-The-substitution-method-for-solving,recurrences,STRONG
-
-Elementary-Graph-Algorithms,The-Ford-Fulkerson,STRONG
-Breadth-first-search,The-Ford-Fulkerson,STRONG
-Depth-first-search,The-Ford-Fulkerson,STRONG
-Flow-networks,The-Ford-Fulkerson,STRONG
-Augmenting-Data-Structures,The-Ford-Fulkerson,STRONG
-Asymptotic-notation,The-Ford-Fulkerson,STRON
-
+Calculating the determinant of a matrix by Gauss,Kirchhoff's theorem. Finding the number of spanning trees,STRONG
+Range Minimum Query,Suffix Array,STRONG
+Convex hull trick and Li Chao tree,Half-plane intersection,STRONG
+Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,Range Minimum Query,STRONG
+Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,Lowest Common Ancestor - Farach-Colton and Bender Algorithm,STRONG
+Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,Finding Bridges Online,STRONG
+Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,Paint the edges of the tree,STRONG
+Minimum stack / Minimum queue,Treap (Cartesian tree),STRONG
+Integer factorization,Primality tests,STRONG
+Integer factorization,Montgomery Multiplication,STRONG
+Euclidean algorithm for computing the greatest common divisor,Integer factorization,STRONG
+Euclidean algorithm for computing the greatest common divisor,Fibonacci Numbers,STRONG
+Euclidean algorithm for computing the greatest common divisor,Extended Euclidean Algorithm,STRONG
+Euclidean algorithm for computing the greatest common divisor,Linear Congruence Equation,STRONG
+Euclidean algorithm for computing the greatest common divisor,The Inclusion-Exclusion Principle,STRONG
+Euclidean algorithm for computing the greatest common divisor,Finding the equation of a line for a segment,STRONG
+Euclidean algorithm for computing the greatest common divisor,Operations on polynomials and series,STRONG
+Stars and bars,The Inclusion-Exclusion Principle,STRONG
+Sqrt Tree,Range Minimum Query,STRONG
+Sqrt Tree,Sparse Table,STRONG
+The Stern-Brocot tree and Farey sequences,Continued fractions,STRONG
+Suffix Tree. Ukkonen's Algorithm,Manacher's Algorithm - Finding all sub-palindromes in $O(N)$,STRONG
+Suffix Tree. Ukkonen's Algorithm,String Hashing,STRONG
+Number of paths of fixed length / Shortest paths of fixed length,Binary Exponentiation,STRONG
+Point location in $O(log n)$,Finding faces of a planar graph,STRONG
+Bellman-Ford Algorithm,Hungarian algorithm for solving the assignment problem,STRONG
+Bellman-Ford Algorithm,Solving assignment problem using min-cost-flow,STRONG
+Bellman-Ford Algorithm,Minimum-cost flow - Successive shortest path algorithm,STRONG
+Bellman-Ford Algorithm,D´Esopo-Pape algorithm,STRONG
+Bellman-Ford Algorithm,Finding a negative cycle in the graph,STRONG
+Segment Tree,Longest increasing subsequence,STRONG
+Segment Tree,Range Minimum Query,STRONG
+Segment Tree,Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,STRONG
+Segment Tree,Heavy-light decomposition,STRONG
+Segment Tree,Josephus Problem,STRONG
+Segment Tree,Paint the edges of the tree,STRONG
+Fibonacci Numbers,Binomial Coefficients,STRONG
+Fibonacci Numbers,Binary Exponentiation,STRONG
+Divide and Conquer DP,Knuth's Optimization,STRONG
+Lowest Common Ancestor - Farach-Colton and Bender Algorithm,Range Minimum Query,STRONG
+Lowest Common Ancestor - Farach-Colton and Bender Algorithm,Solve RMQ (Range Minimum Query) by finding LCA (Lowest Common Ancestor),STRONG
+Lowest Common Ancestor - Farach-Colton and Bender Algorithm,Disjoint Set Union,STRONG
+Maximum flow - Dinic's algorithm,Maximum flow - MPM algorithm,STRONG
+Floyd-Warshall Algorithm,Finding a negative cycle in the graph,STRONG
+Strongly connected components and the condensation graph,Topological Sorting,STRONG
+Strongly connected components and the condensation graph,Strong Orientation,STRONG
+Linear Diophantine Equation,Modular Multiplicative Inverse,STRONG
+Linear Diophantine Equation,Extended Euclidean Algorithm,STRONG
+Linear Diophantine Equation,Linear Congruence Equation,STRONG
+Binary search,Longest increasing subsequence,STRONG
+Finding articulation points in a graph in $O(N+M)$,Depth First Search,STRONG
+Finding bridges in a graph in $O(N+M)$,Finding Bridges Online,STRONG
+Finding bridges in a graph in $O(N+M)$,Depth First Search,STRONG
+Finding bridges in a graph in $O(N+M)$,Strong Orientation,STRONG
+Finding Bridges Online,Finding bridges in a graph in $O(N+M)$,STRONG
+Finding Bridges Online,Disjoint Set Union,STRONG
+Convex Hull construction,Half-plane intersection,STRONG
+Oriented area of a triangle,Convex Hull construction,STRONG
+Euler's totient function,Modular Multiplicative Inverse,STRONG
+Euler's totient function,Primality tests,STRONG
+Euler's totient function,Burnside's lemma / Pólya enumeration theorem,STRONG
+Lowest Common Ancestor - Tarjan's off-line algorithm,Disjoint Set Union,STRONG
+Maximum flow - Ford-Fulkerson and Edmonds-Karp,Edge connectivity / Vertex connectivity,STRONG
+Maximum flow - Ford-Fulkerson and Edmonds-Karp,Maximum flow - Dinic's algorithm,STRONG
+Maximum flow - Ford-Fulkerson and Edmonds-Karp,Minimum-cost flow - Successive shortest path algorithm,STRONG
+Maximum flow - Ford-Fulkerson and Edmonds-Karp,Maximum flow - Push-relabel algorithm,STRONG
+Maximum flow - Ford-Fulkerson and Edmonds-Karp,Flows with demands,STRONG
+Suffix Automaton,String Hashing,STRONG
+Rabin-Karp Algorithm for string matching,String Hashing,STRONG
+Intersection Point of Lines,Finding intersection of two segments,STRONG
+Intersection Point of Lines,Finding the equation of a line for a segment,STRONG
+Catalan Numbers,Balanced bracket sequences,STRONG
+Prefix function. Knuth–Morris–Pratt algorithm,Z-function and its calculation,STRONG
+Floyd's Linked List Cycle Finding Algorithm,Integer factorization,STRONG
+Garner's algorithm,Chinese Remainder Theorem,STRONG
+Garner's algorithm,Arbitrary-Precision Arithmetic,STRONG
+0-1 BFS,Breadth-first search,STRONG
+Modular Multiplicative Inverse,Linear Diophantine Equation,STRONG
+Modular Multiplicative Inverse,Euler's totient function,STRONG
+Modular Multiplicative Inverse,Garner's algorithm,STRONG
+Modular Multiplicative Inverse,Fast Fourier transform,STRONG
+Modular Multiplicative Inverse,Chinese Remainder Theorem,STRONG
+Modular Multiplicative Inverse,Linear Congruence Equation,STRONG
+Modular Multiplicative Inverse,String Hashing,STRONG
+Modular Multiplicative Inverse,Binary Exponentiation,STRONG
+Fenwick Tree,Longest increasing subsequence,STRONG
+Fenwick Tree,Range Minimum Query,STRONG
+Primality tests,Integer factorization,STRONG
+Primality tests,Montgomery Multiplication,STRONG
+Primitive Root,Discrete Root,STRONG
+Primitive Root,Fast Fourier transform,STRONG
+Minimum-cost flow - Successive shortest path algorithm,Hungarian algorithm for solving the assignment problem,STRONG
+Minimum-cost flow - Successive shortest path algorithm,Solving assignment problem using min-cost-flow,STRONG
+Depth First Search,Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,STRONG
+Depth First Search,Hungarian algorithm for solving the assignment problem,STRONG
+Depth First Search,Lowest Common Ancestor - Farach-Colton and Bender Algorithm,STRONG
+Depth First Search,Strongly connected components and the condensation graph,STRONG
+Depth First Search,Games on arbitrary graphs,STRONG
+Depth First Search,Finding articulation points in a graph in $O(N+M)$,STRONG
+Depth First Search,Finding bridges in a graph in $O(N+M)$,STRONG
+Depth First Search,Finding Bridges Online,STRONG
+Depth First Search,Lowest Common Ancestor - Tarjan's off-line algorithm,STRONG
+Depth First Search,Aho-Corasick algorithm,STRONG
+Depth First Search,Maximum flow - Ford-Fulkerson and Edmonds-Karp,STRONG
+Depth First Search,Checking a graph for acyclicity and finding a cycle in $O(M)$,STRONG
+Depth First Search,Lowest Common Ancestor - Binary Lifting,STRONG
+Depth First Search,Topological Sorting,STRONG
+Depth First Search,Strong Orientation,STRONG
+Depth First Search,Kuhn's Algorithm for Maximum Bipartite Matching,STRONG
+Depth First Search,Disjoint Set Union,STRONG
+Suffix Array,String Hashing,STRONG
+Fast Fourier transform,Operations on polynomials and series,STRONG
+Linear Sieve,Sieve of Eratosthenes,STRONG
+Lowest Common Ancestor - Binary Lifting,Second Best Minimum Spanning Tree,STRONG
+Lowest Common Ancestor - Binary Lifting,Heavy-light decomposition,STRONG
+Minimum spanning tree - Kruskal's algorithm,Minimum spanning tree - Prim's algorithm,STRONG
+Minimum spanning tree - Kruskal's algorithm,Minimum spanning tree - Kruskal with Disjoint Set Union,STRONG
+Minimum spanning tree - Kruskal's algorithm,Disjoint Set Union,STRONG
+Dijkstra Algorithm,Hungarian algorithm for solving the assignment problem,STRONG
+Dijkstra Algorithm,Solving assignment problem using min-cost-flow,STRONG
+Dijkstra Algorithm,0-1 BFS,STRONG
+Dijkstra Algorithm,Minimum-cost flow - Successive shortest path algorithm,STRONG
+Dijkstra Algorithm,Dijkstra on sparse graphs,STRONG
+Dijkstra Algorithm,D´Esopo-Pape algorithm,STRONG
+Sqrt Decomposition,Range Minimum Query,STRONG
+Sqrt Decomposition,Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,STRONG
+Sqrt Decomposition,Sqrt Tree,STRONG
+Extended Euclidean Algorithm,Linear Diophantine Equation,STRONG
+Extended Euclidean Algorithm,Modular Multiplicative Inverse,STRONG
+Extended Euclidean Algorithm,Chinese Remainder Theorem,STRONG
+Extended Euclidean Algorithm,Linear Congruence Equation,STRONG
+Extended Euclidean Algorithm,Continued fractions,STRONG
+Extended Euclidean Algorithm,Montgomery Multiplication,STRONG
+Chinese Remainder Theorem,Euler's totient function,STRONG
+Chinese Remainder Theorem,Garner's algorithm,STRONG
+Chinese Remainder Theorem,Fast Fourier transform,STRONG
+Chinese Remainder Theorem,Arbitrary-Precision Arithmetic,STRONG
+Chinese Remainder Theorem,Binomial Coefficients,STRONG
+Treap (Cartesian tree),Continued fractions,STRONG
+Dijkstra on sparse graphs,Dijkstra Algorithm,STRONG
+Continued fractions,The Stern-Brocot tree and Farey sequences,STRONG
+The Inclusion-Exclusion Principle,Stars and bars,STRONG
+Gauss method for solving system of linear equations,Calculating the determinant of a matrix by Gauss,STRONG
+Gauss method for solving system of linear equations,Finding the rank of a matrix,STRONG
+Circle-Line Intersection,Circle-Circle Intersection,STRONG
+Topological Sorting,Strongly connected components and the condensation graph,STRONG
+Basic Geometry,Oriented area of a triangle,STRONG
+Basic Geometry,Intersection Point of Lines,STRONG
+Basic Geometry,Continued fractions,STRONG
+Solve RMQ (Range Minimum Query) by finding LCA (Lowest Common Ancestor),Range Minimum Query,STRONG
+Arbitrary-Precision Arithmetic,Garner's algorithm,STRONG
+Arbitrary-Precision Arithmetic,Binomial Coefficients,STRONG
+Minimum spanning tree - Kruskal with Disjoint Set Union,Minimum spanning tree - Kruskal's algorithm,STRONG
+Minimum spanning tree - Kruskal with Disjoint Set Union,Disjoint Set Union,STRONG
+String Hashing,Rabin-Karp Algorithm for string matching,STRONG
+String Hashing,Manacher's Algorithm - Finding all sub-palindromes in $O(N)$,STRONG
+Maximum flow - Push-relabel algorithm,Maximum flow - Push-relabel method improved,STRONG
+Maximum flow - Push-relabel algorithm,Flows with demands,STRONG
+Sparse Table,Range Minimum Query,STRONG
+Sparse Table,Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,STRONG
+Sparse Table,Lowest Common Ancestor - Farach-Colton and Bender Algorithm,STRONG
+Sparse Table,Suffix Array,STRONG
+Pick's Theorem,Continued fractions,STRONG
+Gray code,Generating all $K$-combinations,STRONG
+Binomial Coefficients,Submask Enumeration,STRONG
+Binomial Coefficients,Stars and bars,STRONG
+Binomial Coefficients,The Inclusion-Exclusion Principle,STRONG
+Binomial Coefficients,Factorial modulo $p$,STRONG
+Factorial modulo $p$,Binomial Coefficients,STRONG
+Breadth-first search,Hungarian algorithm for solving the assignment problem,STRONG
+Breadth-first search,Aho-Corasick algorithm,STRONG
+Breadth-first search,Maximum flow - Ford-Fulkerson and Edmonds-Karp,STRONG
+Breadth-first search,Check whether a graph is bipartite,STRONG
+Breadth-first search,0-1 BFS,STRONG
+Breadth-first search,Kuhn's Algorithm for Maximum Bipartite Matching,STRONG
+Breadth-first search,Disjoint Set Union,STRONG
+Discrete Logarithm,Discrete Root,STRONG
+Binary Exponentiation,Integer factorization,STRONG
+Binary Exponentiation,Number of paths of fixed length / Shortest paths of fixed length,STRONG
+Binary Exponentiation,Fibonacci Numbers,STRONG
+Binary Exponentiation,Modular Multiplicative Inverse,STRONG
+Binary Exponentiation,Primality tests,STRONG
+Binary Exponentiation,Factorial modulo $p$,STRONG
+Binary Exponentiation,Discrete Logarithm,STRONG
+Montgomery Multiplication,Integer factorization,STRONG
+Kuhn's Algorithm for Maximum Bipartite Matching,Hungarian algorithm for solving the assignment problem,STRONG
+Sieve of Eratosthenes,Integer factorization,STRONG
+Sieve of Eratosthenes,Euler's totient function,STRONG
+Sieve of Eratosthenes,Linear Sieve,STRONG
+Finding a negative cycle in the graph,Bellman-Ford Algorithm,STRONG
+Finding a negative cycle in the graph,Floyd-Warshall Algorithm,STRONG
+Disjoint Set Union,Finding Bridges Online,STRONG
+Disjoint Set Union,Lowest Common Ancestor - Tarjan's off-line algorithm,STRONG
+Disjoint Set Union,Minimum spanning tree - Kruskal's algorithm,STRONG
+Disjoint Set Union,Minimum spanning tree - Kruskal with Disjoint Set Union,STRONG
+Z-function and its calculation,Finding repetitions,STRONG
+Z-function and its calculation,Manacher's Algorithm - Finding all sub-palindromes in $O(N)$,STRONG
+Algebra,Data Structures and algorithms,STRONG
+Binary Exponentiation,Algebra,STRONG
+Euclidean algorithm for computing the greatest common divisor,Algebra,STRONG
+Extended Euclidean Algorithm,Algebra,STRONG
+Linear Diophantine Equation,Algebra,STRONG
+Fibonacci Numbers,Algebra,STRONG
+Bit manipulation,Algebra,STRONG
+Submask Enumeration,Algebra,STRONG
+Arbitrary-Precision Arithmetic,Algebra,STRONG
+Fast Fourier transform,Algebra,STRONG
+Operations on polynomials and series,Algebra,STRONG
+Continued fractions,Algebra,STRONG
+Binary Exponentiation by Factoring,Algebra,STRONG
+Prime numbers,Algebra,STRONG
+Sieve of Eratosthenes,Prime numbers,STRONG
+Linear Sieve,Prime numbers,STRONG
+Primality tests,Prime numbers,STRONG
+Integer factorization,Prime numbers,STRONG
+Number-theoretic functions,Algebra,STRONG
+Euler's totient function,Number-theoretic functions,STRONG
+Number of divisors / sum of divisors,Number-theoretic functions,STRONG
+Modular arithmetic,Algebra,STRONG
+Modular Multiplicative Inverse,Modular arithmetic,STRONG
+Linear Congruence Equation,Modular arithmetic,STRONG
+Chinese Remainder Theorem,Modular arithmetic,STRONG
+Garner's algorithm,Modular arithmetic,STRONG
+Factorial modulo $p$,Modular arithmetic,STRONG
+Discrete Logarithm,Modular arithmetic,STRONG
+Primitive Root,Modular arithmetic,STRONG
+Discrete Root,Modular arithmetic,STRONG
+Montgomery Multiplication,Modular arithmetic,STRONG
+Number systems,Algebra,STRONG
+Balanced Ternary,Number systems,STRONG
+Gray code,Number systems,STRONG
+Data Structures,Data Structures and algorithms,STRONG
+Trees,Data Structures,STRONG
+Disjoint Set Union,Trees,STRONG
+Fenwick Tree,Trees,STRONG
+Sqrt Decomposition,Trees,STRONG
+Segment Tree,Trees,STRONG
+Treap (Cartesian tree),Trees,STRONG
+Sqrt Tree,Trees,STRONG
+Randomized Heap,Trees,STRONG
+Minimum stack / Minimum queue,Data Structures,STRONG
+Sparse Table,Data Structures,STRONG
+Deleting from a data structure in $O(T(n)\log n)$,Data Structures,STRONG
+Dynamic Programming,Data Structures and algorithms,STRONG
+Introduction to Dynamic Programming,Dynamic Programming,STRONG
+Knapsack Problem,Dynamic Programming,STRONG
+DP optimizations,Dynamic Programming,STRONG
+Divide and Conquer DP,DP optimizations,STRONG
+Knuth's Optimization,DP optimizations,STRONG
+Tasks,Dynamic Programming,STRONG
+"Dynamic Programming on Broken Profile. Problem ""Parquet""",Tasks,STRONG
+Finding the largest zero submatrix,Tasks,STRONG
+String Processing,Data Structures and algorithms,STRONG
+String Hashing,String Processing,STRONG
+Rabin-Karp Algorithm for string matching,String Processing,STRONG
+Prefix function. Knuth–Morris–Pratt algorithm,String Processing,STRONG
+Z-function and its calculation,String Processing,STRONG
+Suffix Array,String Processing,STRONG
+Aho-Corasick algorithm,String Processing,STRONG
+Suffix Tree. Ukkonen's Algorithm,String Processing,STRONG
+Suffix Automaton,String Processing,STRONG
+Lyndon factorization,String Processing,STRONG
+Expression parsing,String Processing,STRONG
+Manacher's Algorithm - Finding all sub-palindromes in $O(N)$,String Processing,STRONG
+Finding repetitions,String Processing,STRONG
+Linear Algebra,Data Structures and algorithms,STRONG
+Matrices,Linear Algebra,STRONG
+Gauss method for solving system of linear equations,Matrices,STRONG
+Calculating the determinant of a matrix by Gauss,Matrices,STRONG
+Calculating the determinant using Kraut method in $O(N^3)$,Matrices,STRONG
+Finding the rank of a matrix,Matrices,STRONG
+Combinatorics,Data Structures and algorithms,STRONG
+Finding Power of Factorial Divisor,Combinatorics,STRONG
+Binomial Coefficients,Combinatorics,STRONG
+Catalan Numbers,Combinatorics,STRONG
+The Inclusion-Exclusion Principle,Combinatorics,STRONG
+Burnside's lemma / Pólya enumeration theorem,Combinatorics,STRONG
+Stars and bars,Combinatorics,STRONG
+Generating all $K$-combinations,Combinatorics,STRONG
+Placing Bishops on a Chessboard,Combinatorics,STRONG
+Balanced bracket sequences,Combinatorics,STRONG
+Counting labeled graphs,Combinatorics,STRONG
+Numerical Methods,Data Structures and algorithms,STRONG
+Binary search,Numerical Methods,STRONG
+Ternary Search,Numerical Methods,STRONG
+Newton's method for finding roots,Numerical Methods,STRONG
+Simulated Annealing,Numerical Methods,STRONG
+Integration by Simpson's formula,Numerical Methods,STRONG
+Geometry,Data Structures and algorithms,STRONG
+Elementary operations of geometry,Geometry,STRONG
+Basic Geometry,Elementary operations of geometry,STRONG
+Finding the equation of a line for a segment,Elementary operations of geometry,STRONG
+Intersection Point of Lines,Elementary operations of geometry,STRONG
+Check if two segments intersect,Elementary operations of geometry,STRONG
+Finding intersection of two segments,Elementary operations of geometry,STRONG
+Circle-Line Intersection,Elementary operations of geometry,STRONG
+Circle-Circle Intersection,Elementary operations of geometry,STRONG
+Finding common tangents to two circles,Elementary operations of geometry,STRONG
+Length of the union of segments,Elementary operations of geometry,STRONG
+Polygons,Geometry,STRONG
+Oriented area of a triangle,Polygons,STRONG
+Finding area of simple polygon in $O(N)$,Polygons,STRONG
+Check if point belongs to the convex polygon in $O(\log N)$,Polygons,STRONG
+Minkowski sum of convex polygons,Polygons,STRONG
+Pick's Theorem,Polygons,STRONG
+Lattice points inside non-lattice polygon,Polygons,STRONG
+Convex hull,Geometry,STRONG
+Convex Hull construction,Convex hull,STRONG
+Convex hull trick and Li Chao tree,Convex hull,STRONG
+Sweep-line algorithms,Geometry,STRONG
+Search for a pair of intersecting segments,Sweep-line algorithms,STRONG
+Planar graphs,Geometry,STRONG
+Finding faces of a planar graph,Planar graphs,STRONG
+Point location in $O(log n)$,Planar graphs,STRONG
+Finding the nearest pair of points,Geometry,STRONG
+Delaunay triangulation and Voronoi diagram,Geometry,STRONG
+Vertical decomposition,Geometry,STRONG
+Half-plane intersection,Geometry,STRONG
+Manhattan Distance,Geometry,STRONG
+Graphs,Data Structures and algorithms,STRONG
+Graph traversal algorithms,Graphs,STRONG
+Breadth-first search,Graph traversal algorithms,STRONG
+Depth First Search,Graph traversal algorithms,STRONG
+"Connected components, bridges, articulations points",Graphs,STRONG
+Search for connected components in a graph,"Connected components, bridges, articulations points",STRONG
+Finding bridges in a graph in $O(N+M)$,"Connected components, bridges, articulations points",STRONG
+Finding Bridges Online,"Connected components, bridges, articulations points",STRONG
+Finding articulation points in a graph in $O(N+M)$,"Connected components, bridges, articulations points",STRONG
+Strongly connected components and the condensation graph,"Connected components, bridges, articulations points",STRONG
+Strong Orientation,"Connected components, bridges, articulations points",STRONG
+Single-source shortest paths problem,Graphs,STRONG
+Dijkstra Algorithm,Single-source shortest paths problem,STRONG
+Dijkstra on sparse graphs,Single-source shortest paths problem,STRONG
+Bellman-Ford Algorithm,Single-source shortest paths problem,STRONG
+0-1 BFS,Single-source shortest paths problem,STRONG
+D´Esopo-Pape algorithm,Single-source shortest paths problem,STRONG
+All-pairs shortest paths problem,Graphs,STRONG
+Floyd-Warshall Algorithm,All-pairs shortest paths problem,STRONG
+Number of paths of fixed length / Shortest paths of fixed length,All-pairs shortest paths problem,STRONG
+Spanning trees,Graphs,STRONG
+Minimum spanning tree - Prim's algorithm,Spanning trees,STRONG
+Minimum spanning tree - Kruskal's algorithm,Spanning trees,STRONG
+Minimum spanning tree - Kruskal with Disjoint Set Union,Spanning trees,STRONG
+Second Best Minimum Spanning Tree,Spanning trees,STRONG
+Kirchhoff's theorem. Finding the number of spanning trees,Spanning trees,STRONG
+Prüfer code,Spanning trees,STRONG
+Cycles in graphs,Graphs,STRONG
+Checking a graph for acyclicity and finding a cycle in $O(M)$,Cycles in graphs,STRONG
+Finding a negative cycle in the graph,Cycles in graphs,STRONG
+Finding the Eulerian path in $O(M)$,Cycles in graphs,STRONG
+Lowest common ancestor,Graphs,STRONG
+Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,Lowest common ancestor,STRONG
+Lowest Common Ancestor - Binary Lifting,Lowest common ancestor,STRONG
+Lowest Common Ancestor - Farach-Colton and Bender Algorithm,Lowest common ancestor,STRONG
+Solve RMQ (Range Minimum Query) by finding LCA (Lowest Common Ancestor),Lowest common ancestor,STRONG
+Lowest Common Ancestor - Tarjan's off-line algorithm,Lowest common ancestor,STRONG
+Flows and related problems,Graphs,STRONG
+Maximum flow - Ford-Fulkerson and Edmonds-Karp,Flows and related problems,STRONG
+Maximum flow - Push-relabel algorithm,Flows and related problems,STRONG
+Maximum flow - Push-relabel method improved,Flows and related problems,STRONG
+Maximum flow - Dinic's algorithm,Flows and related problems,STRONG
+Maximum flow - MPM algorithm,Flows and related problems,STRONG
+Flows with demands,Flows and related problems,STRONG
+Minimum-cost flow - Successive shortest path algorithm,Flows and related problems,STRONG
+Solving assignment problem using min-cost-flow,Flows and related problems,STRONG
+Matchings and related problems,Graphs,STRONG
+Check whether a graph is bipartite,Matchings and related problems,STRONG
+Kuhn's Algorithm for Maximum Bipartite Matching,Matchings and related problems,STRONG
+Hungarian algorithm for solving the assignment problem,Matchings and related problems,STRONG
+Topological Sorting,Graphs,STRONG
+Edge connectivity / Vertex connectivity,Graphs,STRONG
+Paint the edges of the tree,Graphs,STRONG
+2-SAT,Graphs,STRONG
+Heavy-light decomposition,Graphs,STRONG
+Sequences,Data Structures and algorithms,STRONG
+Range Minimum Query,Sequences,STRONG
+Longest increasing subsequence,Sequences,STRONG
+Search the subarray with the maximum/minimum sum,Sequences,STRONG
+$K$th order statistic in $O(N)$,Sequences,STRONG
+MEX (minimal excluded) of a sequence,Sequences,STRONG
+Game Theory,Data Structures and algorithms,STRONG
+Games on arbitrary graphs,Game Theory,STRONG
+Sprague-Grundy theorem. Nim,Game Theory,STRONG
+Schedules,Data Structures and algorithms,STRONG
+Scheduling jobs on one machine,Schedules,STRONG
+Scheduling jobs on two machines,Schedules,STRONG
+Optimal schedule of jobs given their deadlines and durations,Schedules,STRONG
+Floyd's Linked List Cycle Finding Algorithm,Data Structures and algorithms,STRONG
+Josephus Problem,Data Structures and algorithms,STRONG
+15 Puzzle Game: Existence Of The Solution,Data Structures and algorithms,STRONG
+The Stern-Brocot tree and Farey sequences,Data Structures and algorithms,STRONG

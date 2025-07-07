@@ -24,7 +24,7 @@ def show_final_result(estado_final):
         print("⚠️ Tipo de ayuda no reconocido o información incompleta.")
         print(f"Tipo de ayuda recibido: {tipo}")
         return
-    plan = estado_final["planificacion"]
+    plan = estado_final.get("planificacion", None)
     if plan:
         print("\n🎯 Para entender mejor el tema te recomiendo estudiar lo siguiente:")
         for paso in plan:
