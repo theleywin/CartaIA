@@ -1,140 +1,122 @@
 name,type,difficulty,estimated_time
-Aggregateanalysis,other,1,1.0
-Algorithms 5,algorithm,2,1.5
-Algorithmsasatechnology,algorithm,1,1.0
-All-PairsShortestPaths,other,2,2.0
-AmortizedAnalysis,other,3,2.0
-Anactivity-selection problem,other,2,1.5
-ApproximationAlgorithms,algorithm,4,4.0
-Arandomized,other,1,1.0
-Arecursivestructure,other,1,1.0
-Asymptoticnotation,other,1,1.0
-AugmentingDataStructures,other,1,1.0
-B-Trees 484,structure,4,4.5
-Basicoperations,other,1,1.0
-BinarySearchTrees,algorithm,2,2.0
-Boundingthemaximumdegree 523,other,2,1.5
-Breadth-firstsearch,algorithm,1,1.5
+Algorithms,algorithm,2,1.5
+All-Pairs-Shortest-Paths,other,2,2.0
+Amortized-Analysis,other,3,2.0
+Approximation-Algorithms,algorithm,4,4.0
+A-recursive-structure,other,1,1.0
+Asymptotic-notation,other,1,1.0
+Augmenting-Data-Structures,other,1,1.0
+B-Trees,structure,4,4.5
+Basic-operations,other,1,1.0
+Binary-Search-Trees,algorithm,2,2.0
+Bounding-the-maximum-degree,other,2,1.5
+Breadth-first-search,algorithm,1,1.5
 Bucketsort,algorithm,2,1.5
-ComputationalGeometry,other,4,4.0
+Computational-Geometry,other,4,4.0
 Countingsort,algorithm,2,1.0
-DataStructuresforDisjointSets,other,2,1.5
-Decreasingakeyanddeleting anode,other,2,1.5
-DefinitionofB-trees 488,structure,2,1.5
-Deletion,other,1,1.0
-Depth-firstsearch 603,algorithm,2,1.5
-Description,other,1,1.0
-Designing,other,1,1.0
-Determiningwhetheranypairofsegmentsintersects,other,1,1.0
-Differenceconstraints andshortestpaths,other,2,1.5
-Dijkstra’salgorithm,algorithm,3,2.0
-Direct-address tables,other,2,1.5
+Data-Structures-for-Disjoint-Sets,other,2,1.5
+Decreasing-a-key-and-deleting-a-node,other,2,1.5
+Definition-of-B-trees,structure,2,1.5
+Depth-first-search,algorithm,2,1.5
+Determining-whether-any-pair-of-segments-intersects,other,1,1.0
+Difference-constraints-and-shortest-paths,other,2,1.5
+Dijkstra’s-algorithm,algorithm,3,2.0
+Direct-address-tables,other,2,1.5
 Divide-and-Conquer,other,3,5.0
 Duality,other,3,2.0
-DynamicProgramming,other,4,4.0
-Dynamicorderstatistics,other,4,3.0
-Dynamictables,other,2,1.5
-ElementaryGraphAlgorithms,algorithm,1,1.0
-Elementarynumber-theoretic notions,other,2,1.5
-Elementsofdynamicprogramming,other,1,1.0
-Elementsofthegreedy strategy,other,2,1.5
-FibonacciHeaps,structure,3,2.0
-Findingtheclosestpairofpoints,other,3,1.0
-Findingtheconvexhull,other,4,3.0
-Flownetworks,other,5,4.0
-GettingStarted,other,1,1.0
-Greatestcommondivisor,other,1,1.0
-GreedyAlgorithms,algorithm,3,2.0
-Growingaminimumspanning,other,2,1.0
-GrowthofFunctions,other,1,1.0
-HashTables 253,structure,3,1.5
-Hashfunctions,structure,3,1.0
+Dynamic-Programming,other,4,4.0
+Dynamic-order-statistics,other,4,3.0
+Dynamic-tables,other,2,1.5
+Elementary-Graph-Algorithms,algorithm,1,1.0
+Elements-of-dynamic-programming,other,1,1.0
+Elements-of-the-greedy-strategy,other,2,1.5
+Fibonacci-Heaps,structure,3,2.0
+Finding-the-closest-pair-of-points,other,3,1.0
+Finding-the-convex-hull,other,4,3.0
+Flow-networks,other,5,4.0
+Getting-Started,other,1,1.0
+Greatest-common-divisor,other,1,1.0
+Greedy-Algorithms,algorithm,3,2.0
+Growing-a-minimum-spanning-tree,other,2,1.0
+Growth-of-Functions,other,1,1.0
+Hash-Tables,structure,3,1.5
+Hash-functions,structure,3,1.0
 Hashtables,structure,3,1.0
 Heapsort,algorithm,2,1.0
-Huffmancodes,other,3,1.0
-Indicator randomvariables,other,2,1.5
+Huffman-codes,other,3,1.0
+Indicator-random-variables,other,2,1.5
 Insertion,other,1,1.0
-Insertion anddeletion,other,2,1.5
-Intervaltrees,structure,1,1.0
-Inverting matrices,other,2,1.5
-Johnson’s algorithm,algorithm,3,1.5
-Line-segmentproperties,other,2,1.0
-LinearProgramming,other,3,1.0
+Insertion-and-deletion,other,2,1.5
+Interval-trees,structure,1,1.0
+Inverting-matrices,other,2,1.5
+Line-segment-properties,other,2,1.0
+Linear-Programming,other,3,1.0
 Linked-list,other,1,1.0
-Longestcommonsubsequence,other,2,1.0
-Lowerbounds forsorting,algorithm,2,1.5
-Matrix-chain multiplication,other,2,1.5
-MatrixOperations,other,1,1.0
-MaximumFlow 708,other,3,1.5
-MediansandOrderStatistics,other,1,1.0
-Mergeable-heap operations,structure,2,1.5
-MinimumSpanningTrees,structure,2,1.5
-Minimumandmaximum,other,1,1.0
-Modulararithmetic,other,1,1.0
-Multithreaded matrixmultiplication,other,2,1.5
-Multithreaded mergesort,algorithm,2,1.5
-MultithreadedAlgorithms,algorithm,3,1.0
+Longest-common-subsequence,other,2,1.0
+Lower-bounds-for-sorting,algorithm,2,1.5
+Matrix-chain-multiplication,other,2,1.5
+Matrix-Operations,other,1,1.0
+Maximum-Flow,other,3,1.5
+Medians-and-Order-Statistics,other,1,1.0
+Mergeable-heap-operations,structure,2,1.5
+Minimum-Spanning-Trees,structure,2,1.5
+Minimum-and-maximum,other,1,1.0
+Modular-arithmetic,other,1,1.0
+Multithreaded-matrix-multiplication,other,2,1.5
+Multithreaded-mergesort,algorithm,2,1.5
+Multithreaded-Algorithms,algorithm,3,1.0
 NP-completeness,other,4,1.0
-NP-completeproblems,other,4,4.0
-Number-TheoreticAlgorithms,algorithm,3,1.0
-Openaddressing,other,1,1.0
-Optimalbinarysearchtrees,algorithm,3,1.0
-Performanceofquicksort,algorithm,3,1.0
-Polynomial-time verification,other,3,1.5
-Polynomialtime,other,1,1.0
-Powersofanelement,other,2,1.0
-Preliminaryapproaches,other,1,1.0
-ProbabilisticAnalysisandRandomizedAlgorithms,algorithm,1,1.0
-Proofsofshortest-paths,other,1,1.0
-Propertiesofred-black trees,structure,2,1.5
-Queryingabinarysearchtree,algorithm,1,1.0
+NP-complete-problems,other,4,4.0
+Number-Theoretic-Algorithms,algorithm,3,1.0
+Open-addressing,other,1,1.0
+Optimal-binary-search-trees,algorithm,3,1.0
+Performance-of-quicksort,algorithm,3,1.0
+Polynomial-time-verification,other,3,1.5
+Polynomial-time,other,1,1.0
+Powers-of-an-element,other,2,1.0
+Probabilistic-Analysis-and-Randomized-Algorithms,algorithm,1,1.0
+Proofs-of-shortest-paths,other,1,1.0
+Properties-of-red-black-trees,structure,2,1.5
+Querying-a-binary-search-tree,algorithm,1,1.0
 Quicksort,algorithm,1,1.0
 Radixsort,algorithm,1,1.0
-Randomization andlinearprogramming,other,3,1.5
-Randomizedalgorithms,algorithm,4,1.0
-Red-BlackTrees,structure,4,1.0
+Randomization-and-linear-programming,other,3,1.5
+Randomized-algorithms,algorithm,4,1.0
+Red-Black-Trees,structure,4,1.0
 Representations,other,1,1.0
 Rodcutting,other,2,1.0
 Rotations,other,3,1.0
-Selectioninexpected lineartime,other,2,1.5
-Selectioninworst-case lineartime,other,2,1.5
-Shortestpathsandmatrixmultiplication,other,2,1.0
-Single-source shortestpathsindirected acyclicgraphs,structure,3,2.0
-Solvingsystemsoflinearequations,other,2,1.0
-Stacksandqueues,structure,1,1.0
-Standardnotations,other,1,1.0
-StringMatching,algorithm,3,1.0
-Stringmatchingwithfiniteautomata,algorithm,3,1.0
-Stronglyconnected components,other,3,1.5
-StructureofFibonacciheaps,structure,3,1.0
-Symmetricpositive-definite matricesandleast-squares approximation,other,3,2.0
-TheDFTandFFT,other,5,5.0
-TheFloyd-Warshall algorithm,algorithm,2,1.5
-TheFord-Fulkerson,other,4,3.0
-Theaccounting method,other,2,1.5
-Theheapsort algorithm,algorithm,2,1.5
-Thehiringproblem,other,1,1.0
-Theinitialbasicfeasiblesolution,other,1,1.0
-Themastermethodforsolving,other,1,1.0
-Themaximum-subarray problem,other,2,1.5
-Thenaivestring-matching algorithm,algorithm,2,1.5
-Thepotential method,other,2,1.5
-Theset-covering problem,other,2,1.5
-Thesimplexalgorithm,algorithm,1,1.0
-Thesubstitution methodforsolving,other,2,1.5
-Thetraveling-salesman problem,other,2,1.5
-Thevertex-coverproblem 1108,other,2,1.5
+Selection-in-expected-linear-time,other,2,1.5
+Selection-in-worst-case-linear-time,other,2,1.5
+Shortest-paths-and-matrix-multiplication,other,2,1.0
+Single-source-shortest-paths-in-directed-acyclic-graphs,structure,3,2.0
+Solving-systems-of-linear-equations,other,2,1.0
+Stacks-and-queues,structure,1,1.0
+Standard-notations,other,1,1.0
+String-Matching,algorithm,3,1.0
+String-matching-with-finite-automata,algorithm,3,1.0
+Strongly-connected-components,other,3,1.5
+Structure-of-Fibonacci-heaps,structure,3,1.0
+Symmetric-positive-definite-matrices-and-least-squares-approximation,other,3,2.0
+The-DFT-and-FFT,other,5,5.0
+The-Floyd-Warshall-algorithm,algorithm,2,1.5
+The-Ford-Fulkerson,other,4,3.0
+The-accounting-method,other,2,1.5
+The-heapsort-algorithm,algorithm,2,1.5
+The-hiring-problem,other,1,1.0
+The-initial-basic-feasible-solution,other,1,1.0
+The-maximum-subarray-problem,other,2,1.5
+The-naive-string-matching-algorithm,algorithm,2,1.5
+The-set-covering-problem,other,2,1.5
+The-simplex-algorithm,algorithm,1,1.0
+The-substitution-method-for-solving,other,2,1.5
+The-traveling-salesman-problem,other,2,1.5
+The-vertex-cover-problem,other,2,1.5
 Topological,other,1,1.0
-Whatisabinarysearchtree,algorithm,1,1.0
-algorithms,algorithm,1,1.0
-andcommonfunctions,other,1,1.0
-cryptosystem,other,1,1.0
-forsparsegraphs,structure,1,1.0
-ofgraphs,structure,1,1.0
-properties,other,1,1.0
+binary-search-tree,algorithm,1,1.0
 recurrences,other,1,1.0
 representation,other,1,1.0
-rootedtrees,structure,1,1.0
+rooted-trees,structure,1,1.0
+sorting,algorithm,1,1.0
+
 tree,structure,1,2.5
-vanEmdeBoasTrees,structure,1,1.0
-versionofquicksort,algorithm,1,1.0

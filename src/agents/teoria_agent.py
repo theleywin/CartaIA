@@ -3,8 +3,9 @@ from schemas.contenido import ExplicacionTeorica
 from schemas.estado import EstadoConversacion
 from utils.test_generador import generar_test_teoria
 from utils.simulador_estudiante import simular_respuesta_estudiante
+from langchain_core.language_models.chat_models import BaseChatModel
 
-def crear_agente_teoria(llm):
+def crear_agente_teoria(llm: BaseChatModel):
     llm_teoria = llm.with_structured_output(ExplicacionTeorica)
 
     prompt = ChatPromptTemplate.from_template(

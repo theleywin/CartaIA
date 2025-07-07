@@ -1,6 +1,9 @@
 from pydantic import BaseModel
+from agents.bdi_agent import BDIAgent
 from schemas.estado import EstadoConversacion
-async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent, llm):
+from langchain_core.language_models.chat_models import BaseChatModel
+
+async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent: BDIAgent, llm):
     solucion = estado.solucion_estudiante or ""
     comprension = await evaluar_dimension_llm("comprensión", estado.problema_actual.enunciado, solucion, llm)
     precision = await evaluar_dimension_llm("precisión",estado.problema_actual.enunciado, solucion, llm)
@@ -25,7 +28,7 @@ async def evaluar_y_actualizar_bdi(estado: EstadoConversacion, bdi_agent, llm):
 class EvaluacionDimension(BaseModel):
     puntuacion: float
 
-async def evaluar_dimension_llm(dimension: str, tema: str, solucion: str, llm) -> float:
+async def evaluar_dimension_llm(dimension: str, tema: str, solucion: str, llm: BaseChatModel) -> float:
     prompt = f"""
     Eres un asistente educativo. Evalúa la siguiente solución de un estudiante en la dimensión de **{dimension}** 
     respecto a la siguiente pregunta:
@@ -44,11 +47,8 @@ async def evaluar_dimension_llm(dimension: str, tema: str, solucion: str, llm) -
 
     Devuelve únicamente un número decimal entre 0.0 y 1.0 sin texto adicional.
     """
-
-    # print(f"[Debug] Prompt ({dimension}):\n{prompt}")
-
+    
     llm = llm.with_structured_output(EvaluacionDimension)
     llm_response = await llm.ainvoke(prompt)
     respuesta = llm_response.puntuacion
-    # print(f"[Debug] Respuesta LLM ({dimension}):", repr(respuesta))
     return respuesta

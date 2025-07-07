@@ -2,6 +2,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel
 from schemas.estado import TipoAyuda, EstadoConversacion
+from langchain_core.language_models.chat_models import BaseChatModel
 
 class SupervisorDecision(BaseModel):
     decision: TipoAyuda
@@ -13,7 +14,7 @@ def obtener_ultima_consulta(estado: EstadoConversacion) -> str:
             return mensaje.get("contenido", "")
     return "No se encontró una consulta reciente."
 
-def crear_supervisor(llm):
+def crear_supervisor(llm: BaseChatModel):
     llm = llm.with_structured_output(SupervisorDecision)
     parser = JsonOutputParser(pydantic_object=SupervisorDecision)
 

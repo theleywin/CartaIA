@@ -1,5 +1,15 @@
+import csv
 from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader, UnstructuredMarkdownLoader
 
+def load_topics(topics_file: str = "nodes.csv") -> list:
+    topics = []
+    with open(topics_file, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            topic = row["name"]
+            topics.append(topic)
+    return topics
+    
 def load_pdfs(directory: str):
     pdf_loader = DirectoryLoader(
         path=directory,

@@ -10,6 +10,9 @@ class EstadoEstudiante(BaseModel):
     temas_vistos: List[str] = []
     errores_comunes: List[str] = []
 
+class Planificacion(BaseModel):
+    plan: List[str]
+
 class EstadoConversacion(BaseModel):
     tema: str
     historial: List[Dict[str, str]] = []
@@ -22,6 +25,7 @@ class EstadoConversacion(BaseModel):
     estado_estudiante: EstadoEstudiante
     bdi_state: Optional[BDIState] = None
     ultima_evaluacion: Optional[dict] = None
+    planificacion: Optional[Planificacion] = None
     
 class EstadoConversacionResponse(BaseModel):
     tema: str

@@ -3,8 +3,9 @@ from schemas.contenido import EjemploCodigo
 from schemas.estado import EstadoConversacion
 from utils.test_generador import generar_test_ejemplo
 from utils.simulador_estudiante import simular_respuesta_estudiante
+from langchain_core.language_models.chat_models import BaseChatModel
 
-def crear_agente_ejemplos(llm):
+def crear_agente_ejemplos(llm: BaseChatModel):
     llm_ejemplo = llm.with_structured_output(EjemploCodigo)
 
     prompt = ChatPromptTemplate.from_template(

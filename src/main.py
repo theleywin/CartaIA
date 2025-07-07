@@ -1,10 +1,11 @@
+import asyncio
 from graphs.tutor_workflow import crear_workflow_tutor
 from rag.vector_store import VectorDB
 from utils.input import get_initial_state
 from utils.embedding_loader import embedding_loader, llm_loader
 from utils.prettty_print import print_output
 from langchain_core.language_models.chat_models import BaseChatModel
-import time 
+from langchain_core.runnables import Runnable
 
 async def es_tema_valido(llm: BaseChatModel, tema: str) -> bool:
     prompt = f"""
@@ -16,7 +17,7 @@ async def es_tema_valido(llm: BaseChatModel, tema: str) -> bool:
     respuesta = await llm.ainvoke(prompt)
     return respuesta.content.strip().lower().startswith("sí")
 
-async def run(tutor, llm):
+async def run(tutor: Runnable, llm: BaseChatModel) -> bool:
     user_input = input("Introduce un tema para comenzar la tutoría (presiona Enter para continuar o escribe 'q' para salir)...\n")
     if (user_input.lower() == 'q'):
         return False
@@ -44,5 +45,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    import asyncio
     asyncio.run(main())
