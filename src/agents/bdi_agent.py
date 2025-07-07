@@ -128,7 +128,7 @@ class BDIAgent:
             "activate_prior_knowledge"
         ]
         
-        current_strategy = self.state.intentions.fallback_strategy
+        current_strategy = self.state.intentions.fallback_strategy.strip('"')
         next_index = (strategies.index(current_strategy) + 1) % len(strategies)
         
         self.state.intentions.fallback_strategy = strategies[next_index]
