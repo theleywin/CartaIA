@@ -160,3 +160,38 @@ Finding a negative cycle in the graph,algorithm,4.0,6.0
 Disjoint Set Union,structure,4.0,6.0
 Z-function and its calculation,algorithm,4.0,6.0
 Operations on polynomials and series,theory,4.0,12.0
+Data Structures and algorithms,OTHER,3.0,4.0
+Algebra,OTHER,3.0,4.0
+Prime numbers,OTHER,3.0,4.0
+Number-theoretic functions,OTHER,3.0,4.0
+Modular arithmetic,OTHER,3.0,4.0
+Number systems,OTHER,3.0,4.0
+Data Structures,OTHER,3.0,4.0
+Trees,OTHER,3.0,4.0
+Dynamic Programming,OTHER,3.0,4.0
+DP optimizations,OTHER,3.0,4.0
+Tasks,OTHER,3.0,4.0
+String Processing,OTHER,3.0,4.0
+Linear Algebra,OTHER,3.0,4.0
+Matrices,OTHER,3.0,4.0
+Combinatorics,OTHER,3.0,4.0
+Numerical Methods,OTHER,3.0,4.0
+Geometry,OTHER,3.0,4.0
+Elementary operations of geometry,OTHER,3.0,4.0
+Polygons,OTHER,3.0,4.0
+Convex hull,OTHER,3.0,4.0
+Sweep-line algorithms,OTHER,3.0,4.0
+Planar graphs,OTHER,3.0,4.0
+Graphs,OTHER,3.0,4.0
+Graph traversal algorithms,OTHER,3.0,4.0
+"Connected components, bridges, articulations points",OTHER,3.0,4.0
+Single-source shortest paths problem,OTHER,3.0,4.0
+All-pairs shortest paths problem,OTHER,3.0,4.0
+Spanning trees,OTHER,3.0,4.0
+Cycles in graphs,OTHER,3.0,4.0
+Lowest common ancestor,OTHER,3.0,4.0
+Flows and related problems,OTHER,3.0,4.0
+Matchings and related problems,OTHER,3.0,4.0
+Sequences,OTHER,3.0,4.0
+Game Theory,OTHER,3.0,4.0
+Schedules,OTHER,3.0,4.0

@@ -196,3 +196,197 @@ Disjoint Set Union,Minimum spanning tree - Kruskal's algorithm,STRONG
 Disjoint Set Union,Minimum spanning tree - Kruskal with Disjoint Set Union,STRONG
 Z-function and its calculation,Finding repetitions,STRONG
 Z-function and its calculation,Manacher's Algorithm - Finding all sub-palindromes in $O(N)$,STRONG
+Algebra,Data Structures and algorithms,STRONG
+Binary Exponentiation,Algebra,STRONG
+Euclidean algorithm for computing the greatest common divisor,Algebra,STRONG
+Extended Euclidean Algorithm,Algebra,STRONG
+Linear Diophantine Equation,Algebra,STRONG
+Fibonacci Numbers,Algebra,STRONG
+Bit manipulation,Algebra,STRONG
+Submask Enumeration,Algebra,STRONG
+Arbitrary-Precision Arithmetic,Algebra,STRONG
+Fast Fourier transform,Algebra,STRONG
+Operations on polynomials and series,Algebra,STRONG
+Continued fractions,Algebra,STRONG
+Binary Exponentiation by Factoring,Algebra,STRONG
+Prime numbers,Algebra,STRONG
+Sieve of Eratosthenes,Prime numbers,STRONG
+Linear Sieve,Prime numbers,STRONG
+Primality tests,Prime numbers,STRONG
+Integer factorization,Prime numbers,STRONG
+Number-theoretic functions,Algebra,STRONG
+Euler's totient function,Number-theoretic functions,STRONG
+Number of divisors / sum of divisors,Number-theoretic functions,STRONG
+Modular arithmetic,Algebra,STRONG
+Modular Multiplicative Inverse,Modular arithmetic,STRONG
+Linear Congruence Equation,Modular arithmetic,STRONG
+Chinese Remainder Theorem,Modular arithmetic,STRONG
+Garner's algorithm,Modular arithmetic,STRONG
+Factorial modulo $p$,Modular arithmetic,STRONG
+Discrete Logarithm,Modular arithmetic,STRONG
+Primitive Root,Modular arithmetic,STRONG
+Discrete Root,Modular arithmetic,STRONG
+Montgomery Multiplication,Modular arithmetic,STRONG
+Number systems,Algebra,STRONG
+Balanced Ternary,Number systems,STRONG
+Gray code,Number systems,STRONG
+Data Structures,Data Structures and algorithms,STRONG
+Trees,Data Structures,STRONG
+Disjoint Set Union,Trees,STRONG
+Fenwick Tree,Trees,STRONG
+Sqrt Decomposition,Trees,STRONG
+Segment Tree,Trees,STRONG
+Treap (Cartesian tree),Trees,STRONG
+Sqrt Tree,Trees,STRONG
+Randomized Heap,Trees,STRONG
+Minimum stack / Minimum queue,Data Structures,STRONG
+Sparse Table,Data Structures,STRONG
+Deleting from a data structure in $O(T(n)\log n)$,Data Structures,STRONG
+Dynamic Programming,Data Structures and algorithms,STRONG
+Introduction to Dynamic Programming,Dynamic Programming,STRONG
+Knapsack Problem,Dynamic Programming,STRONG
+DP optimizations,Dynamic Programming,STRONG
+Divide and Conquer DP,DP optimizations,STRONG
+Knuth's Optimization,DP optimizations,STRONG
+Tasks,Dynamic Programming,STRONG
+"Dynamic Programming on Broken Profile. Problem ""Parquet""",Tasks,STRONG
+Finding the largest zero submatrix,Tasks,STRONG
+String Processing,Data Structures and algorithms,STRONG
+String Hashing,String Processing,STRONG
+Rabin-Karp Algorithm for string matching,String Processing,STRONG
+Prefix function. Knuth–Morris–Pratt algorithm,String Processing,STRONG
+Z-function and its calculation,String Processing,STRONG
+Suffix Array,String Processing,STRONG
+Aho-Corasick algorithm,String Processing,STRONG
+Suffix Tree. Ukkonen's Algorithm,String Processing,STRONG
+Suffix Automaton,String Processing,STRONG
+Lyndon factorization,String Processing,STRONG
+Expression parsing,String Processing,STRONG
+Manacher's Algorithm - Finding all sub-palindromes in $O(N)$,String Processing,STRONG
+Finding repetitions,String Processing,STRONG
+Linear Algebra,Data Structures and algorithms,STRONG
+Matrices,Linear Algebra,STRONG
+Gauss method for solving system of linear equations,Matrices,STRONG
+Calculating the determinant of a matrix by Gauss,Matrices,STRONG
+Calculating the determinant using Kraut method in $O(N^3)$,Matrices,STRONG
+Finding the rank of a matrix,Matrices,STRONG
+Combinatorics,Data Structures and algorithms,STRONG
+Finding Power of Factorial Divisor,Combinatorics,STRONG
+Binomial Coefficients,Combinatorics,STRONG
+Catalan Numbers,Combinatorics,STRONG
+The Inclusion-Exclusion Principle,Combinatorics,STRONG
+Burnside's lemma / Pólya enumeration theorem,Combinatorics,STRONG
+Stars and bars,Combinatorics,STRONG
+Generating all $K$-combinations,Combinatorics,STRONG
+Placing Bishops on a Chessboard,Combinatorics,STRONG
+Balanced bracket sequences,Combinatorics,STRONG
+Counting labeled graphs,Combinatorics,STRONG
+Numerical Methods,Data Structures and algorithms,STRONG
+Binary search,Numerical Methods,STRONG
+Ternary Search,Numerical Methods,STRONG
+Newton's method for finding roots,Numerical Methods,STRONG
+Simulated Annealing,Numerical Methods,STRONG
+Integration by Simpson's formula,Numerical Methods,STRONG
+Geometry,Data Structures and algorithms,STRONG
+Elementary operations of geometry,Geometry,STRONG
+Basic Geometry,Elementary operations of geometry,STRONG
+Finding the equation of a line for a segment,Elementary operations of geometry,STRONG
+Intersection Point of Lines,Elementary operations of geometry,STRONG
+Check if two segments intersect,Elementary operations of geometry,STRONG
+Finding intersection of two segments,Elementary operations of geometry,STRONG
+Circle-Line Intersection,Elementary operations of geometry,STRONG
+Circle-Circle Intersection,Elementary operations of geometry,STRONG
+Finding common tangents to two circles,Elementary operations of geometry,STRONG
+Length of the union of segments,Elementary operations of geometry,STRONG
+Polygons,Geometry,STRONG
+Oriented area of a triangle,Polygons,STRONG
+Finding area of simple polygon in $O(N)$,Polygons,STRONG
+Check if point belongs to the convex polygon in $O(\log N)$,Polygons,STRONG
+Minkowski sum of convex polygons,Polygons,STRONG
+Pick's Theorem,Polygons,STRONG
+Lattice points inside non-lattice polygon,Polygons,STRONG
+Convex hull,Geometry,STRONG
+Convex Hull construction,Convex hull,STRONG
+Convex hull trick and Li Chao tree,Convex hull,STRONG
+Sweep-line algorithms,Geometry,STRONG
+Search for a pair of intersecting segments,Sweep-line algorithms,STRONG
+Planar graphs,Geometry,STRONG
+Finding faces of a planar graph,Planar graphs,STRONG
+Point location in $O(log n)$,Planar graphs,STRONG
+Finding the nearest pair of points,Geometry,STRONG
+Delaunay triangulation and Voronoi diagram,Geometry,STRONG
+Vertical decomposition,Geometry,STRONG
+Half-plane intersection,Geometry,STRONG
+Manhattan Distance,Geometry,STRONG
+Graphs,Data Structures and algorithms,STRONG
+Graph traversal algorithms,Graphs,STRONG
+Breadth-first search,Graph traversal algorithms,STRONG
+Depth First Search,Graph traversal algorithms,STRONG
+"Connected components, bridges, articulations points",Graphs,STRONG
+Search for connected components in a graph,"Connected components, bridges, articulations points",STRONG
+Finding bridges in a graph in $O(N+M)$,"Connected components, bridges, articulations points",STRONG
+Finding Bridges Online,"Connected components, bridges, articulations points",STRONG
+Finding articulation points in a graph in $O(N+M)$,"Connected components, bridges, articulations points",STRONG
+Strongly connected components and the condensation graph,"Connected components, bridges, articulations points",STRONG
+Strong Orientation,"Connected components, bridges, articulations points",STRONG
+Single-source shortest paths problem,Graphs,STRONG
+Dijkstra Algorithm,Single-source shortest paths problem,STRONG
+Dijkstra on sparse graphs,Single-source shortest paths problem,STRONG
+Bellman-Ford Algorithm,Single-source shortest paths problem,STRONG
+0-1 BFS,Single-source shortest paths problem,STRONG
+D´Esopo-Pape algorithm,Single-source shortest paths problem,STRONG
+All-pairs shortest paths problem,Graphs,STRONG
+Floyd-Warshall Algorithm,All-pairs shortest paths problem,STRONG
+Number of paths of fixed length / Shortest paths of fixed length,All-pairs shortest paths problem,STRONG
+Spanning trees,Graphs,STRONG
+Minimum spanning tree - Prim's algorithm,Spanning trees,STRONG
+Minimum spanning tree - Kruskal's algorithm,Spanning trees,STRONG
+Minimum spanning tree - Kruskal with Disjoint Set Union,Spanning trees,STRONG
+Second Best Minimum Spanning Tree,Spanning trees,STRONG
+Kirchhoff's theorem. Finding the number of spanning trees,Spanning trees,STRONG
+Prüfer code,Spanning trees,STRONG
+Cycles in graphs,Graphs,STRONG
+Checking a graph for acyclicity and finding a cycle in $O(M)$,Cycles in graphs,STRONG
+Finding a negative cycle in the graph,Cycles in graphs,STRONG
+Finding the Eulerian path in $O(M)$,Cycles in graphs,STRONG
+Lowest common ancestor,Graphs,STRONG
+Lowest Common Ancestor - $O(\sqrt{N})$ and $O(\log N)$ with $O(N)$ preprocessing,Lowest common ancestor,STRONG
+Lowest Common Ancestor - Binary Lifting,Lowest common ancestor,STRONG
+Lowest Common Ancestor - Farach-Colton and Bender Algorithm,Lowest common ancestor,STRONG
+Solve RMQ (Range Minimum Query) by finding LCA (Lowest Common Ancestor),Lowest common ancestor,STRONG
+Lowest Common Ancestor - Tarjan's off-line algorithm,Lowest common ancestor,STRONG
+Flows and related problems,Graphs,STRONG
+Maximum flow - Ford-Fulkerson and Edmonds-Karp,Flows and related problems,STRONG
+Maximum flow - Push-relabel algorithm,Flows and related problems,STRONG
+Maximum flow - Push-relabel method improved,Flows and related problems,STRONG
+Maximum flow - Dinic's algorithm,Flows and related problems,STRONG
+Maximum flow - MPM algorithm,Flows and related problems,STRONG
+Flows with demands,Flows and related problems,STRONG
+Minimum-cost flow - Successive shortest path algorithm,Flows and related problems,STRONG
+Solving assignment problem using min-cost-flow,Flows and related problems,STRONG
+Matchings and related problems,Graphs,STRONG
+Check whether a graph is bipartite,Matchings and related problems,STRONG
+Kuhn's Algorithm for Maximum Bipartite Matching,Matchings and related problems,STRONG
+Hungarian algorithm for solving the assignment problem,Matchings and related problems,STRONG
+Topological Sorting,Graphs,STRONG
+Edge connectivity / Vertex connectivity,Graphs,STRONG
+Paint the edges of the tree,Graphs,STRONG
+2-SAT,Graphs,STRONG
+Heavy-light decomposition,Graphs,STRONG
+Sequences,Data Structures and algorithms,STRONG
+Range Minimum Query,Sequences,STRONG
+Longest increasing subsequence,Sequences,STRONG
+Search the subarray with the maximum/minimum sum,Sequences,STRONG
+$K$th order statistic in $O(N)$,Sequences,STRONG
+MEX (minimal excluded) of a sequence,Sequences,STRONG
+Game Theory,Data Structures and algorithms,STRONG
+Games on arbitrary graphs,Game Theory,STRONG
+Sprague-Grundy theorem. Nim,Game Theory,STRONG
+Schedules,Data Structures and algorithms,STRONG
+Scheduling jobs on one machine,Schedules,STRONG
+Scheduling jobs on two machines,Schedules,STRONG
+Optimal schedule of jobs given their deadlines and durations,Schedules,STRONG
+Floyd's Linked List Cycle Finding Algorithm,Data Structures and algorithms,STRONG
+Josephus Problem,Data Structures and algorithms,STRONG
+15 Puzzle Game: Existence Of The Solution,Data Structures and algorithms,STRONG
+The Stern-Brocot tree and Farey sequences,Data Structures and algorithms,STRONG
