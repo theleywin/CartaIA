@@ -31,6 +31,8 @@ def crear_agente_planificacion(llm: BaseChatModel):
 
         ant_colony = AntColony(
             problem=problem,
+            num_ants=80,
+            iterations=100
         )
         action_plan, _ = ant_colony.run()
         

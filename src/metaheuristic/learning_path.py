@@ -1,6 +1,7 @@
 import networkx as nx
 from typing import List, Set
 from metaheuristic.ant_colony.problem import Problem
+from networkx import has_path, shortest_path_length
 
 class LearningPathProblem(Problem[str]):
     def __init__(
@@ -16,8 +17,11 @@ class LearningPathProblem(Problem[str]):
         self.target_topic = target_topic
 
     def start_nodes(self) -> List[str]:
-        return list(self.known_topics)
-
+        candidates = [n for n in self.known_topics if has_path(self.graph, n, self.target_topic)]
+        if len(candidates) > 0:
+            return candidates
+        return [n for n in self.graph.nodes if self.graph.in_degree(n) == 0 and self.graph.out_degree(n) > 0 and has_path(self.graph, n, self.target_topic)]
+    
     def is_terminal(self, node: str) -> bool:
         return node == self.target_topic
 
@@ -33,7 +37,13 @@ class LearningPathProblem(Problem[str]):
 
         reinforcement = 1.5 if j in self.weak_topics else 1.0
 
-        return weight * reinforcement / (difficulty * time)
+        score = weight * reinforcement / (difficulty * time)
+        if j == self.target_topic:
+            return score * 10.0
+        if has_path(self.graph, j, self.target_topic):
+            length = shortest_path_length(self.graph, j, self.target_topic)
+            return score * length
+        return score * 1e-10
 
     def evaluate(self, solution: List[str]) -> float:
         total_time = 0.0
@@ -42,4 +52,4 @@ class LearningPathProblem(Problem[str]):
             attrs = self.graph.nodes[node]
             total_time += attrs.get("estimated_time", 1.0)
             total_difficulty += attrs.get("difficulty", 1.0)
-        return total_time + total_difficulty
+        return (total_time + total_difficulty) / len(solution)

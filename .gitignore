@@ -202,5 +202,5 @@ index.pkl
 
 # Ignore bdi state
 estado_bdi.json
-
+navigation.json
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
